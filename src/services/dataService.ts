@@ -54,7 +54,7 @@ export interface TourInput {
   durationHours: number;
   originalPrice: number;
   price: number;
-  discount?: number | null;
+  discount?: string | null;
   category: string;
   description: string;
   image: string;
@@ -73,6 +73,31 @@ export interface TourInput {
   heroBackgroundPosition: string;
   operatorId?: string | null;
   translations?: Record<string, Record<string, string>> | string | null;
+  // Professional fields
+  durationDays?: number;
+  shortDescription?: string;
+  availableDates?: unknown;
+  itinerary?: unknown;
+  minAge?: number;
+  maxPassengers?: number;
+  trailerUrl?: string;
+  galleryImages?: unknown;
+  mapCenterLat?: number;
+  mapCenterLng?: number;
+  mapZoom?: number;
+  difficulty?: string;
+  seasonality?: unknown;
+  includes?: unknown;
+  excludes?: unknown;
+  requirements?: unknown;
+  pickupInfo?: string;
+  cancellationPrice?: number;
+  cancellationPolicy?: string;
+  languages?: unknown;
+  groupType?: string;
+  vibeScores?: { adrenalina: number; relax: number; cultura: number; familia: number };
+  destinationCountry?: string;
+  bgPosition?: string;
 }
 
 export interface BookingInput {
@@ -879,5 +904,4 @@ return {
     return slides;
   },
 };
-
 
