@@ -1,162 +1,295 @@
-# Informe de Estado del Proyecto — BuscaTours (modern-app)
+# 🚨 INFORME DE ERRORES Y PROBLEMAS — BuscaTours
 
-Fecha: 2026-07-07
-Stack: React 19 + Vite + Firebase (Auth, Data Connect, Cloud Functions Gen2) + Vertex AI (Gemini)
-
----
-
-## 1. Resumen ejecutivo
-
-El frontend está **muy avanzado** (todas las vistas y componentes implementados, sin stubs
-visuales). La capa de datos (Data Connect) está bien definida y coincide con lo que consume el
-frontend. Sin embargo, **faltan piezas críticas de backend, integración y configuración** para
-llegar a producción:
-
-- Backend de funciones solo tiene 2 de ~12 funciones esperadas.
-- No hay integración real de pagos ni de búsqueda IA.
-- El SDK generado está desactualizado frente al schema.
-- Faltan variables de entorno y scripts de seed no están cableados.
-- Hay código muerto y un error de lint que rompe.
+> **Fecha:** 28/07/2026
+> **Propósito:** Lista detallada de todos los problemas encontrados para corregir antes de poblar datos reales y subir a producción.
 
 ---
 
-## 2. Bloqueantes / Críticos (P0)
+## 🔴 PROBLEMAS CRÍTICOS (Deben corregirse antes de continuar)
 
-### 2.1 Error de lint (rompe calidad, no el build)
-- `src/components/admin/ToursManagement.tsx:69` — array de dependencias inválido en `useMemo`
-  (`['price', originalPrice]` con `price` literal). Genera 1 error ESLint.
-  - Acción: corregir a `[price, originalPrice]`.
+### 1. Runtime mismatch — Node version
 
-### 2.2 SDK generado desactualizado
-- `src/dataconnect-generated` tiene `TourStatus = { DRAFT, PUBLISHED, ARCHIVED }` pero
-  `dataconnect/schema.graphql` define también `PENDING`. El SDK necesita regenerarse.
-  - Acción: `firebase dataconnect generate-sdk` (o redeploy Data Connect).
-- Además, `dataService.ts` lee propiedades que el SDK no devuelve:
-  - `:757` lee `result.data?.offlineCheckin_insert` → debería ser `pwaCheckin_insert`.
-  - `:795` lee `result.data?.deleteSliderSlide` → debería ser `sliderSlide_delete`.
-  - Estas mutaciones devuelven `undefined`/null en runtime (bug lógico).
+**Archivos involucrados:**
+- `functions/package.json` → línea 29: `"node": "22"`
+- `firebase.json` → línea 39: `"runtime": "nodejs20"`
 
-### 2.3 Variables de entorno faltantes
-- `DATABASE_URL` no existe en `.env` / `.env.local` / `.env.production`, pero
-  `schema.graphql` declara `url = env("DATABASE_URL")` como datasource de Cloud SQL.
-  Sin esto el emulador/servicio de Data Connect no puede conectar a Postgres.
-- `VITE_GEMINI_API_KEY` está vacío en `.env.local` (inofensivo: la IA usa Cloud Function, pero
-  conviene limpiarlo).
+**Problema:** Firebase Functions NO soporta Node 22 actualmente. El package.json pide Node 22 pero firebase.json configura Node 20.
 
-### 2.4 Migración de datos no ejecutable
-- `MIGRATION_LOG.md` indica exportar de Neon vía `backend/scripts/export-neon.js`, pero
-  **`backend/` está vacío** (solo `node_modules`, sin código fuente) y no existe `export-neon.js`.
-  El cut-over de datos no se puede realizar con el estado actual.
-- Scripts de seed (`functions/scripts/*.mjs`):
-  - `seed-dataconnect-sql.mjs` usa `pg` pero **`pg` no está en `functions/package.json`**.
-  - Ninguno de los dos está cableado en `package.json` scripts (no hay `db:seed` real funcional).
-
-### 2.5 Type mismatch en mutations
-- En `dataconnect/connector/mutations.gql`, `operatorId`/`userId` se declaran `String` pero el
-  schema los define como `UUID!`. Debe verificarse/coincidir (FDC puede coercer, pero es inconsistente).
+**Solución:** Cambiar `functions/package.json` línea 29 de `"node": "22"` a `"node": "20"`.
 
 ---
 
-## 3. Funcionalidades incompletas (P1)
+### 2. Mutations.gql no incluye campos profesionales del schema
 
-### 3.1 Backend / Cloud Functions
-Solo existen 2 funciones (`functions/src/index.ts` exporta `generateTourWithAI` y `searchTours`):
-- ✅ `generateTourWithAI` — implementada (devuelve tour sheet vía Gemini, no persiste).
-- ⚠️ `searchTours` — implementada pero **devuelve IDs alucinados por Gemini**, no hace lookup real
-  en Data Connect. No es búsqueda IA real.
-- ❌ `recommendTours` — **no existe** (el MIGRATION_LOG la lista como requerida).
-- ❌ `bookings/*`, `tours/*`, `users/*` callable functions — **no implementadas** (el CRUD vive
-  solo en Data Connect, invocado directo desde el frontend). Esto es válido, pero implica que la
-  lógica de `errors.ts` (`BOOKING_CONFLICT`, `USER_NOT_FOUND`, etc.) es código muerto de funciones
-  que nunca se construyeron.
+**Archivo:** `dataconnect/connector/mutations.gql`
 
-### 3.2 Roles de admin simulados
-- `AdminPanel.tsx:81` inicializa `currentRole = 'Platform Admin'` y trae un switcher de rol en UI.
-  `App.jsx` no propaga el rol real del usuario (custom claims de Firebase).
-  - Riesgo: cualquiera que llegue a `#admin` obtiene acceso total de Platform Admin (solo `customer`
-    está bloqueado).
-- Inconsistencia de taxonomía de roles: admin usa Title Case (`'Platform Admin'`) vs el resto
-  usa kebab (`'platform-admin'`). `AuthContext.tsx:56` hace cast inseguro `as UserRole`.
+**Problema:** Las mutations `CreateTour` y `UpdateTour` NO aceptan estos campos que están definidos en `schema.graphql`:
 
-### 3.3 Pagos simulados
-- `CheckoutModal.jsx` y `SplitPaymentGate` recolectan datos de tarjeta/Webpay/MercadoPago pero
-  **nunca llaman a ningún gateway**. `onBookingSuccess` solo es local. No hay Stripe/Webpay/Mercado
-  Pago/PayPal integrado.
+| Campo | Tipo | ¿En mutation? |
+|-------|------|:---:|
+| `availableDates` | JSON | ❌ |
+| `itinerary` | JSON | ❌ |
+| `minAge` | Int | ❌ |
+| `maxPassengers` | Int | ❌ |
+| `trailerUrl` | String | ❌ |
+| `galleryImages` | JSON | ❌ |
+| `mapCenterLat` | Float | ❌ |
+| `mapCenterLng` | Float | ❌ |
+| `mapZoom` | Int | ❌ |
+| `difficulty` | Difficulty | ❌ |
+| `seasonality` | JSON | ❌ |
+| `includes` | JSON | ❌ |
+| `excludes` | JSON | ❌ |
+| `requirements` | JSON | ❌ |
+| `pickupInfo` | String | ❌ |
+| `cancellationPolicy` | String | ❌ |
+| `languages` | JSON | ❌ |
+| `groupType` | GroupType | ❌ |
 
-### 3.4 Búsqueda IA / vibe scoring
-- Modo `"ai"` en `App.jsx` es solo filtrado de texto (no llama IA).
-- `useAI.ts:10` `useSearchTours` es un stub (`Promise.resolve([])`), y el hook completo `useAI` no
-  está cableado en ningún lado.
-- Mapeo de vibe scores: datos semilla usan `vibeAdrenaline/vibeRelax/...` pero `dataService.getTours`
-  (`:302-324`) no renombra `vibeScores` del DB a esos campos → con datos reales quedarían en 50.
+**Impacto:** Cuando guardas un tour desde el panel admin, estos campos se envían pero el mutation los ignora. Los datos se pierden.
+
+**Solución:** Agregar todos estos campos como parámetros opcionales en `CreateTour` y `UpdateTour` en `mutations.gql`.
 
 ---
 
-## 4. Código muerto / Limpieza (P2)
+### 3. Queries.gql no retorna campos profesionales
 
-- **`src/hooks/*` completo (5 hooks)** — `useAdmin, useBookings, useTours, useAuth, useAI` están
-  implementados pero **nunca importados** en ningún lado (el app usa `context/AuthContext` y
-  `dataService` directo). `useAuth.ts` es duplicado de `AuthContext.tsx`.
-- **`src/components/Activities.jsx`** y **`src/components/Testimonials.jsx`** — no se importan
-  (el home usa datos inline / `SocialProofFeed`).
-- **`src/components/admin/ToursManagement.tsx.bak`** — archivo backup, eliminar.
-- **`functions/src/utils/errors.ts`** — helpers para funciones inexistentes (código muerto).
-- Métodos de `dataService` no usados: `getDestinations`, `getActivities`, `deleteBooking`,
-  `deleteSliderSlide`.
-- `lucide-react` está fijado a `^1.21.0` (raro para esta librería, normalmente 0.x). Verificar que
-  resuelva en `npm install` limpio.
-- `@tanstack/react-query` está instalado pero no se usa (los hooks que lo usaban están muertos);
-  el SDK generado declara peer `@tanstack-query-firebase/react` que tampoco está instalado.
-- `README.md` es el template por defecto de Vite (no documenta el proyecto real).
-- `backend/` legacy es un stub vacío → eliminar o documentar como deprecado.
+**Archivo:** `dataconnect/connector/queries.gql`
 
----
+**Problema:** `GetTours` (línea 1-34) y `GetTour` (línea 36-69) no solicitan los campos profesionales. Cuando el frontend carga los tours, estos campos vienen vacíos.
 
-## 5. Datos / Seed (contexto)
+**Campos faltantes en ambas queries:**
+- `durationDays`
+- `shortDescription`
+- `availableDates`
+- `itinerary`
+- `minAge`
+- `maxPassengers`
+- `trailerUrl`
+- `galleryImages`
+- `mapCenterLat`
+- `mapCenterLng`
+- `mapZoom`
+- `difficulty`
+- `seasonality`
+- `includes`
+- `excludes`
+- `requirements`
+- `pickupInfo`
+- `cancellationPolicy`
+- `languages`
+- `groupType`
 
-- Datos mock en `dataService.ts` (`MOCK_TOURS/BOOKINGS/...`) usados como fallback en 401 — aceptable
-  para dev, pero el seed real (12 tours, 7 users, 3 slides) depende de los scripts de seed que hoy
-  no están cableados (ver 2.4).
-
----
-
-## 6. Checklist de producción (de MIGRATION_LOG.md) — pendientes
-
-- [ ] `firebase deploy` completo sin errores
-- [ ] Data Connect schema activo en consola
-- [ ] 6+ Cloud Functions deployadas (hoy solo 2 existen)
-- [ ] Auth Firebase con roles reales propagados al AdminPanel
-- [ ] IA `recommendTours` y `generateTourWithAI` responden < 3s
-- [ ] Booking atómico (validación de capacidad / conflict) — hoy solo en Data Connect, sin capa de
-      función que lo garantice con los errores definidos
-- [ ] AdminPanel CRUD tours/bookings/slider funcionando
-- [ ] Datos migrados (12 tours, 7 users, 3 slides)
-- [ ] Performance queries < 300ms p95
-- [ ] Zero console errors
-- [ ] `npm run deploy` = deploy completo en un comando
+**Solución:** Agregar todos estos campos a las queries `GetTours` y `GetTour`.
 
 ---
 
-## 7. Plan recomendado (orden)
+### 4. dataService.ts envía campos que el mutation no acepta
 
-1. **Corregir bloqueantes P0**: arreglar lint error, regenerar SDK, añadir `DATABASE_URL`,
-   corregir los 2 reads en `dataService.ts`, definir/fijar scripts de seed (añadir `pg`).
-2. **Backend mínimo viable**: implementar `recommendTours` y convertir `searchTours` para que haga
-   lookup real en Data Connect (usar `GetTours` + filtrar por resultados de Gemini).
-3. **Seguridad de admin**: propagar custom claims de rol desde `AuthContext`/`App.jsx` al
-   `AdminPanel` y eliminar el switcher simulado. Unificar taxonomía de roles.
-4. **Pagos**: decidir gateway (Webpay/MercadoPago/Stripe) e integrar backend + frontend.
-5. **Migración de datos**: crear/recuperar script de export y cablear `db:seed` funcional.
-6. **Limpieza**: eliminar hooks muertos, componentes huérfanos, `.bak`, y actualizar `README.md`.
-7. **Deploy + validación**: ejecutar checklist de producción.
+**Archivo:** `src/services/dataService.ts`
+
+**Problema:** En el método `saveTour()` (líneas 386-503), el código serializa a JSON y envía campos como `itinerary`, `minAge`, `maxPassengers`, `difficulty`, `seasonality`, `includes`, `excludes`, `requirements`, `pickupInfo`, `cancellationPrice`, `languages`, `groupType`, `galleryImages`, `mapCenterLat`, `mapCenterLng`, `mapZoom`, `trailerUrl`, `availableDates`. Pero el mutation GQL no los recibe, por lo que Firebase Data Connect lanzará un error de validación o ignorará silenciosamente estos campos.
+
+**Solución:** Esto se resuelve automáticamente cuando se corrija el punto #2 (mutations.gql).
 
 ---
 
-## 8. Métricas rápidas
+### 5. seed-real.json tiene datos placeholder
 
-- Lint: **1 error**, 6 warnings (corregible en minutos).
-- Funciones Cloud implementadas: **2 / ~12 esperadas**.
-- Hooks del frontend cableados: **0 / 5** (todos muertos).
-- Vistas (hash routes): **5/5 implementadas**.
-- Operaciones Data Connect referenciadas por frontend: **100% presentes**.
-- SDK generado vs schema: **desincronizado** (falta `TourStatus.PENDING`).
+**Archivo:** `dataconnect/seed-real.json`
+
+**Problema:** Contiene datos de ejemplo no reales:
+- 1 operador placeholder: `ventas@tuoperador.com` / "Tu Operador Real S.A.C."
+- 2 clientes placeholder
+- 1 tour de ejemplo genérico
+
+**Solución:** Reemplazar con tus datos reales de operadores, clientes y tours. Luego ejecutar:
+```
+node scripts/seed-real.mjs
+```
+
+---
+
+## 🟠 PROBLEMAS IMPORTANTES
+
+### 6. Categorías inconsistentes entre frontend y schema
+
+**Archivos:** `src/data/tours.js` vs `dataconnect/schema.graphql`
+
+**Problema:** El frontend usa nombres en español para categorías (e.g. "Relaxación", "Familiar", "Full Day") pero el schema usa `RELAXACION`, `FAMILIAR`, `FULLDAY`. El mapper `mappers.ts` hace la conversión, pero algunas categorías en `activitiesData` (líneas 559-576 de tours.js) no tienen对应 en el schema:
+
+| activitiesData | ¿En schema? |
+|----------------|:-----------:|
+| Outdoor | ✅ OUTDOOR |
+| Relaxación | ✅ RELAXACION |
+| Feriado | ✅ FERIADO |
+| Temporada | ✅ TEMPORADA |
+| Salvaje | ✅ SALVAJE |
+| Aventura | ✅ AVENTURA |
+| Temático | ✅ TEMATICO |
+| Cultural | ✅ CULTURAL |
+| Ciudad | ✅ CIUDAD |
+| Montaña | ✅ MONTANA |
+| Glaciar | ✅ GLACIAR |
+| Lujo | ✅ LUJO |
+| Histórico | ✅ HISTORICO |
+| Familiar | ✅ FAMILIAR |
+| Selva | ✅ SELVA |
+| Full Day | ✅ FULLDAY |
+| **Navegación** | ✅ NAVEGACION |
+
+**Verificar:** Que `mapCategoryToDb` en `mappers.ts` tenga todas las categorías correctamente mapeadas.
+
+---
+
+### 7. Destinos limitados en el schema
+
+**Archivo:** `dataconnect/schema.graphql` (líneas 69-79)
+
+**Problema:** El enum `Destination` solo incluye 9 países:
+```
+ARGENTINA, PERU, BOLIVIA, BRAZIL, COLOMBIA, ECUADOR, CHILE, MEXICO, DOMINICAN_REPUBLIC
+```
+
+Pero `destinationsData` en `src/data/tours.js` tiene **17 destinos**, incluyendo:
+- Guatemala ❌
+- Costa Rica ❌
+- Panamá ❌
+- Cuba ❌
+- Belice ❌
+- El Salvador ❌
+- Honduras ❌
+- Nicaragua ❌
+- Haití ❌
+
+**Impacto:** Si creas tours para esos países, el schema no los aceptará.
+
+**Solución:** Agregar los países faltantes al enum `Destination` en `schema.graphql`.
+
+---
+
+### 8. Mock tours en dataService.ts tienen estructura diferente
+
+**Archivo:** `src/services/dataService.ts` (líneas 170-255)
+
+**Problema:** Los 3 tours mock usan `vibeScores` (objeto con `adrenalina`, `relax`, `cultura`, `familia`) mientras que el schema y los tours reales usan campos planos `vibeAdrenaline`, `vibeRelax`, `vibeCulture`, `vibeFamily`. El mapper.js los maneja, pero crea duplicación y confusión.
+
+**Además:** Los mock tours tienen campos como `guideId`, `vehicleId`, `operator`, `vibeScores`, `destinationCountry` que NO existen en el schema de la DB.
+
+---
+
+### 9. OperadoresManagement no aparece en el menú del sidebar
+
+**Archivo:** `src/components/admin/AdminPanel.tsx`
+
+**Problema:** El array `MENU_ITEMS` (líneas 56-66) no incluye un item con `id: 'operators'`, pero el render condicional (línea 740-747) sí tiene un bloque para `activeTab === 'operators'`. Esto significa que la pestaña de operadores existe pero no hay forma de acceder a ella desde el menú.
+
+---
+
+### 10. Roles: TOUR_ADMIN no está considerado en filtros de tours
+
+**Archivo:** `src/app/useToursFilter.js` (líneas 164-178)
+
+**Problema:** En el filtro de tours, solo se considera:
+```javascript
+if (userRole === "platform-admin" || userRole === "tour-admin") { /* admins see all */ }
+```
+Pero `TOUR_ADMIN` en la DB se mapea a `tour-admin` (con guión). El mapper `normalizeDbRole` en `mappers.ts` línea 173 devuelve `"tour-admin"`. Esto debería funcionar, pero **verificar** que el rol `TOUR_ADMIN` en seed.sql se esté mapeando correctamente.
+
+---
+
+## 🟡 PROBLEMAS MENORES / ADVERTENCIAS
+
+### 11. Archivos duplicados / backups
+
+**Carpeta:** `src-backup-pre2/`
+
+Hay una copia de seguridad completa del frontend. Esto ocupa espacio y puede causar confusión. Considerar eliminar cuando ya no sea necesaria.
+
+---
+
+### 12. Scripts de reconstrucción
+
+**Archivos:** `reconstruct.py`, `reconstruct2.py`, `reconstruct3.py`, `reconstruct4.py`, `reconstruct5.py`, `reconstruct6.py`
+
+Múltiples scripts Python de reconstrucción. Probablemente de intentos anteriores de recuperar el proyecto. Revisar si aún son necesarios.
+
+---
+
+### 13. Archivo Header.jsx.bak
+
+**Archivo:** `src/components/Header.jsx.bak`
+
+Backup del Header. Probablemente se puede eliminar.
+
+---
+
+### 14. Exportaciones de Firebase emulator
+
+**Carpetas:**
+- `firebase-export-1785095989936GbrCgq/`
+- `firebase-export-17851157921387U9PY9/`
+- `firebase-export-1785258719450zyGXOo/`
+
+Son exportaciones del emulador de Firebase. Ocupan espacio. Se pueden eliminar si no se necesitan.
+
+---
+
+### 15. Test results de Playwright
+
+**Carpeta:** `test-results/`
+
+Contiene capturas de pantalla y traces de tests fallidos. Ocupan espacio. Se pueden eliminar.
+
+---
+
+### 16. playwright-report
+
+**Carpeta:** `playwright-report/`
+
+Reporte HTML de tests. Ocupa ~10MB. Se puede eliminar.
+
+---
+
+## 📋 LISTA DE VERIFICACIÓN PARA CORREGIR
+
+### Prioridad 1 — Antes de poblar datos
+- [ ] Corregir runtime Node en `functions/package.json` (22 → 20)
+- [ ] Agregar campos profesionales a `mutations.gql` (CreateTour, UpdateTour)
+- [ ] Agregar campos profesionales a `queries.gql` (GetTours, GetTour)
+- [ ] Regenerar el SDK de Data Connect después de los cambios GQL
+
+### Prioridad 2 — Antes de crear tours reales
+- [ ] Reemplazar `dataconnect/seed-real.json` con datos reales
+- [ ] Agregar países faltantes al enum `Destination` en `schema.graphql`
+- [ ] Verificar que todas las categorías en `mappers.ts` tengan对应 en el schema
+
+### Prioridad 3 — Limpieza
+- [ ] Eliminar `src-backup-pre2/` (cuando ya no sea necesaria)
+- [ ] Eliminar scripts de reconstrucción (reconstruct*.py)
+- [ ] Eliminar `Header.jsx.bak`
+- [ ] Eliminar exportaciones de emulador (`firebase-export-*/`)
+- [ ] Eliminar `test-results/` y `playwright-report/`
+
+---
+
+## 🛠 COMANDOS ÚTILES
+
+```bash
+# Ver el estado actual de Git
+git status
+
+# Ver el historial de commits
+git log --oneline
+
+# Volver al checkpoint si algo sale mal
+git checkout a48830f
+
+# Ejecutar seed con datos reales (después de editar seed-real.json)
+node scripts/seed-real.mjs
+
+# Iniciar emuladores
+npm run dev
+
+# Ejecutar el bug scanner
+npm run scan

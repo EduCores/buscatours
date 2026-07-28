@@ -62,6 +62,18 @@ export const DESTINATION_MAP_TO_DB: Record<string, string> = {
   Mexico: "MEXICO",
   "República Dominicana": "DOMINICAN_REPUBLIC",
   "Dominican Republic": "DOMINICAN_REPUBLIC",
+  Guatemala: "GUATEMALA",
+  "Costa Rica": "COSTA_RICA",
+  Panamá: "PANAMA",
+  Panama: "PANAMA",
+  Cuba: "CUBA",
+  Belice: "BELICE",
+  Belize: "BELICE",
+  "El Salvador": "EL_SALVADOR",
+  Honduras: "HONDURAS",
+  Nicaragua: "NICARAGUA",
+  Haití: "HAITI",
+  Haiti: "HAITI",
 };
 
 export const DESTINATION_MAP_FROM_DB: Record<string, string> = {
@@ -74,6 +86,15 @@ export const DESTINATION_MAP_FROM_DB: Record<string, string> = {
   CHILE: "Chile",
   MEXICO: "México",
   DOMINICAN_REPUBLIC: "República Dominicana",
+  GUATEMALA: "Guatemala",
+  COSTA_RICA: "Costa Rica",
+  PANAMA: "Panamá",
+  CUBA: "Cuba",
+  BELICE: "Belice",
+  EL_SALVADOR: "El Salvador",
+  HONDURAS: "Honduras",
+  NICARAGUA: "Nicaragua",
+  HAITI: "Haití",
 };
 
 export function mapDestinationToDb(dest: string): string {

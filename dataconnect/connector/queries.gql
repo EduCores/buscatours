@@ -5,6 +5,7 @@ query GetTours @auth(level: PUBLIC) {
     location
     duration
     durationHours
+    durationDays
     originalPrice
     price
     discount
@@ -12,6 +13,7 @@ query GetTours @auth(level: PUBLIC) {
     reviewsCount
     category
     description
+    shortDescription
     image
     featured
     oneDay
@@ -28,6 +30,24 @@ query GetTours @auth(level: PUBLIC) {
     heroBackgroundPosition
     translations
     operatorId
+    availableDates
+    itinerary
+    minAge
+    maxPassengers
+    trailerUrl
+    galleryImages
+    mapCenterLat
+    mapCenterLng
+    mapZoom
+    difficulty
+    seasonality
+    includes
+    excludes
+    requirements
+    pickupInfo
+    cancellationPolicy
+    languages
+    groupType
     createdAt
     updatedAt
   }
@@ -40,6 +60,7 @@ query GetTour($id: UUID!) @auth(level: PUBLIC) {
     location
     duration
     durationHours
+    durationDays
     originalPrice
     price
     discount
@@ -47,6 +68,7 @@ query GetTour($id: UUID!) @auth(level: PUBLIC) {
     reviewsCount
     category
     description
+    shortDescription
     image
     featured
     oneDay
@@ -63,6 +85,24 @@ query GetTour($id: UUID!) @auth(level: PUBLIC) {
     heroBackgroundPosition
     translations
     operatorId
+    availableDates
+    itinerary
+    minAge
+    maxPassengers
+    trailerUrl
+    galleryImages
+    mapCenterLat
+    mapCenterLng
+    mapZoom
+    difficulty
+    seasonality
+    includes
+    excludes
+    requirements
+    pickupInfo
+    cancellationPolicy
+    languages
+    groupType
     createdAt
     updatedAt
   }

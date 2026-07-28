@@ -24,6 +24,25 @@ mutation CreateTour(
   $heroBackgroundPosition: String
   $translations: String
   $operatorId: String!
+  # Professional fields
+  $availableDates: Any
+  $itinerary: Any
+  $minAge: Int
+  $maxPassengers: Int
+  $trailerUrl: String
+  $galleryImages: Any
+  $mapCenterLat: Float
+  $mapCenterLng: Float
+  $mapZoom: Int
+  $difficulty: String
+  $seasonality: Any
+  $includes: Any
+  $excludes: Any
+  $requirements: Any
+  $pickupInfo: String
+  $cancellationPolicy: String
+  $languages: Any
+  $groupType: String
 ) @auth(level: USER) {
   tour_insert(data: {
     title: $title
@@ -51,6 +70,24 @@ mutation CreateTour(
     heroBackgroundPosition: $heroBackgroundPosition
     translations: $translations
     operatorId: $operatorId
+    availableDates: $availableDates
+    itinerary: $itinerary
+    minAge: $minAge
+    maxPassengers: $maxPassengers
+    trailerUrl: $trailerUrl
+    galleryImages: $galleryImages
+    mapCenterLat: $mapCenterLat
+    mapCenterLng: $mapCenterLng
+    mapZoom: $mapZoom
+    difficulty: $difficulty
+    seasonality: $seasonality
+    includes: $includes
+    excludes: $excludes
+    requirements: $requirements
+    pickupInfo: $pickupInfo
+    cancellationPolicy: $cancellationPolicy
+    languages: $languages
+    groupType: $groupType
   })
 }
 
@@ -81,6 +118,25 @@ mutation UpdateTour(
   $heroBackgroundPosition: String
   $translations: String
   $operatorId: String
+  # Professional fields
+  $availableDates: Any
+  $itinerary: Any
+  $minAge: Int
+  $maxPassengers: Int
+  $trailerUrl: String
+  $galleryImages: Any
+  $mapCenterLat: Float
+  $mapCenterLng: Float
+  $mapZoom: Int
+  $difficulty: String
+  $seasonality: Any
+  $includes: Any
+  $excludes: Any
+  $requirements: Any
+  $pickupInfo: String
+  $cancellationPolicy: String
+  $languages: Any
+  $groupType: String
 ) @auth(level: USER) {
   tour_update(
     key: { id: $id }
@@ -110,6 +166,24 @@ mutation UpdateTour(
       heroBackgroundPosition: $heroBackgroundPosition
       translations: $translations
       operatorId: $operatorId
+      availableDates: $availableDates
+      itinerary: $itinerary
+      minAge: $minAge
+      maxPassengers: $maxPassengers
+      trailerUrl: $trailerUrl
+      galleryImages: $galleryImages
+      mapCenterLat: $mapCenterLat
+      mapCenterLng: $mapCenterLng
+      mapZoom: $mapZoom
+      difficulty: $difficulty
+      seasonality: $seasonality
+      includes: $includes
+      excludes: $excludes
+      requirements: $requirements
+      pickupInfo: $pickupInfo
+      cancellationPolicy: $cancellationPolicy
+      languages: $languages
+      groupType: $groupType
     }
   )
 }

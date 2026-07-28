@@ -76,6 +76,15 @@ enum Destination {
   CHILE
   MEXICO
   DOMINICAN_REPUBLIC
+  GUATEMALA
+  COSTA_RICA
+  PANAMA
+  CUBA
+  BELICE
+  EL_SALVADOR
+  HONDURAS
+  NICARAGUA
+  HAITI
 }
 
 type User @auth(level: PUBLIC) @table(name: "users") {

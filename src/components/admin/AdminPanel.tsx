@@ -8,7 +8,7 @@ import { useTranslation } from '../../i18n/LanguageContext';
 import { dataService } from '../../services/dataService';
 import { normalizeDbRole } from '../../services/mappers';
 import { useAuth } from '../../context/AuthContext';
-import { Tour, Booking, Guide, Vehicle, Slide, PwaCheckin, UserRole } from './types';
+import { Tour, Booking, Guide, Vehicle, Slide, PwaCheckin, UserRole, ActiveTab } from './types';
 
 import TabErrorBoundary from './ErrorBoundary';
 import Sidebar from './Sidebar';
@@ -53,7 +53,7 @@ interface AdminPanelProps {
   onHashChange?: (hash: string) => void;
 }
 
-const MENU_ITEMS = [
+const MENU_ITEMS: { id: ActiveTab; label: string; desc: string; icon: React.ElementType; roles: string[] }[] = [
   { id: 'dashboard', label: 'admin.dashboard', desc: 'admin.dashboardDesc', icon: LayoutDashboard, roles: ['platform-admin', 'tour-admin', 'operator'] },
   { id: 'logistics', label: 'admin.logistics', desc: 'admin.logisticsDesc', icon: Map, roles: ['platform-admin', 'tour-admin'] },
   { id: 'copilot', label: 'admin.copilot', desc: 'admin.copilotDesc', icon: Sparkles, roles: ['platform-admin', 'tour-admin'] },
@@ -62,6 +62,7 @@ const MENU_ITEMS = [
   { id: 'bookings', label: 'admin.bookings', desc: 'admin.bookingsDesc', icon: CalendarCheck, roles: ['platform-admin', 'tour-admin', 'operator'] },
   { id: 'resources', label: 'admin.resources', desc: 'admin.resourcesDesc', icon: Users, roles: ['platform-admin', 'tour-admin', 'operator'] },
   { id: 'pwa', label: 'admin.pwa', desc: 'admin.pwaDesc', icon: QrCode, roles: ['platform-admin', 'tour-admin', 'operator'] },
+  { id: 'operators', label: 'admin.operators', desc: 'admin.operatorsDesc', icon: Users, roles: ['platform-admin', 'tour-admin'] },
   { id: 'tourists', label: 'admin.tourists', desc: 'admin.touristsDesc', icon: UserCheck, roles: ['platform-admin'] },
 ];
 
@@ -93,7 +94,7 @@ export default function AdminPanel({
 }: AdminPanelProps) {
   const { t } = useTranslation();
   const auth = useAuth();
-  const [activeTab, setActiveTab] = useState<keyof typeof MENU_ITEMS[0] | 'dashboard'>('dashboard');
+  const [activeTab, setActiveTab] = useState<ActiveTab>('dashboard');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [notification, setNotification] = useState<{ message: string; type: 'success' | 'warning' | 'error' } | null>(null);
   const [currentHash, setCurrentHash] = useState<string>(() => {
