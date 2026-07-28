@@ -1,0 +1,378 @@
+extend type Query {
+  """
+  ✨ Look up a single `Booking` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  booking(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Booking_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Booking_FirstRow
+  ): Booking @fdc_generated(from: "Booking", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `Guide` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  guide(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Guide_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Guide_FirstRow
+  ): Guide @fdc_generated(from: "Guide", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `PwaCheckin` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  pwaCheckin(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: PwaCheckin_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: PwaCheckin_FirstRow
+  ): PwaCheckin @fdc_generated(from: "PwaCheckin", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `SliderSlide` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  sliderSlide(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: SliderSlide_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: SliderSlide_FirstRow
+  ): SliderSlide @fdc_generated(from: "SliderSlide", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `Tour` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  tour(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Tour_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Tour_FirstRow
+  ): Tour @fdc_generated(from: "Tour", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `User` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  user(
+    """
+    The unique ID of the object.
+    """
+    id: String
+
+    """
+    ✨ `_expr` server value variant of `id` (The unique ID of the object.)
+    """
+    id_expr: String_Expr
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+  ): User @fdc_generated(from: "User", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `Vehicle` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  vehicle(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Vehicle_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Vehicle_FirstRow
+  ): Vehicle @fdc_generated(from: "Vehicle", purpose: QUERY_SINGLE)
+  """
+  ✨ List `Booking` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  bookings(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Booking_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Booking_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Booking_Having
+  ): [Booking!]! @fdc_generated(from: "Booking", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `Guide` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  guides(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Guide_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Guide_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Guide_Having
+  ): [Guide!]! @fdc_generated(from: "Guide", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `PwaCheckin` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  pwaCheckins(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: PwaCheckin_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [PwaCheckin_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: PwaCheckin_Having
+  ): [PwaCheckin!]! @fdc_generated(from: "PwaCheckin", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `SliderSlide` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  sliderSlides(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: SliderSlide_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [SliderSlide_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: SliderSlide_Having
+  ): [SliderSlide!]! @fdc_generated(from: "SliderSlide", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `Tour` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  tours(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Tour_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Tour_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Tour_Having
+  ): [Tour!]! @fdc_generated(from: "Tour", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `User` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  users(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: User_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [User_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: User_Having
+  ): [User!]! @fdc_generated(from: "User", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `Vehicle` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  vehicles(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Vehicle_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Vehicle_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Vehicle_Having
+  ): [Vehicle!]! @fdc_generated(from: "Vehicle", purpose: QUERY_MULTIPLE)
+}

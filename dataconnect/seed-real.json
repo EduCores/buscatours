@@ -1,0 +1,57 @@
+{
+  "users": [
+    {
+      "id": "11111111-1111-4111-8111-111111111111",
+      "email": "admin@buscatours.com",
+      "name": "Busca Tours",
+      "role": "PLATFORM_ADMIN",
+      "description": "Dueño de la plataforma"
+    },
+    {
+      "id": "22222222-2222-4222-8222-222222222222",
+      "email": "ventas@tuoperador.com",
+      "name": "Tu Operador Real S.A.C.",
+      "role": "OPERATOR",
+      "description": "Operador turístico real - reemplaza con tus datos"
+    },
+    {
+      "id": "33333333-3333-4333-8333-333333333333",
+      "email": "cliente@clientereal.com",
+      "name": "Cliente Real Uno",
+      "role": "CUSTOMER",
+      "description": "Turista real de prueba"
+    },
+    {
+      "id": "44444444-4444-4444-8444-444444444444",
+      "email": "clienta@clientareal.com",
+      "name": "Cliente Real Dos",
+      "role": "CUSTOMER",
+      "description": "Turista real de prueba"
+    }
+  ],
+  "tours": [
+    {
+      "title": "Tour Real de Ejemplo - Cusco",
+      "location": "Cusco, Perú",
+      "duration": "1 Day",
+      "durationHours": 9,
+      "originalPrice": 160,
+      "price": 130,
+      "discount": "20% Off",
+      "category": "AVENTURA",
+      "description": "Reemplaza con la descripción real de tu tour.",
+      "image": "https://images.unsplash.com/photo-1587593817642-87a248556637?auto=format&fit=crop&w=800&q=80",
+      "featured": true,
+      "oneDay": true,
+      "popular": true,
+      "destination": "PERU",
+      "vibeAdrenaline": 85,
+      "vibeRelax": 15,
+      "vibeCulture": 95,
+      "vibeFamily": 50,
+      "lat": -13.1631,
+      "lng": -72.5450,
+      "operatorId": "22222222-2222-4222-8222-222222222222"
+    }
+  ]
+}

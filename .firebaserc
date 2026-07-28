@@ -1,0 +1,10 @@
+{
+  "projects": {
+    "default": "buscatours-e0816",
+    "production": "buscatours-e0816",
+    "buscatours": "buscatours-e0816",
+    "buscators.com": "buscatours-e0816"
+  },
+  "targets": {},
+  "etags": {}
+}

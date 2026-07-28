@@ -1,0 +1,30 @@
+[
+  {
+    "localId": "uid-admin",
+    "email": "admin@buscatours.com",
+    "password": "admin123",
+    "emailVerified": true,
+    "displayName": "Administrador Plataforma"
+  },
+  {
+    "localId": "uid-operador1",
+    "email": "operador1@buscatours.com",
+    "password": "admin123",
+    "emailVerified": true,
+    "displayName": "Operador 1"
+  },
+  {
+    "localId": "uid-editor",
+    "email": "editor@buscatours.com",
+    "password": "admin123",
+    "emailVerified": true,
+    "displayName": "Editor Tours"
+  },
+  {
+    "localId": "uid-cliente",
+    "email": "cliente@buscatours.com",
+    "password": "admin123",
+    "emailVerified": true,
+    "displayName": "Cliente"
+  }
+]

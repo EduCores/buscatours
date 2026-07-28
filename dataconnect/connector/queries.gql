@@ -1,0 +1,186 @@
+query GetTours @auth(level: PUBLIC) {
+  tours {
+    id
+    title
+    location
+    duration
+    durationHours
+    originalPrice
+    price
+    discount
+    rating
+    reviewsCount
+    category
+    description
+    image
+    featured
+    oneDay
+    popular
+    status
+    destination
+    vibeAdrenaline
+    vibeRelax
+    vibeCulture
+    vibeFamily
+    lat
+    lng
+    heroImages
+    heroBackgroundPosition
+    translations
+    operatorId
+    createdAt
+    updatedAt
+  }
+}
+
+query GetTour($id: UUID!) @auth(level: PUBLIC) {
+  tour(id: $id) {
+    id
+    title
+    location
+    duration
+    durationHours
+    originalPrice
+    price
+    discount
+    rating
+    reviewsCount
+    category
+    description
+    image
+    featured
+    oneDay
+    popular
+    status
+    destination
+    vibeAdrenaline
+    vibeRelax
+    vibeCulture
+    vibeFamily
+    lat
+    lng
+    heroImages
+    heroBackgroundPosition
+    translations
+    operatorId
+    createdAt
+    updatedAt
+  }
+}
+
+query GetBookings @auth(level: USER) {
+  bookings {
+    id
+    bookingId
+    tourId
+    tour {
+      id
+      title
+      price
+    }
+    userId
+    user {
+      id
+      name
+      email
+    }
+    guests
+    date
+    totalPrice
+    currency
+    status
+    addons
+    specialRequests
+    createdAt
+    updatedAt
+  }
+}
+
+query GetUsers @auth(level: USER) {
+  users {
+    id
+    email
+    name
+    role
+    description
+    createdAt
+    updatedAt
+  }
+}
+
+query GetCurrentUser @auth(level: USER) {
+  user(key: { id_expr: "auth.uid" }) {
+    id
+    email
+    name
+    role
+    description
+    createdAt
+    updatedAt
+  }
+}
+
+query GetActiveSliderSlides @auth(level: PUBLIC) {
+  sliderSlides(where: { active: { eq: true } }, orderBy: [{ order: ASC }]) {
+    id
+    subtitle
+    title
+    description
+    buttonText
+    image
+    link
+    order
+    active
+    translations
+    createdAt
+    updatedAt
+  }
+}
+
+query GetGuides(
+  $operatorId: String
+  $status: GuideStatus
+) @auth(level: USER) {
+  guides(where: { operatorId: { eq: $operatorId }, status: { eq: $status } }, orderBy: [{ createdAt: DESC }]) {
+    id
+    name
+    specialty
+    status
+    operatorId
+    createdAt
+    updatedAt
+  }
+}
+
+query GetVehicles(
+  $operatorId: String
+  $status: VehicleStatus
+) @auth(level: USER) {
+  vehicles(where: { operatorId: { eq: $operatorId }, status: { eq: $status } }, orderBy: [{ createdAt: DESC }]) {
+    id
+    name
+    seats
+    status
+    operatorId
+    createdAt
+    updatedAt
+  }
+}
+
+query GetOfflineQueue(
+  $operator: String
+  $status: CheckinStatus
+) @auth(level: USER) {
+  pwaCheckins(where: { operator: { eq: $operator }, status: { eq: $status } }, orderBy: [{ timestamp: ASC }]) {
+    id
+    tourId
+    bookingId
+    tourTitle
+    customerName
+    operator
+    status
+    timestamp
+    createdAt
+    updatedAt
+  }
+}

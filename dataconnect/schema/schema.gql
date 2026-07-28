@@ -1,0 +1,185 @@
+enum Role {
+  PLATFORM_ADMIN
+  OPERATOR
+  TOUR_ADMIN
+  CUSTOMER
+}
+
+enum TourStatus {
+  DRAFT
+  PENDING
+  PUBLISHED
+  ARCHIVED
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}
+
+enum Category {
+  OUTDOOR
+  RELAXACION
+  FERIADO
+  TEMPORADA
+  SALVAJE
+  AVENTURA
+  TEMATICO
+  CULTURAL
+  CIUDAD
+  MONTANA
+  GLACIAR
+  LUJO
+  HISTORICO
+  FAMILIAR
+  SELVA
+  FULLDAY
+  NAVEGACION
+}
+
+enum Destination {
+  ARGENTINA
+  PERU
+  BOLIVIA
+  BRAZIL
+  COLOMBIA
+  ECUADOR
+  CHILE
+  MEXICO
+  DOMINICAN_REPUBLIC
+}
+
+
+type User @table(name: "users") {
+  id: String! @default(expr: "auth.uid")
+  email: String! @unique
+  name: String!
+  role: Role! @default(value: CUSTOMER)
+  description: String
+  createdAt: Timestamp! @default(expr: "request.time")
+  updatedAt: Timestamp! @default(expr: "request.time")
+}
+
+type Tour @table(name: "tours") {
+  id: UUID! @default(expr: "uuidV4()")
+  title: String!
+  location: String!
+  duration: String!
+  durationHours: Int!
+  originalPrice: Float!
+  price: Float!
+  discount: String
+  rating: Float! @default(value: 0)
+  reviewsCount: Int! @default(value: 0)
+  category: Category!
+  description: String!
+  image: String!
+  featured: Boolean! @default(value: false)
+  oneDay: Boolean! @default(value: true)
+  popular: Boolean! @default(value: false)
+  status: TourStatus! @default(value: PUBLISHED)
+  destination: Destination!
+  vibeAdrenaline: Int! @default(value: 50)
+  vibeRelax: Int! @default(value: 50)
+  vibeCulture: Int! @default(value: 50)
+  vibeFamily: Int! @default(value: 50)
+  lat: Float
+  lng: Float
+  heroImages: String
+  heroBackgroundPosition: String
+  operatorId: String!
+  operator: User! @ref(fields: "operatorId", references: "id")
+  translations: String
+  createdAt: Timestamp! @default(expr: "request.time")
+  updatedAt: Timestamp! @default(expr: "request.time")
+}
+
+type Booking @table(name: "bookings") {
+  id: UUID! @default(expr: "uuidV4()")
+  bookingId: String! @unique
+  tourId: UUID!
+  tour: Tour! @ref(fields: "tourId", references: "id")
+  userId: String!
+  user: User! @ref(fields: "userId", references: "id")
+  guests: Int!
+  date: Timestamp!
+  totalPrice: Float!
+  currency: String! @default(value: "USD")
+  status: BookingStatus! @default(value: PENDING)
+  addons: Any
+  specialRequests: String
+  createdAt: Timestamp! @default(expr: "request.time")
+  updatedAt: Timestamp! @default(expr: "request.time")
+}
+
+type SliderSlide @table(name: "slider_slides") {
+  id: UUID! @default(expr: "uuidV4()")
+  subtitle: String!
+  title: String!
+  description: String!
+  buttonText: String!
+  image: String!
+  link: String!
+  order: Int! @default(value: 0)
+  active: Boolean! @default(value: true)
+  translations: String
+  createdAt: Timestamp! @default(expr: "request.time")
+  updatedAt: Timestamp! @default(expr: "request.time")
+}
+
+enum GuideStatus {
+  DISPONIBLE
+  EN_TOUR
+  OFFLINE
+}
+
+enum VehicleStatus {
+  DISPONIBLE
+  EN_USO
+  OFFLINE
+}
+
+enum CheckinStatus {
+  PENDING
+  SYNCED
+  PENDIENTE_SYNC
+}
+
+type Guide @table(name: "guides") {
+  id: UUID! @default(expr: "uuidV4()")
+  name: String!
+  specialty: String!
+  status: GuideStatus! @default(value: DISPONIBLE)
+  operatorId: String!
+  operator: User! @ref(fields: "operatorId", references: "id")
+  createdAt: Timestamp! @default(expr: "request.time")
+  updatedAt: Timestamp! @default(expr: "request.time")
+}
+
+type Vehicle @table(name: "vehicles") {
+  id: UUID! @default(expr: "uuidV4()")
+  name: String!
+  seats: Int!
+  status: VehicleStatus! @default(value: DISPONIBLE)
+  operatorId: String!
+  operator: User! @ref(fields: "operatorId", references: "id")
+  createdAt: Timestamp! @default(expr: "request.time")
+  updatedAt: Timestamp! @default(expr: "request.time")
+}
+
+type PwaCheckin @table(name: "pwa_checkins") {
+  id: UUID! @default(expr: "uuidV4()")
+  tourId: UUID
+  bookingId: UUID
+  tourTitle: String
+  customerName: String
+  operator: String!
+  status: CheckinStatus! @default(value: PENDIENTE_SYNC)
+  timestamp: Timestamp! @default(expr: "request.time")
+  createdAt: Timestamp! @default(expr: "request.time")
+  updatedAt: Timestamp! @default(expr: "request.time")
+}
+
+

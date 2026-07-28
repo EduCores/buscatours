@@ -1,0 +1,519 @@
+import React, { useState, useEffect } from "react";
+import { Globe, User, Compass, Phone, Mail, Menu, X, Moon, Sun, Settings, Sparkles, UserPlus } from "lucide-react";
+import { useTranslation } from "../i18n/LanguageContext";
+
+export default function Header({ 
+  setView, 
+  theme, 
+  toggleTheme, 
+  activeCurrency, 
+  setActiveCurrency, 
+  onOpenProfile,
+  onOpenPlanner,
+  onOpenRegister,
+  currentUser,
+  availableUsers,
+  onChangeUser
+}) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 120);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    setView("home");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const { activeLanguage, setActiveLanguage, t } = useTranslation();
+
+  return (
+    <>
+      <header
+        style={{
+          position: "fixed",
+          width: "100%",
+          top: 0,
+          left: 0,
+          zIndex: 50,
+          transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+        }}
+      >
+        {/* TOP CONTACT BAR (BLUE NAVY) */}
+        <div
+          style={{
+            backgroundColor: "var(--topbar-bg-glass)",
+            backdropFilter: "blur(1.1px)",
+            WebkitBackdropFilter: "blur(1.1px)",
+            color: "rgba(255,255,255,0.85)",
+            padding: isScrolled ? "0 var(--nav-padding-x)" : "8px var(--nav-padding-x)",
+            fontSize: "0.8rem",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            borderBottom: isScrolled ? "none" : "1px solid rgba(255,255,255,0.15)",
+            maxHeight: isScrolled ? "0px" : "50px",
+            opacity: isScrolled ? 0 : 1,
+            overflow: "hidden",
+            transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+          }}
+          className="top-bar-container"
+        >
+          {/* Left Side: Lang Flags, Phone, Email */}
+          <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+            {/* Lang flags */}
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", cursor: "pointer" }}>
+              <span onClick={() => setActiveLanguage("ES")} style={{ opacity: activeLanguage === "ES" ? 1 : 0.4, transition: "opacity 0.2s", transform: activeLanguage === "ES" ? "scale(1.15)" : "scale(1)" }} title="Español">🇪🇸</span>
+              <span onClick={() => setActiveLanguage("EN")} style={{ opacity: activeLanguage === "EN" ? 1 : 0.4, transition: "opacity 0.2s", transform: activeLanguage === "EN" ? "scale(1.15)" : "scale(1)" }} title="English">🇬🇧</span>
+              <span onClick={() => setActiveLanguage("PT")} style={{ opacity: activeLanguage === "PT" ? 1 : 0.4, transition: "opacity 0.2s", transform: activeLanguage === "PT" ? "scale(1.15)" : "scale(1)" }} title="Português">🇧🇷</span>
+            </div>
+
+            <div style={{ width: "1px", height: "12px", backgroundColor: "rgba(255,255,255,0.2)" }} />
+
+            {/* Currency Selector */}
+            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <select
+                value={activeCurrency}
+                onChange={(e) => setActiveCurrency(e.target.value)}
+                style={{
+                  backgroundColor: "transparent",
+                  border: "1px solid rgba(255,255,255,0.25)",
+                  color: "#fff",
+                  fontSize: "0.75rem",
+                  borderRadius: "4px",
+                  padding: "2px 6px",
+                  outline: "none",
+                  cursor: "pointer",
+                  fontWeight: 600,
+                  transition: "border-color 0.2s"
+                }}
+                className="currency-select"
+              >
+                <option value="USD" style={{ color: "#000" }}>USD ($)</option>
+                <option value="CLP" style={{ color: "#000" }}>CLP (Ch$)</option>
+                <option value="ARS" style={{ color: "#000" }}>ARS (AR$)</option>
+                <option value="EUR" style={{ color: "#000" }}>EUR (€)</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Right Side: Social Media and User login */}
+          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "6px" }} className="topbar-phone-container">
+              <Phone size={13} style={{ color: "var(--accent)" }} />
+              <span>1.820.3345.33</span>
+            </div>
+            
+            <div style={{ width: "1px", height: "12px", backgroundColor: "rgba(255,255,255,0.2)" }} className="topbar-phone-divider" />
+
+            <div style={{ display: "flex", alignItems: "center", gap: "6px" }} className="topbar-email">
+              <Mail size={13} style={{ color: "var(--accent)" }} />
+              <span>contacto@buscatours.com</span>
+            </div>
+            {availableUsers?.length > 0 && (
+              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                <select
+                  value={currentUser?.id || ""}
+                  onChange={(e) => onChangeUser?.(e.target.value)}
+                  style={{
+                    borderRadius: "999px",
+                    padding: "4px 10px",
+                    border: "1px solid rgba(255,255,255,0.25)",
+                    backgroundColor: "rgba(255,255,255,0.12)",
+                    color: "#fff",
+                    fontSize: "0.75rem",
+                    outline: "none",
+                    cursor: "pointer"
+                  }}
+                >
+                  {availableUsers.map((user) => (
+                    <option key={user.id} value={user.id} style={{ color: "#000" }}>
+                      {user.name} ({user.role === "platform-admin" ? "Admin" : user.role === "operator" ? t('headerOperator', 'Operador') : t('headerClient', 'Cliente')})
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
+            <div style={{ width: "1px", height: "12px", backgroundColor: "rgba(255,255,255,0.2)" }} className="topbar-email-divider" />
+
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                onOpenProfile();
+              }}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
+                color: "#fff",
+                fontWeight: 700,
+                transition: "color 0.2s"
+              }}
+              className="topbar-profile-link"
+            >
+              <User size={14} style={{ color: "var(--accent)" }} />
+              <span>{t.miCuenta}</span>
+            </a>
+            <a
+              href="#register"
+              onClick={(e) => {
+                e.preventDefault();
+                onOpenRegister?.();
+              }}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
+                color: "#fff",
+                fontWeight: 700,
+                textDecoration: "underline",
+                cursor: "pointer"
+              }}
+              className="topbar-register-link"
+            >
+              <UserPlus size={14} style={{ color: "var(--accent)" }} />
+              <span>{t('headerRegister', 'Registrarse')}</span>
+            </a>
+          </div>
+        </div>
+
+        {/* MAIN NAVIGATION BAR (GLASSMORPHISM) */}
+        <div
+          className="glass-nav main-nav-container"
+          style={{
+            padding: isScrolled ? "10px var(--nav-padding-x)" : "16px var(--nav-padding-x)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+            boxShadow: isScrolled ? "var(--shadow-md)" : "none",
+          }}
+        >
+          {/* Logo */}
+          <a href="#" onClick={handleLogoClick} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <Compass size={28} style={{ color: "var(--accent)", transition: "transform 0.4s" }} className="logo-icon" />
+            <span
+              style={{
+                fontFamily: "var(--font-title)",
+                fontWeight: 800,
+                fontSize: "1.4rem",
+                letterSpacing: "-0.5px",
+                color: "var(--text-heading)",
+              }}
+            >
+              Busca<span style={{ color: "var(--primary)" }}>Tours</span>
+            </span>
+          </a>
+
+          {/* Nav Links */}
+          <nav
+            style={{
+              display: "none",
+              alignItems: "center",
+              gap: "28px",
+              fontFamily: "var(--font-title)",
+              fontWeight: 700,
+              fontSize: "0.8rem",
+              textTransform: "uppercase",
+              letterSpacing: "0.5px",
+            }}
+            className="desktop-menu"
+          >
+            <a href="#" onClick={handleLogoClick} className="nav-link-custom">{t.inicio}</a>
+            <a href="#tours" onClick={() => setView("home")} className="nav-link-custom">{t.tours}</a>
+            <a href="#destinos" onClick={() => setView("home")} className="nav-link-custom">{t.destinos}</a>
+            <a href="#opiniones" onClick={() => setView("home")} className="nav-link-custom">{t.opiniones}</a>
+          </nav>
+
+          {/* Actions (desktop) */}
+          <div style={{ display: "none", alignItems: "center", gap: "16px" }} className="desktop-menu">
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              style={{
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                color: "var(--text-heading)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "8px",
+                borderRadius: "var(--radius-full)",
+                transition: "transform 0.2s"
+              }}
+              className="theme-toggle-btn"
+              title={t('headerChangeTheme', 'Cambiar Tema')}
+            >
+              {theme === "light" ? (
+                <Sun size={20} color="var(--primary)" />
+              ) : (
+                <Moon size={20} color="var(--primary)" />
+              )}
+            </button>
+
+            {/* AI Planner button */}
+            <button
+              onClick={onOpenPlanner}
+              style={{
+                background: "rgba(234,179,8,0.1)",
+                border: "1px solid rgba(234,179,8,0.3)",
+                cursor: "pointer",
+                color: "var(--text-heading)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "8px 12px",
+                borderRadius: "var(--radius-sm)",
+                fontSize: "0.8rem",
+                fontWeight: 700,
+                gap: "6px",
+                transition: "all 0.2s"
+              }}
+              className="planner-nav-btn"
+            >
+              <Sparkles size={14} style={{ color: "var(--accent)" }} />
+              <span>{t('headerItineraryIA', 'Itinerario IA')}</span>
+            </button>
+
+            {/* Admin Panel button */}
+            {currentUser?.role !== "customer" && (
+              <button
+                onClick={() => setView("admin")}
+                style={{
+                  background: "#0081de8c",
+                  border: "1px solid #0081de",
+                  cursor: "pointer",
+                  color: "#fff",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "8px 12px",
+                  borderRadius: "var(--radius-sm)",
+                  fontSize: "0.8rem",
+                  fontWeight: 700,
+                  gap: "4px",
+                  transition: "all 0.2s"
+                }}
+                className="admin-nav-btn"
+              >
+                <Settings size={14} color="#fff" />
+                <span>{t.adminPanel}</span>
+              </button>
+            )}
+
+
+          </div>
+
+          <div style={{ display: "flex", alignItems: "center", gap: "12px" }} className="mobile-toggle-btn">
+            <button
+              onClick={toggleTheme}
+              style={{
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                color: "var(--text-heading)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+              }}
+            >
+              {theme === "light" ? (
+                <Sun size={24} color="var(--primary)" />
+              ) : (
+                <Moon size={24} color="var(--primary)" />
+              )}
+            </button>
+
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              style={{
+                display: "block",
+                background: "transparent",
+                border: "none",
+                color: "var(--text-heading)",
+                cursor: "pointer",
+              }}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Dropdown Menu */}
+        {isMobileMenuOpen && (
+          <div
+            className="glass-nav"
+            style={{
+              position: "absolute",
+              top: "100%",
+              left: 0,
+              width: "100%",
+              padding: "24px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "18px",
+              boxShadow: "var(--shadow-md)",
+              backgroundColor: "hsl(220deg 40% 9% / 30%)",
+              backdropFilter: "blur(4.4px)",
+              WebkitBackdropFilter: "blur(4.4px)",
+              animation: "slide-down-menu 0.25s cubic-bezier(0.16, 1, 0.3, 1)"
+            }}
+          >
+            <a
+              href="#"
+              onClick={(e) => {
+                handleLogoClick(e);
+                setIsMobileMenuOpen(false);
+              }}
+              style={{ fontWeight: 700, color: "var(--text-heading)" }}
+            >
+              {t.inicio}
+            </a>
+            <a
+              href="#tours"
+              onClick={() => {
+                setView("home");
+                setIsMobileMenuOpen(false);
+              }}
+              style={{ fontWeight: 600, color: "var(--text-main)" }}
+            >
+              {t.tours}
+            </a>
+            <a
+              href="#destinos"
+              onClick={() => {
+                setView("home");
+                setIsMobileMenuOpen(false);
+              }}
+              style={{ fontWeight: 600, color: "var(--text-main)" }}
+            >
+              {t.destinos}
+            </a>
+            <a
+              href="#opiniones"
+              onClick={() => {
+                setView("home");
+                setIsMobileMenuOpen(false);
+              }}
+              style={{ fontWeight: 600, color: "var(--text-main)" }}
+            >
+              {t.opiniones}
+            </a>
+            
+            <hr style={{ borderColor: "var(--border-color)" }} />
+            
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                onOpenPlanner();
+                setIsMobileMenuOpen(false);
+              }}
+              style={{ fontWeight: 700, color: "var(--accent)", display: "flex", alignItems: "center", gap: "8px" }}
+            >
+              <Sparkles size={16} style={{ color: "var(--accent)" }} />
+              <span>{t('headerItineraryIA', 'Itinerario IA')}</span>
+            </a>
+
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setView("admin");
+                setIsMobileMenuOpen(false);
+              }}
+              style={{ fontWeight: 700, color: "var(--text-main)", display: "flex", alignItems: "center", gap: "8px" }}
+            >
+              <Settings size={16} />
+              <span>{t.adminPanel}</span>
+            </a>
+
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                onOpenProfile();
+                setIsMobileMenuOpen(false);
+              }}
+              style={{ fontWeight: 700, color: "var(--text-main)", display: "flex", alignItems: "center", gap: "8px" }}
+            >
+              <User size={16} />
+              <span>{t.miCuenta}</span>
+            </a>
+          </div>
+        )}
+      </header>
+
+      <style>{`
+        @media (min-width: 768px) {
+          .desktop-menu { display: flex !important; }
+          .mobile-toggle-btn { display: none !important; }
+        }
+        @media (max-width: 768px) {
+          .topbar-email-divider, .topbar-email { display: none !important; }
+        }
+        @media (max-width: 480px) {
+          .topbar-phone-container, .topbar-phone-divider { display: none !important; }
+        }
+        
+        /* Micro animations */
+        .logo-icon:hover {
+          transform: rotate(180deg);
+        }
+        .theme-toggle-btn:hover {
+          transform: scale(1.15) rotate(10deg);
+        }
+        .admin-nav-btn:hover {
+          background-color: var(--primary-glow) !important;
+          border-color: var(--primary) !important;
+        }
+        .currency-select:hover {
+          border-color: var(--primary) !important;
+        }
+        .topbar-profile-link:hover {
+          color: var(--accent) !important;
+        }
+        
+        /* Custom Nav Underline Animation */
+        .nav-link-custom {
+          color: var(--text-main);
+          position: relative;
+          padding-bottom: 4px;
+          transition: color 0.3s;
+        }
+        .nav-link-custom::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: var(--primary);
+          transform-origin: bottom right;
+          transition: transform 0.25s ease-out;
+        }
+        .nav-link-custom:hover {
+          color: var(--primary) !important;
+        }
+        .nav-link-custom:hover::after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+        @keyframes slide-down-menu {
+          from { transform: translateY(-10px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+      `}</style>
+    </>
+  );
+}

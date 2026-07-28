@@ -1,0 +1,796 @@
+extend type Mutation {
+  """
+  ✨ Insert a single `Booking` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  booking_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Booking_Data!
+  ): Booking_KeyOutput! @fdc_generated(from: "Booking", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Guide` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  guide_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Guide_Data!
+  ): Guide_KeyOutput! @fdc_generated(from: "Guide", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `PwaCheckin` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  pwaCheckin_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: PwaCheckin_Data!
+  ): PwaCheckin_KeyOutput! @fdc_generated(from: "PwaCheckin", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `SliderSlide` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  sliderSlide_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: SliderSlide_Data!
+  ): SliderSlide_KeyOutput! @fdc_generated(from: "SliderSlide", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Tour` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  tour_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Tour_Data!
+  ): Tour_KeyOutput! @fdc_generated(from: "Tour", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `User` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Vehicle` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  vehicle_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Vehicle_Data!
+  ): Vehicle_KeyOutput! @fdc_generated(from: "Vehicle", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert `Booking` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  booking_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Booking_Data!]!
+  ): [Booking_KeyOutput!]! @fdc_generated(from: "Booking", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Guide` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  guide_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Guide_Data!]!
+  ): [Guide_KeyOutput!]! @fdc_generated(from: "Guide", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `PwaCheckin` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  pwaCheckin_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [PwaCheckin_Data!]!
+  ): [PwaCheckin_KeyOutput!]! @fdc_generated(from: "PwaCheckin", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `SliderSlide` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  sliderSlide_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [SliderSlide_Data!]!
+  ): [SliderSlide_KeyOutput!]! @fdc_generated(from: "SliderSlide", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Tour` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  tour_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Tour_Data!]!
+  ): [Tour_KeyOutput!]! @fdc_generated(from: "Tour", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `User` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Vehicle` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  vehicle_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Vehicle_Data!]!
+  ): [Vehicle_KeyOutput!]! @fdc_generated(from: "Vehicle", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert or update a single `Booking` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Booking`.
+  """
+  booking_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Booking_Data!
+  ): Booking_KeyOutput! @fdc_generated(from: "Booking", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Guide` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Guide`.
+  """
+  guide_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Guide_Data!
+  ): Guide_KeyOutput! @fdc_generated(from: "Guide", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `PwaCheckin` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `PwaCheckin`.
+  """
+  pwaCheckin_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: PwaCheckin_Data!
+  ): PwaCheckin_KeyOutput! @fdc_generated(from: "PwaCheckin", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `SliderSlide` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `SliderSlide`.
+  """
+  sliderSlide_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: SliderSlide_Data!
+  ): SliderSlide_KeyOutput! @fdc_generated(from: "SliderSlide", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Tour` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Tour`.
+  """
+  tour_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Tour_Data!
+  ): Tour_KeyOutput! @fdc_generated(from: "Tour", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `User` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Vehicle` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Vehicle`.
+  """
+  vehicle_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Vehicle_Data!
+  ): Vehicle_KeyOutput! @fdc_generated(from: "Vehicle", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update `Booking` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Booking`.
+  """
+  booking_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Booking_Data!]!
+  ): [Booking_KeyOutput!]! @fdc_generated(from: "Booking", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Guide` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Guide`.
+  """
+  guide_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Guide_Data!]!
+  ): [Guide_KeyOutput!]! @fdc_generated(from: "Guide", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `PwaCheckin` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `PwaCheckin`.
+  """
+  pwaCheckin_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [PwaCheckin_Data!]!
+  ): [PwaCheckin_KeyOutput!]! @fdc_generated(from: "PwaCheckin", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `SliderSlide` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `SliderSlide`.
+  """
+  sliderSlide_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [SliderSlide_Data!]!
+  ): [SliderSlide_KeyOutput!]! @fdc_generated(from: "SliderSlide", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Tour` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Tour`.
+  """
+  tour_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Tour_Data!]!
+  ): [Tour_KeyOutput!]! @fdc_generated(from: "Tour", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `User` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Vehicle` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Vehicle`.
+  """
+  vehicle_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Vehicle_Data!]!
+  ): [Vehicle_KeyOutput!]! @fdc_generated(from: "Vehicle", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Update a single `Booking` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Booking` or `null` if not found.
+  """
+  booking_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Booking_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Booking_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Booking_Data!
+  ): Booking_KeyOutput @fdc_generated(from: "Booking", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Guide` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Guide` or `null` if not found.
+  """
+  guide_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Guide_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Guide_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Guide_Data!
+  ): Guide_KeyOutput @fdc_generated(from: "Guide", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `PwaCheckin` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `PwaCheckin` or `null` if not found.
+  """
+  pwaCheckin_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: PwaCheckin_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: PwaCheckin_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: PwaCheckin_Data!
+  ): PwaCheckin_KeyOutput @fdc_generated(from: "PwaCheckin", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `SliderSlide` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `SliderSlide` or `null` if not found.
+  """
+  sliderSlide_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: SliderSlide_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: SliderSlide_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: SliderSlide_Data!
+  ): SliderSlide_KeyOutput @fdc_generated(from: "SliderSlide", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Tour` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Tour` or `null` if not found.
+  """
+  tour_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Tour_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Tour_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Tour_Data!
+  ): Tour_KeyOutput @fdc_generated(from: "Tour", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `User` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `User` or `null` if not found.
+  """
+  user_update(
+    """
+    The unique ID of the object.
+    """
+    id: String
+
+    """
+    ✨ `_expr` server value variant of `id` (The unique ID of the object.)
+    """
+    id_expr: String_Expr
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: User_Data!
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Vehicle` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Vehicle` or `null` if not found.
+  """
+  vehicle_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Vehicle_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Vehicle_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Vehicle_Data!
+  ): Vehicle_KeyOutput @fdc_generated(from: "Vehicle", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update `Booking` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  booking_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Booking_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Booking_Data!
+  ): Int! @fdc_generated(from: "Booking", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Guide` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  guide_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Guide_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Guide_Data!
+  ): Int! @fdc_generated(from: "Guide", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `PwaCheckin` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  pwaCheckin_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: PwaCheckin_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: PwaCheckin_Data!
+  ): Int! @fdc_generated(from: "PwaCheckin", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `SliderSlide` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  sliderSlide_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: SliderSlide_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: SliderSlide_Data!
+  ): Int! @fdc_generated(from: "SliderSlide", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Tour` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  tour_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Tour_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Tour_Data!
+  ): Int! @fdc_generated(from: "Tour", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `User` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  user_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: User_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: User_Data!
+  ): Int! @fdc_generated(from: "User", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Vehicle` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  vehicle_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Vehicle_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Vehicle_Data!
+  ): Int! @fdc_generated(from: "Vehicle", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Delete a single `Booking` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  booking_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Booking_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Booking_FirstRow
+  ): Booking_KeyOutput @fdc_generated(from: "Booking", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Guide` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  guide_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Guide_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Guide_FirstRow
+  ): Guide_KeyOutput @fdc_generated(from: "Guide", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `PwaCheckin` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  pwaCheckin_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: PwaCheckin_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: PwaCheckin_FirstRow
+  ): PwaCheckin_KeyOutput @fdc_generated(from: "PwaCheckin", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `SliderSlide` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  sliderSlide_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: SliderSlide_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: SliderSlide_FirstRow
+  ): SliderSlide_KeyOutput @fdc_generated(from: "SliderSlide", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Tour` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  tour_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Tour_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Tour_FirstRow
+  ): Tour_KeyOutput @fdc_generated(from: "Tour", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `User` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  user_delete(
+    """
+    The unique ID of the object.
+    """
+    id: String
+
+    """
+    ✨ `_expr` server value variant of `id` (The unique ID of the object.)
+    """
+    id_expr: String_Expr
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Vehicle` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  vehicle_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Vehicle_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Vehicle_FirstRow
+  ): Vehicle_KeyOutput @fdc_generated(from: "Vehicle", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete `Booking` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  booking_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Booking_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Booking", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Guide` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  guide_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Guide_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Guide", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `PwaCheckin` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  pwaCheckin_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: PwaCheckin_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "PwaCheckin", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `SliderSlide` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  sliderSlide_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: SliderSlide_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "SliderSlide", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Tour` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  tour_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Tour_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Tour", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `User` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  user_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: User_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "User", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Vehicle` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  vehicle_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Vehicle_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Vehicle", purpose: DELETE_MULTIPLE)
+}

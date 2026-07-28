@@ -1,0 +1,344 @@
+mutation CreateTour(
+  $title: String!
+  $location: String!
+  $duration: String!
+  $durationHours: Int!
+  $originalPrice: Float!
+  $price: Float!
+  $discount: String
+  $category: Category!
+  $description: String!
+  $image: String!
+  $featured: Boolean
+  $oneDay: Boolean
+  $popular: Boolean
+  $status: TourStatus
+  $destination: Destination!
+  $vibeAdrenaline: Int
+  $vibeRelax: Int
+  $vibeCulture: Int
+  $vibeFamily: Int
+  $lat: Float
+  $lng: Float
+  $heroImages: String
+  $heroBackgroundPosition: String
+  $translations: String
+  $operatorId: String!
+) @auth(level: USER) {
+  tour_insert(data: {
+    title: $title
+    location: $location
+    duration: $duration
+    durationHours: $durationHours
+    originalPrice: $originalPrice
+    price: $price
+    discount: $discount
+    category: $category
+    description: $description
+    image: $image
+    featured: $featured
+    oneDay: $oneDay
+    popular: $popular
+    status: $status
+    destination: $destination
+    vibeAdrenaline: $vibeAdrenaline
+    vibeRelax: $vibeRelax
+    vibeCulture: $vibeCulture
+    vibeFamily: $vibeFamily
+    lat: $lat
+    lng: $lng
+    heroImages: $heroImages
+    heroBackgroundPosition: $heroBackgroundPosition
+    translations: $translations
+    operatorId: $operatorId
+  })
+}
+
+mutation UpdateTour(
+  $id: UUID!
+  $title: String
+  $location: String
+  $duration: String
+  $durationHours: Int
+  $originalPrice: Float
+  $price: Float
+  $discount: String
+  $category: Category
+  $description: String
+  $image: String
+  $featured: Boolean
+  $oneDay: Boolean
+  $popular: Boolean
+  $status: TourStatus
+  $destination: Destination
+  $vibeAdrenaline: Int
+  $vibeRelax: Int
+  $vibeCulture: Int
+  $vibeFamily: Int
+  $lat: Float
+  $lng: Float
+  $heroImages: String
+  $heroBackgroundPosition: String
+  $translations: String
+  $operatorId: String
+) @auth(level: USER) {
+  tour_update(
+    key: { id: $id }
+    data: {
+      title: $title
+      location: $location
+      duration: $duration
+      durationHours: $durationHours
+      originalPrice: $originalPrice
+      price: $price
+      discount: $discount
+      category: $category
+      description: $description
+      image: $image
+      featured: $featured
+      oneDay: $oneDay
+      popular: $popular
+      status: $status
+      destination: $destination
+      vibeAdrenaline: $vibeAdrenaline
+      vibeRelax: $vibeRelax
+      vibeCulture: $vibeCulture
+      vibeFamily: $vibeFamily
+      lat: $lat
+      lng: $lng
+      heroImages: $heroImages
+      heroBackgroundPosition: $heroBackgroundPosition
+      translations: $translations
+      operatorId: $operatorId
+    }
+  )
+}
+
+mutation DeleteTour($id: UUID!) @auth(level: USER) {
+  tour_delete(key: { id: $id })
+}
+
+# SECURITY: caller must ensure $userId === auth.uid. The client (dataService.addBooking)
+# and the createBooking Cloud Function enforce this; never let a user book on behalf of another.
+mutation CreateBooking(
+  $bookingId: String!
+  $tourId: UUID!
+  $userId: String!
+  $guests: Int!
+  $date: Timestamp!
+  $totalPrice: Float!
+  $currency: String
+  $status: BookingStatus
+  $addons: Any
+  $specialRequests: String
+) @auth(level: USER) {
+  booking_insert(data: {
+    bookingId: $bookingId
+    tourId: $tourId
+    userId: $userId
+    guests: $guests
+    date: $date
+    totalPrice: $totalPrice
+    currency: $currency
+    status: $status
+    addons: $addons
+    specialRequests: $specialRequests
+  })
+}
+
+# SECURITY: caller must ensure $userId === auth.uid. See CreateBooking.
+mutation UpdateBooking(
+  $id: UUID!
+  $tourId: UUID
+  $userId: String
+  $guests: Int
+  $date: Timestamp
+  $totalPrice: Float
+  $currency: String
+  $status: BookingStatus
+  $addons: Any
+  $specialRequests: String
+) @auth(level: USER) {
+  booking_update(
+    key: { id: $id }
+    data: {
+      tourId: $tourId
+      userId: $userId
+      guests: $guests
+      date: $date
+      totalPrice: $totalPrice
+      currency: $currency
+      status: $status
+      addons: $addons
+      specialRequests: $specialRequests
+    }
+  )
+}
+
+# PUBLIC is required for self-signup (no session yet). The role is ALWAYS CUSTOMER here;
+# privilege escalation (OPERATOR/ADMIN) must happen only via an authenticated admin Cloud Function.
+mutation CreateUser(
+  $email: String!
+  $name: String!
+  $description: String
+) @auth(level: PUBLIC) {
+  user_insert(data: {
+    email: $email
+    name: $name
+    role: CUSTOMER
+    description: $description
+  })
+}
+
+# REMOVED: SetCurrentUser was unsafe — it upserted with hardcoded name/email and allowed
+# any logged-in user to overwrite another user's record by id. The current user is fetched
+# via the GetCurrentUser query (user(key: { id_expr: "auth.uid" })), which is the correct path.
+
+mutation CreateSliderSlide(
+  $subtitle: String!
+  $title: String!
+  $description: String!
+  $buttonText: String!
+  $image: String!
+  $link: String!
+  $order: Int
+  $active: Boolean
+  $translations: String
+) @auth(level: USER) {
+  sliderSlide_insert(data: {
+    subtitle: $subtitle
+    title: $title
+    description: $description
+    buttonText: $buttonText
+    image: $image
+    link: $link
+    order: $order
+    active: $active
+    translations: $translations
+  })
+}
+
+mutation UpdateSliderSlide(
+  $id: UUID!
+  $subtitle: String
+  $title: String
+  $description: String
+  $buttonText: String
+  $image: String
+  $link: String
+  $order: Int
+  $active: Boolean
+  $translations: String
+) @auth(level: USER) {
+  sliderSlide_update(
+    key: { id: $id }
+    data: {
+      subtitle: $subtitle
+      title: $title
+      description: $description
+      buttonText: $buttonText
+      image: $image
+      link: $link
+      order: $order
+      active: $active
+      translations: $translations
+    }
+  )
+}
+
+mutation DeleteSliderSlide($id: UUID!) @auth(level: USER) {
+  sliderSlide_delete(key: { id: $id })
+}
+
+mutation CreateGuide(
+  $name: String!
+  $specialty: String!
+  $status: GuideStatus
+  $operatorId: String!
+) @auth(level: USER) {
+  guide_insert(data: {
+    name: $name
+    specialty: $specialty
+    status: $status
+    operatorId: $operatorId
+  })
+}
+
+mutation UpdateGuide(
+  $id: UUID!
+  $name: String
+  $specialty: String
+  $status: GuideStatus
+) @auth(level: USER) {
+  guide_update(
+    key: { id: $id }
+    data: {
+      name: $name
+      specialty: $specialty
+      status: $status
+    }
+  )
+}
+
+mutation DeleteGuide($id: UUID!) @auth(level: USER) {
+  guide_delete(key: { id: $id })
+}
+
+mutation CreateVehicle(
+  $name: String!
+  $seats: Int!
+  $status: VehicleStatus
+  $operatorId: String!
+) @auth(level: USER) {
+  vehicle_insert(data: {
+    name: $name
+    seats: $seats
+    status: $status
+    operatorId: $operatorId
+  })
+}
+
+mutation UpdateVehicle(
+  $id: UUID!
+  $name: String
+  $seats: Int
+  $status: VehicleStatus
+) @auth(level: USER) {
+  vehicle_update(
+    key: { id: $id }
+    data: {
+      name: $name
+      seats: $seats
+      status: $status
+    }
+  )
+}
+
+mutation DeleteVehicle($id: UUID!) @auth(level: USER) {
+  vehicle_delete(key: { id: $id })
+}
+
+mutation AddOfflineCheckin(
+  $tourId: UUID
+  $bookingId: UUID
+  $tourTitle: String
+  $customerName: String
+  $operator: String!
+) @auth(level: USER) {
+  pwaCheckin_insert(data: {
+    tourId: $tourId
+    bookingId: $bookingId
+    tourTitle: $tourTitle
+    customerName: $customerName
+    operator: $operator
+    status: PENDIENTE_SYNC
+  })
+}
+
+mutation DeletePwaCheckin($id: UUID!) @auth(level: USER) {
+  pwaCheckin_delete(key: { id: $id })
+}
+
+mutation DeleteBooking($id: UUID!) @auth(level: USER) {
+  booking_delete(key: { id: $id })
+}

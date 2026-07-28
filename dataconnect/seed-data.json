@@ -1,0 +1,183 @@
+{
+  "users": [
+    {
+      "id": "buscatours",
+      "email": "admin@buscatours.com",
+      "name": "Busca Tours",
+      "role": "PLATFORM_ADMIN",
+      "description": "Dueño de la plataforma con todos los privilegios"
+    },
+    {
+      "id": "operator-01",
+      "email": "operador1@buscatours.com",
+      "name": "Andes Expeditions",
+      "role": "OPERATOR",
+      "description": "Operador especializado en Perú y trekking de montaña"
+    },
+    {
+      "id": "operator-02",
+      "email": "operador2@buscatours.com",
+      "name": "Patagonia Wild Outdoors",
+      "role": "OPERATOR",
+      "description": "Operador regional para Patagonia con enfoque outdoor"
+    },
+    {
+      "id": "operator-03",
+      "email": "operador3@buscatours.com",
+      "name": "Amazon Green Travel",
+      "role": "OPERATOR",
+      "description": "Operador de experiencias en la selva y ecoturismo"
+    },
+    {
+      "id": "operator-04",
+      "email": "operador4@buscatours.com",
+      "name": "Maya Tours S.A.",
+      "role": "OPERATOR",
+      "description": "Operador de viajes culturales en México y Caribe"
+    },
+    {
+      "id": "tour-admin-01",
+      "email": "editor@buscatours.com",
+      "name": "Admin de Contenido",
+      "role": "TOUR_ADMIN",
+      "description": "Administrador con acceso a crear tours y slider"
+    },
+    {
+      "id": "customer-01",
+      "email": "cliente@buscatours.com",
+      "name": "Cliente Frecuente",
+      "role": "CUSTOMER",
+      "description": "Usuario final que compra tours en la plataforma"
+    }
+  ],
+  "tours": [
+    {
+      "id": "1",
+      "title": "Full Day Torres del Paine",
+      "location": "Patagonia, Argentina",
+      "duration": "1 Day",
+      "durationHours": 12,
+      "originalPrice": 150,
+      "price": 120,
+      "discount": "20% Off",
+      "rating": 4.9,
+      "reviewsCount": 38,
+      "category": "OUTDOOR",
+      "description": "Visita la Cueva del Milodón, Laguna Sofía, Mirador del Nordenskjöld y navega cerca del impresionante Lago Grey en la excursión más completa.",
+      "image": "/uploads/tours/torres-del-paine-card-tour.webp",
+      "featured": true,
+      "oneDay": true,
+      "popular": true,
+      "status": "PUBLISHED",
+      "destination": "ARGENTINA",
+      "vibeAdrenaline": 75,
+      "vibeRelax": 30,
+      "vibeCulture": 40,
+      "vibeFamily": 70,
+      "lat": -51.2533,
+      "lng": -72.9814,
+      "operatorId": "operator-02",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Camino Inca a Machu Picchu",
+      "location": "Cusco, Perú",
+      "duration": "1 Day (Trekking)",
+      "durationHours": 9,
+      "originalPrice": 160,
+      "price": 130,
+      "discount": "Recomendado",
+      "rating": 4.9,
+      "reviewsCount": 54,
+      "category": "AVENTURA",
+      "description": "Recorre el legendario Camino Inca hasta las ruinas sagradas de Machu Picchu. Una aventura de trekking sin precedentes entre templos y naturaleza.",
+      "image": "/uploads/tours/Machu-Picchu-card-tour.webp",
+      "featured": true,
+      "oneDay": true,
+      "popular": true,
+      "status": "PUBLISHED",
+      "destination": "PERU",
+      "vibeAdrenaline": 85,
+      "vibeRelax": 15,
+      "vibeCulture": 95,
+      "vibeFamily": 50,
+      "lat": -13.1631,
+      "lng": -72.5450,
+      "operatorId": "operator-01",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "title": "Aventura Salar de Uyuni",
+      "location": "Potosí, Bolivia",
+      "duration": "10 Hours",
+      "durationHours": 10,
+      "originalPrice": 210,
+      "price": 195,
+      "discount": null,
+      "rating": 4.8,
+      "reviewsCount": 29,
+      "category": "OUTDOOR",
+      "description": "Explora el espejo de sal más grande del mundo en un vehículo 4x4. Visita la Isla Incahuasi, el cementerio de trenes y lagunas de colores.",
+      "image": "/uploads/tours/salar-de-uyuni-card-tour.webp",
+      "featured": true,
+      "oneDay": true,
+      "popular": false,
+      "status": "PUBLISHED",
+      "destination": "BOLIVIA",
+      "vibeAdrenaline": 70,
+      "vibeRelax": 35,
+      "vibeCulture": 50,
+      "vibeFamily": 75,
+      "lat": -20.1338,
+      "lng": -67.4891,
+      "operatorId": "operator-03",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "slides": [
+    {
+      "id": "1",
+      "subtitle": "Tour Especial de Aventura",
+      "title": "7 Días / 6 Noches",
+      "description": "Cueva del Milodón, Laguna Sofía, Base Torres del Paine y Glaciar Grey. La experiencia patagónica definitiva.",
+      "buttonText": "Ver Más",
+      "image": "/uploads/slider/slider-torres-del-paine.webp",
+      "link": "#tours",
+      "order": 0,
+      "active": true,
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "subtitle": "Encuentra tus Vacaciones Perfectas",
+      "title": "Descubre la Magia de la Patagonia",
+      "description": "Excursiones exclusivas saliendo de Punta Arenas, Puerto Natales y exploraciones en la salvaje Tierra del Fuego.",
+      "buttonText": "Explorar Destinos",
+      "image": "/uploads/slider/slider-machu-pichu.webp",
+      "link": "#destinos",
+      "order": 1,
+      "active": true,
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "subtitle": "Abre tus Ojos a...",
+      "title": "Un Mundo Oculto",
+      "description": "Explora glaciares milenarios, estancias remotas y senderos vírgenes en el extremo sur del planeta.",
+      "buttonText": "Ver Actividades",
+      "image": "/uploads/slider/slider-rio-de-janeiro.webp",
+      "link": "#actividades",
+      "order": 2,
+      "active": true,
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z"
+    }
+  ]
+}

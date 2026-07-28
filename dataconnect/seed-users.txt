@@ -1,0 +1,11 @@
+# Usuarios semilla — Busca Tours
+# UUIDs fijos para crear en Firebase Auth (Fase 3)
+# Formato: UUID | email | nombre | rol | contraseña (sugerida)
+#
+a1b2c3d4-0001-4000-8000-000000000001 | admin@buscatours.com     | Busca Tours             | PLATFORM_ADMIN | Busca2024!
+a1b2c3d4-0002-4000-8000-000000000002 | operador1@buscatours.com | Andes Expeditions       | OPERATOR       | Operador2024!
+a1b2c3d4-0003-4000-8000-000000000003 | operador2@buscatours.com | Patagonia Wild Outdoors | OPERATOR       | Operador2024!
+a1b2c3d4-0004-4000-8000-000000000004 | operador3@buscatours.com | Amazon Green Travel     | OPERATOR       | Operador2024!
+a1b2c3d4-0005-4000-8000-000000000005 | operador4@buscatours.com | Maya Tours S.A.         | OPERATOR       | Operador2024!
+a1b2c3d4-0006-4000-8000-000000000006 | editor@buscatours.com    | Admin de Contenido      | TOUR_ADMIN     | Editor2024!
+a1b2c3d4-0007-4000-8000-000000000007 | cliente@buscatours.com   | Cliente Frecuente       | CUSTOMER       | Cliente2024!

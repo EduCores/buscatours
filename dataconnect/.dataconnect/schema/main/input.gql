@@ -1,0 +1,4675 @@
+"""
+✨ `Booking_KeyOutput` returns the primary key fields of table type `Booking`.
+
+It has the same format as `Booking_Key`, but is only used as mutation return value.
+"""
+scalar Booking_KeyOutput
+"""
+✨ `BookingStatus_Expr` is a server value variant of enum type `BookingStatus`.
+
+It accepts a CEL expression.
+"""
+scalar BookingStatus_Expr
+"""
+✨ `Category_Expr` is a server value variant of enum type `Category`.
+
+It accepts a CEL expression.
+"""
+scalar Category_Expr
+"""
+✨ `CheckinStatus_Expr` is a server value variant of enum type `CheckinStatus`.
+
+It accepts a CEL expression.
+"""
+scalar CheckinStatus_Expr
+"""
+✨ `Destination_Expr` is a server value variant of enum type `Destination`.
+
+It accepts a CEL expression.
+"""
+scalar Destination_Expr
+"""
+✨ `Guide_KeyOutput` returns the primary key fields of table type `Guide`.
+
+It has the same format as `Guide_Key`, but is only used as mutation return value.
+"""
+scalar Guide_KeyOutput
+"""
+✨ `GuideStatus_Expr` is a server value variant of enum type `GuideStatus`.
+
+It accepts a CEL expression.
+"""
+scalar GuideStatus_Expr
+"""
+✨ `PwaCheckin_KeyOutput` returns the primary key fields of table type `PwaCheckin`.
+
+It has the same format as `PwaCheckin_Key`, but is only used as mutation return value.
+"""
+scalar PwaCheckin_KeyOutput
+"""
+✨ `Role_Expr` is a server value variant of enum type `Role`.
+
+It accepts a CEL expression.
+"""
+scalar Role_Expr
+"""
+✨ `SliderSlide_KeyOutput` returns the primary key fields of table type `SliderSlide`.
+
+It has the same format as `SliderSlide_Key`, but is only used as mutation return value.
+"""
+scalar SliderSlide_KeyOutput
+"""
+✨ `Tour_KeyOutput` returns the primary key fields of table type `Tour`.
+
+It has the same format as `Tour_Key`, but is only used as mutation return value.
+"""
+scalar Tour_KeyOutput
+"""
+✨ `TourStatus_Expr` is a server value variant of enum type `TourStatus`.
+
+It accepts a CEL expression.
+"""
+scalar TourStatus_Expr
+"""
+✨ `User_KeyOutput` returns the primary key fields of table type `User`.
+
+It has the same format as `User_Key`, but is only used as mutation return value.
+"""
+scalar User_KeyOutput
+"""
+✨ `Vehicle_KeyOutput` returns the primary key fields of table type `Vehicle`.
+
+It has the same format as `Vehicle_Key`, but is only used as mutation return value.
+"""
+scalar Vehicle_KeyOutput
+"""
+✨ `VehicleStatus_Expr` is a server value variant of enum type `VehicleStatus`.
+
+It accepts a CEL expression.
+"""
+scalar VehicleStatus_Expr
+"""
+✨ Generated data input type for table 'Booking'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Booking_Data {
+  """
+  ✨ Generated from Field `Booking`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Booking`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Booking`.`tourId` of type `UUID!`
+  """
+  tourId: UUID
+  """
+  ✨ `_expr` server value variant of `tourId` (✨ Generated from Field `Booking`.`tourId` of type `UUID!`)
+  """
+  tourId_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Booking`.`userId` of type `String!`
+  """
+  userId: String
+  """
+  ✨ `_expr` server value variant of `userId` (✨ Generated from Field `Booking`.`userId` of type `String!`)
+  """
+  userId_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Booking`.`tour` of type `Tour!`
+  """
+  tour: Tour_Key @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Booking`.`user` of type `User!`
+  """
+  user: User_Key @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Booking`.`addons` of type `Any`
+  """
+  addons: Any
+  """
+  ✨ `_expr` server value variant of `addons` (✨ Generated from Field `Booking`.`addons` of type `Any`)
+  """
+  addons_expr: Any_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Booking`.`bookingId` of type `String!`
+  """
+  bookingId: String
+  """
+  ✨ `_expr` server value variant of `bookingId` (✨ Generated from Field `Booking`.`bookingId` of type `String!`)
+  """
+  bookingId_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Booking`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Booking`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Booking`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Booking`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Booking`.`currency` of type `String!`
+  """
+  currency: String
+  """
+  ✨ `_expr` server value variant of `currency` (✨ Generated from Field `Booking`.`currency` of type `String!`)
+  """
+  currency_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Booking`.`date` of type `Timestamp!`
+  """
+  date: Timestamp
+  """
+  ✨ `_expr` server value variant of `date` (✨ Generated from Field `Booking`.`date` of type `Timestamp!`)
+  """
+  date_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `date` (✨ Generated from Field `Booking`.`date` of type `Timestamp!`)
+  """
+  date_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `date` (✨ Generated from Field `Booking`.`date` of type `Timestamp!`)
+  """
+  date_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Booking`.`guests` of type `Int!`
+  """
+  guests: Int
+  """
+  ✨ `_expr` server value variant of `guests` (✨ Generated from Field `Booking`.`guests` of type `Int!`)
+  """
+  guests_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `guests` (✨ Generated from Field `Booking`.`guests` of type `Int!`)
+  """
+  guests_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Booking`.`specialRequests` of type `String`
+  """
+  specialRequests: String
+  """
+  ✨ `_expr` server value variant of `specialRequests` (✨ Generated from Field `Booking`.`specialRequests` of type `String`)
+  """
+  specialRequests_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Booking`.`status` of type `BookingStatus!`
+  """
+  status: BookingStatus
+  """
+  ✨ `_expr` server value variant of `status` (✨ Generated from Field `Booking`.`status` of type `BookingStatus!`)
+  """
+  status_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Booking`.`totalPrice` of type `Float!`
+  """
+  totalPrice: Float
+  """
+  ✨ `_expr` server value variant of `totalPrice` (✨ Generated from Field `Booking`.`totalPrice` of type `Float!`)
+  """
+  totalPrice_expr: Float_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `totalPrice` (✨ Generated from Field `Booking`.`totalPrice` of type `Float!`)
+  """
+  totalPrice_update: [Float_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Booking`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `Booking`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `updatedAt` (✨ Generated from Field `Booking`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `updatedAt` (✨ Generated from Field `Booking`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+}
+"""
+✨ Generated filter input type for table 'Booking'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Booking_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Booking_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Booking_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Booking_Filter!]
+  """
+  ✨ Generated from Field `Booking`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Booking`.`tourId` of type `UUID!`
+  """
+  tourId: UUID_Filter
+  """
+  ✨ Generated from Field `Booking`.`userId` of type `String!`
+  """
+  userId: String_Filter
+  """
+  ✨ Generated from Field `Booking`.`tour` of type `Tour!`
+  """
+  tour: Tour_Filter
+  """
+  ✨ Generated from Field `Booking`.`user` of type `User!`
+  """
+  user: User_Filter
+  """
+  ✨ Generated from Field `Booking`.`addons` of type `Any`
+  """
+  addons: Any_Filter
+  """
+  ✨ Generated from Field `Booking`.`bookingId` of type `String!`
+  """
+  bookingId: String_Filter
+  """
+  ✨ Generated from Field `Booking`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `Booking`.`currency` of type `String!`
+  """
+  currency: String_Filter
+  """
+  ✨ Generated from Field `Booking`.`date` of type `Timestamp!`
+  """
+  date: Timestamp_Filter
+  """
+  ✨ Generated from Field `Booking`.`guests` of type `Int!`
+  """
+  guests: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`specialRequests` of type `String`
+  """
+  specialRequests: String_Filter
+  """
+  ✨ Generated from Field `Booking`.`status` of type `BookingStatus!`
+  """
+  status: BookingStatus_Filter
+  """
+  ✨ Generated from Field `Booking`.`totalPrice` of type `Float!`
+  """
+  totalPrice: Float_Filter
+  """
+  ✨ Generated from Field `Booking`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp_Filter
+}
+"""
+✨ Generated first-row input type for table 'Booking'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Booking_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Booking_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Booking_Filter
+}
+"""
+✨ Generated having input type for table 'Booking'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Booking_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Booking_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Booking_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Booking_Having!]
+  """
+  ✨ Generated from Field `Booking`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`addons_count` of type `Int!`
+  """
+  addons_count: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`bookingId_count` of type `Int!`
+  """
+  bookingId_count: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`currency_count` of type `Int!`
+  """
+  currency_count: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`date_count` of type `Int!`
+  """
+  date_count: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`guests_count` of type `Int!`
+  """
+  guests_count: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`specialRequests_count` of type `Int!`
+  """
+  specialRequests_count: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`status_count` of type `Int!`
+  """
+  status_count: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`totalPrice_count` of type `Int!`
+  """
+  totalPrice_count: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`tourId_count` of type `Int!`
+  """
+  tourId_count: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`userId_count` of type `Int!`
+  """
+  userId_count: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`guests_sum` of type `Int`
+  """
+  guests_sum: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`totalPrice_sum` of type `Float`
+  """
+  totalPrice_sum: Float_Filter
+  """
+  ✨ Generated from Field `Booking`.`guests_avg` of type `Float`
+  """
+  guests_avg: Float_Filter
+  """
+  ✨ Generated from Field `Booking`.`totalPrice_avg` of type `Float`
+  """
+  totalPrice_avg: Float_Filter
+  """
+  ✨ Generated from Field `Booking`.`addons_min` of type `Any`
+  """
+  addons_min: Any_Filter
+  """
+  ✨ Generated from Field `Booking`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Booking`.`date_min` of type `Timestamp`
+  """
+  date_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Booking`.`guests_min` of type `Int`
+  """
+  guests_min: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`totalPrice_min` of type `Float`
+  """
+  totalPrice_min: Float_Filter
+  """
+  ✨ Generated from Field `Booking`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Booking`.`addons_max` of type `Any`
+  """
+  addons_max: Any_Filter
+  """
+  ✨ Generated from Field `Booking`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `Booking`.`date_max` of type `Timestamp`
+  """
+  date_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `Booking`.`guests_max` of type `Int`
+  """
+  guests_max: Int_Filter
+  """
+  ✨ Generated from Field `Booking`.`totalPrice_max` of type `Float`
+  """
+  totalPrice_max: Float_Filter
+  """
+  ✨ Generated from Field `Booking`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'Booking'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Booking_Key {
+  """
+  ✨ Generated from Field `Booking`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Booking`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'Booking'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Booking_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Booking_Filter
+}
+"""
+✨ Generated order input type for table 'Booking'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Booking_Order {
+  """
+  ✨ Generated from Field `Booking`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`tourId` of type `UUID!`
+  """
+  tourId: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`userId` of type `String!`
+  """
+  userId: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`tour` of type `Tour!`
+  """
+  tour: Tour_Order
+  """
+  ✨ Generated from Field `Booking`.`user` of type `User!`
+  """
+  user: User_Order
+  """
+  ✨ Generated from Field `Booking`.`addons` of type `Any`
+  """
+  addons: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`bookingId` of type `String!`
+  """
+  bookingId: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`currency` of type `String!`
+  """
+  currency: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`date` of type `Timestamp!`
+  """
+  date: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`guests` of type `Int!`
+  """
+  guests: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`specialRequests` of type `String`
+  """
+  specialRequests: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`status` of type `BookingStatus!`
+  """
+  status: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`totalPrice` of type `Float!`
+  """
+  totalPrice: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`addons_count` of type `Int!`
+  """
+  addons_count: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`bookingId_count` of type `Int!`
+  """
+  bookingId_count: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`currency_count` of type `Int!`
+  """
+  currency_count: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`date_count` of type `Int!`
+  """
+  date_count: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`guests_count` of type `Int!`
+  """
+  guests_count: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`specialRequests_count` of type `Int!`
+  """
+  specialRequests_count: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`status_count` of type `Int!`
+  """
+  status_count: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`totalPrice_count` of type `Int!`
+  """
+  totalPrice_count: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`tourId_count` of type `Int!`
+  """
+  tourId_count: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`userId_count` of type `Int!`
+  """
+  userId_count: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`guests_sum` of type `Int`
+  """
+  guests_sum: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`totalPrice_sum` of type `Float`
+  """
+  totalPrice_sum: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`guests_avg` of type `Float`
+  """
+  guests_avg: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`totalPrice_avg` of type `Float`
+  """
+  totalPrice_avg: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`addons_min` of type `Any`
+  """
+  addons_min: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`date_min` of type `Timestamp`
+  """
+  date_min: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`guests_min` of type `Int`
+  """
+  guests_min: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`totalPrice_min` of type `Float`
+  """
+  totalPrice_min: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`addons_max` of type `Any`
+  """
+  addons_max: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`date_max` of type `Timestamp`
+  """
+  date_max: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`guests_max` of type `Int`
+  """
+  guests_max: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`totalPrice_max` of type `Float`
+  """
+  totalPrice_max: OrderDirection
+  """
+  ✨ Generated from Field `Booking`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: OrderDirection
+}
+"""
+✨ Generated filter input type for table 'BookingStatus'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input BookingStatus_Filter {
+  """
+  Match if field is exactly equal to provided value.
+  """
+  eq: BookingStatus
+  """
+  ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
+  """
+  eq_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is not equal to provided value.
+  """
+  ne: BookingStatus
+  """
+  ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
+  """
+  ne_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+  """
+  When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
+  """
+  isNull: Boolean
+  """
+  Match if field value is among the provided list of values.
+  """
+  in: [BookingStatus!]
+  """
+  Match if field value is not among the provided list of values.
+  """
+  nin: [BookingStatus!]
+  """
+  Match if field value is greater than the provided value, based on index ordering of supported enum values.
+  """
+  gt: BookingStatus
+  """
+  ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
+  """
+  gt_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is greater than or equal to the provided value.
+  """
+  ge: BookingStatus
+  """
+  ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
+  """
+  ge_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field value is less than the provided value, based on index ordering of supported enum values.
+  """
+  lt: BookingStatus
+  """
+  ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
+  """
+  lt_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
+  """
+  le: BookingStatus
+  """
+  ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
+  """
+  le_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'BookingStatus'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input BookingStatus_ListFilter {
+  """
+  Match if list field contains the provided value as a member.
+  """
+  includes: BookingStatus
+  """
+  ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
+  """
+  includes_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if list field contains all of the provided values as members.
+  """
+  includesAll: [BookingStatus!]
+  """
+  Match if list field does not contain the provided value as a member.
+  """
+  excludes: BookingStatus
+  """
+  ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
+  """
+  excludes_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if list field does not contain any of the provided values as members.
+  """
+  excludesAll: [BookingStatus!]
+  """
+  The desired number of enum values that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: BookingStatus_Filter
+}
+"""
+✨ Generated filter input type for table 'Category'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Category_Filter {
+  """
+  Match if field is exactly equal to provided value.
+  """
+  eq: Category
+  """
+  ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
+  """
+  eq_expr: Category_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is not equal to provided value.
+  """
+  ne: Category
+  """
+  ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
+  """
+  ne_expr: Category_Expr @fdc_forbiddenInVariables
+  """
+  When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
+  """
+  isNull: Boolean
+  """
+  Match if field value is among the provided list of values.
+  """
+  in: [Category!]
+  """
+  Match if field value is not among the provided list of values.
+  """
+  nin: [Category!]
+  """
+  Match if field value is greater than the provided value, based on index ordering of supported enum values.
+  """
+  gt: Category
+  """
+  ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
+  """
+  gt_expr: Category_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is greater than or equal to the provided value.
+  """
+  ge: Category
+  """
+  ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
+  """
+  ge_expr: Category_Expr @fdc_forbiddenInVariables
+  """
+  Match if field value is less than the provided value, based on index ordering of supported enum values.
+  """
+  lt: Category
+  """
+  ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
+  """
+  lt_expr: Category_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
+  """
+  le: Category
+  """
+  ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
+  """
+  le_expr: Category_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'Category'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Category_ListFilter {
+  """
+  Match if list field contains the provided value as a member.
+  """
+  includes: Category
+  """
+  ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
+  """
+  includes_expr: Category_Expr @fdc_forbiddenInVariables
+  """
+  Match if list field contains all of the provided values as members.
+  """
+  includesAll: [Category!]
+  """
+  Match if list field does not contain the provided value as a member.
+  """
+  excludes: Category
+  """
+  ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
+  """
+  excludes_expr: Category_Expr @fdc_forbiddenInVariables
+  """
+  Match if list field does not contain any of the provided values as members.
+  """
+  excludesAll: [Category!]
+  """
+  The desired number of enum values that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Category_Filter
+}
+"""
+✨ Generated filter input type for table 'CheckinStatus'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input CheckinStatus_Filter {
+  """
+  Match if field is exactly equal to provided value.
+  """
+  eq: CheckinStatus
+  """
+  ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
+  """
+  eq_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is not equal to provided value.
+  """
+  ne: CheckinStatus
+  """
+  ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
+  """
+  ne_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+  """
+  When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
+  """
+  isNull: Boolean
+  """
+  Match if field value is among the provided list of values.
+  """
+  in: [CheckinStatus!]
+  """
+  Match if field value is not among the provided list of values.
+  """
+  nin: [CheckinStatus!]
+  """
+  Match if field value is greater than the provided value, based on index ordering of supported enum values.
+  """
+  gt: CheckinStatus
+  """
+  ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
+  """
+  gt_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is greater than or equal to the provided value.
+  """
+  ge: CheckinStatus
+  """
+  ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
+  """
+  ge_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field value is less than the provided value, based on index ordering of supported enum values.
+  """
+  lt: CheckinStatus
+  """
+  ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
+  """
+  lt_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
+  """
+  le: CheckinStatus
+  """
+  ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
+  """
+  le_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'CheckinStatus'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input CheckinStatus_ListFilter {
+  """
+  Match if list field contains the provided value as a member.
+  """
+  includes: CheckinStatus
+  """
+  ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
+  """
+  includes_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if list field contains all of the provided values as members.
+  """
+  includesAll: [CheckinStatus!]
+  """
+  Match if list field does not contain the provided value as a member.
+  """
+  excludes: CheckinStatus
+  """
+  ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
+  """
+  excludes_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if list field does not contain any of the provided values as members.
+  """
+  excludesAll: [CheckinStatus!]
+  """
+  The desired number of enum values that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: CheckinStatus_Filter
+}
+"""
+✨ Generated filter input type for table 'Destination'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Destination_Filter {
+  """
+  Match if field is exactly equal to provided value.
+  """
+  eq: Destination
+  """
+  ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
+  """
+  eq_expr: Destination_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is not equal to provided value.
+  """
+  ne: Destination
+  """
+  ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
+  """
+  ne_expr: Destination_Expr @fdc_forbiddenInVariables
+  """
+  When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
+  """
+  isNull: Boolean
+  """
+  Match if field value is among the provided list of values.
+  """
+  in: [Destination!]
+  """
+  Match if field value is not among the provided list of values.
+  """
+  nin: [Destination!]
+  """
+  Match if field value is greater than the provided value, based on index ordering of supported enum values.
+  """
+  gt: Destination
+  """
+  ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
+  """
+  gt_expr: Destination_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is greater than or equal to the provided value.
+  """
+  ge: Destination
+  """
+  ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
+  """
+  ge_expr: Destination_Expr @fdc_forbiddenInVariables
+  """
+  Match if field value is less than the provided value, based on index ordering of supported enum values.
+  """
+  lt: Destination
+  """
+  ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
+  """
+  lt_expr: Destination_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
+  """
+  le: Destination
+  """
+  ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
+  """
+  le_expr: Destination_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'Destination'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Destination_ListFilter {
+  """
+  Match if list field contains the provided value as a member.
+  """
+  includes: Destination
+  """
+  ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
+  """
+  includes_expr: Destination_Expr @fdc_forbiddenInVariables
+  """
+  Match if list field contains all of the provided values as members.
+  """
+  includesAll: [Destination!]
+  """
+  Match if list field does not contain the provided value as a member.
+  """
+  excludes: Destination
+  """
+  ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
+  """
+  excludes_expr: Destination_Expr @fdc_forbiddenInVariables
+  """
+  Match if list field does not contain any of the provided values as members.
+  """
+  excludesAll: [Destination!]
+  """
+  The desired number of enum values that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Destination_Filter
+}
+"""
+✨ Generated data input type for table 'Guide'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Guide_Data {
+  """
+  ✨ Generated from Field `Guide`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Guide`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Guide`.`operatorId` of type `String!`
+  """
+  operatorId: String
+  """
+  ✨ `_expr` server value variant of `operatorId` (✨ Generated from Field `Guide`.`operatorId` of type `String!`)
+  """
+  operatorId_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Guide`.`operator` of type `User!`
+  """
+  operator: User_Key @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Guide`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Guide`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Guide`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Guide`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Guide`.`name` of type `String!`
+  """
+  name: String
+  """
+  ✨ `_expr` server value variant of `name` (✨ Generated from Field `Guide`.`name` of type `String!`)
+  """
+  name_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Guide`.`specialty` of type `String!`
+  """
+  specialty: String
+  """
+  ✨ `_expr` server value variant of `specialty` (✨ Generated from Field `Guide`.`specialty` of type `String!`)
+  """
+  specialty_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Guide`.`status` of type `GuideStatus!`
+  """
+  status: GuideStatus
+  """
+  ✨ `_expr` server value variant of `status` (✨ Generated from Field `Guide`.`status` of type `GuideStatus!`)
+  """
+  status_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Guide`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `Guide`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `updatedAt` (✨ Generated from Field `Guide`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `updatedAt` (✨ Generated from Field `Guide`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+}
+"""
+✨ Generated filter input type for table 'Guide'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Guide_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Guide_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Guide_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Guide_Filter!]
+  """
+  ✨ Generated from Field `Guide`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Guide`.`operatorId` of type `String!`
+  """
+  operatorId: String_Filter
+  """
+  ✨ Generated from Field `Guide`.`operator` of type `User!`
+  """
+  operator: User_Filter
+  """
+  ✨ Generated from Field `Guide`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `Guide`.`name` of type `String!`
+  """
+  name: String_Filter
+  """
+  ✨ Generated from Field `Guide`.`specialty` of type `String!`
+  """
+  specialty: String_Filter
+  """
+  ✨ Generated from Field `Guide`.`status` of type `GuideStatus!`
+  """
+  status: GuideStatus_Filter
+  """
+  ✨ Generated from Field `Guide`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp_Filter
+}
+"""
+✨ Generated first-row input type for table 'Guide'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Guide_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Guide_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Guide_Filter
+}
+"""
+✨ Generated having input type for table 'Guide'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Guide_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Guide_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Guide_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Guide_Having!]
+  """
+  ✨ Generated from Field `Guide`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Guide`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Guide`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Guide`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+  """
+  ✨ Generated from Field `Guide`.`operatorId_count` of type `Int!`
+  """
+  operatorId_count: Int_Filter
+  """
+  ✨ Generated from Field `Guide`.`specialty_count` of type `Int!`
+  """
+  specialty_count: Int_Filter
+  """
+  ✨ Generated from Field `Guide`.`status_count` of type `Int!`
+  """
+  status_count: Int_Filter
+  """
+  ✨ Generated from Field `Guide`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Guide`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Guide`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Guide`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `Guide`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'Guide'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Guide_Key {
+  """
+  ✨ Generated from Field `Guide`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Guide`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'Guide'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Guide_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Guide_Filter
+}
+"""
+✨ Generated order input type for table 'Guide'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Guide_Order {
+  """
+  ✨ Generated from Field `Guide`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`operatorId` of type `String!`
+  """
+  operatorId: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`operator` of type `User!`
+  """
+  operator: User_Order
+  """
+  ✨ Generated from Field `Guide`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`name` of type `String!`
+  """
+  name: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`specialty` of type `String!`
+  """
+  specialty: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`status` of type `GuideStatus!`
+  """
+  status: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`name_count` of type `Int!`
+  """
+  name_count: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`operatorId_count` of type `Int!`
+  """
+  operatorId_count: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`specialty_count` of type `Int!`
+  """
+  specialty_count: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`status_count` of type `Int!`
+  """
+  status_count: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+  """
+  ✨ Generated from Field `Guide`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: OrderDirection
+}
+"""
+✨ Generated filter input type for table 'GuideStatus'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input GuideStatus_Filter {
+  """
+  Match if field is exactly equal to provided value.
+  """
+  eq: GuideStatus
+  """
+  ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
+  """
+  eq_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is not equal to provided value.
+  """
+  ne: GuideStatus
+  """
+  ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
+  """
+  ne_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+  """
+  When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
+  """
+  isNull: Boolean
+  """
+  Match if field value is among the provided list of values.
+  """
+  in: [GuideStatus!]
+  """
+  Match if field value is not among the provided list of values.
+  """
+  nin: [GuideStatus!]
+  """
+  Match if field value is greater than the provided value, based on index ordering of supported enum values.
+  """
+  gt: GuideStatus
+  """
+  ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
+  """
+  gt_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is greater than or equal to the provided value.
+  """
+  ge: GuideStatus
+  """
+  ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
+  """
+  ge_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field value is less than the provided value, based on index ordering of supported enum values.
+  """
+  lt: GuideStatus
+  """
+  ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
+  """
+  lt_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
+  """
+  le: GuideStatus
+  """
+  ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
+  """
+  le_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'GuideStatus'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input GuideStatus_ListFilter {
+  """
+  Match if list field contains the provided value as a member.
+  """
+  includes: GuideStatus
+  """
+  ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
+  """
+  includes_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if list field contains all of the provided values as members.
+  """
+  includesAll: [GuideStatus!]
+  """
+  Match if list field does not contain the provided value as a member.
+  """
+  excludes: GuideStatus
+  """
+  ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
+  """
+  excludes_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if list field does not contain any of the provided values as members.
+  """
+  excludesAll: [GuideStatus!]
+  """
+  The desired number of enum values that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: GuideStatus_Filter
+}
+"""
+✨ Generated data input type for table 'PwaCheckin'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input PwaCheckin_Data {
+  """
+  ✨ Generated from Field `PwaCheckin`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `PwaCheckin`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `PwaCheckin`.`bookingId` of type `UUID`
+  """
+  bookingId: UUID
+  """
+  ✨ `_expr` server value variant of `bookingId` (✨ Generated from Field `PwaCheckin`.`bookingId` of type `UUID`)
+  """
+  bookingId_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `PwaCheckin`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `PwaCheckin`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `PwaCheckin`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `PwaCheckin`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `PwaCheckin`.`customerName` of type `String`
+  """
+  customerName: String
+  """
+  ✨ `_expr` server value variant of `customerName` (✨ Generated from Field `PwaCheckin`.`customerName` of type `String`)
+  """
+  customerName_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `PwaCheckin`.`operator` of type `String!`
+  """
+  operator: String
+  """
+  ✨ `_expr` server value variant of `operator` (✨ Generated from Field `PwaCheckin`.`operator` of type `String!`)
+  """
+  operator_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `PwaCheckin`.`status` of type `CheckinStatus!`
+  """
+  status: CheckinStatus
+  """
+  ✨ `_expr` server value variant of `status` (✨ Generated from Field `PwaCheckin`.`status` of type `CheckinStatus!`)
+  """
+  status_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `PwaCheckin`.`timestamp` of type `Timestamp!`
+  """
+  timestamp: Timestamp
+  """
+  ✨ `_expr` server value variant of `timestamp` (✨ Generated from Field `PwaCheckin`.`timestamp` of type `Timestamp!`)
+  """
+  timestamp_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `timestamp` (✨ Generated from Field `PwaCheckin`.`timestamp` of type `Timestamp!`)
+  """
+  timestamp_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `timestamp` (✨ Generated from Field `PwaCheckin`.`timestamp` of type `Timestamp!`)
+  """
+  timestamp_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `PwaCheckin`.`tourId` of type `UUID`
+  """
+  tourId: UUID
+  """
+  ✨ `_expr` server value variant of `tourId` (✨ Generated from Field `PwaCheckin`.`tourId` of type `UUID`)
+  """
+  tourId_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `PwaCheckin`.`tourTitle` of type `String`
+  """
+  tourTitle: String
+  """
+  ✨ `_expr` server value variant of `tourTitle` (✨ Generated from Field `PwaCheckin`.`tourTitle` of type `String`)
+  """
+  tourTitle_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `PwaCheckin`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `PwaCheckin`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `updatedAt` (✨ Generated from Field `PwaCheckin`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `updatedAt` (✨ Generated from Field `PwaCheckin`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+}
+"""
+✨ Generated filter input type for table 'PwaCheckin'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input PwaCheckin_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [PwaCheckin_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: PwaCheckin_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [PwaCheckin_Filter!]
+  """
+  ✨ Generated from Field `PwaCheckin`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`bookingId` of type `UUID`
+  """
+  bookingId: UUID_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`customerName` of type `String`
+  """
+  customerName: String_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`operator` of type `String!`
+  """
+  operator: String_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`status` of type `CheckinStatus!`
+  """
+  status: CheckinStatus_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`timestamp` of type `Timestamp!`
+  """
+  timestamp: Timestamp_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`tourId` of type `UUID`
+  """
+  tourId: UUID_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`tourTitle` of type `String`
+  """
+  tourTitle: String_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp_Filter
+}
+"""
+✨ Generated first-row input type for table 'PwaCheckin'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input PwaCheckin_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [PwaCheckin_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: PwaCheckin_Filter
+}
+"""
+✨ Generated having input type for table 'PwaCheckin'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input PwaCheckin_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [PwaCheckin_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: PwaCheckin_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [PwaCheckin_Having!]
+  """
+  ✨ Generated from Field `PwaCheckin`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`bookingId_count` of type `Int!`
+  """
+  bookingId_count: Int_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`customerName_count` of type `Int!`
+  """
+  customerName_count: Int_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`operator_count` of type `Int!`
+  """
+  operator_count: Int_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`status_count` of type `Int!`
+  """
+  status_count: Int_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`timestamp_count` of type `Int!`
+  """
+  timestamp_count: Int_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`tourId_count` of type `Int!`
+  """
+  tourId_count: Int_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`tourTitle_count` of type `Int!`
+  """
+  tourTitle_count: Int_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: Int_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`timestamp_min` of type `Timestamp`
+  """
+  timestamp_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`timestamp_max` of type `Timestamp`
+  """
+  timestamp_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `PwaCheckin`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'PwaCheckin'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input PwaCheckin_Key {
+  """
+  ✨ Generated from Field `PwaCheckin`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `PwaCheckin`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'PwaCheckin'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input PwaCheckin_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: PwaCheckin_Filter
+}
+"""
+✨ Generated order input type for table 'PwaCheckin'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input PwaCheckin_Order {
+  """
+  ✨ Generated from Field `PwaCheckin`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`bookingId` of type `UUID`
+  """
+  bookingId: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`customerName` of type `String`
+  """
+  customerName: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`operator` of type `String!`
+  """
+  operator: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`status` of type `CheckinStatus!`
+  """
+  status: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`timestamp` of type `Timestamp!`
+  """
+  timestamp: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`tourId` of type `UUID`
+  """
+  tourId: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`tourTitle` of type `String`
+  """
+  tourTitle: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`bookingId_count` of type `Int!`
+  """
+  bookingId_count: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`customerName_count` of type `Int!`
+  """
+  customerName_count: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`operator_count` of type `Int!`
+  """
+  operator_count: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`status_count` of type `Int!`
+  """
+  status_count: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`timestamp_count` of type `Int!`
+  """
+  timestamp_count: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`tourId_count` of type `Int!`
+  """
+  tourId_count: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`tourTitle_count` of type `Int!`
+  """
+  tourTitle_count: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`timestamp_min` of type `Timestamp`
+  """
+  timestamp_min: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`timestamp_max` of type `Timestamp`
+  """
+  timestamp_max: OrderDirection
+  """
+  ✨ Generated from Field `PwaCheckin`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: OrderDirection
+}
+"""
+✨ Generated filter input type for table 'Role'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Role_Filter {
+  """
+  Match if field is exactly equal to provided value.
+  """
+  eq: Role
+  """
+  ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
+  """
+  eq_expr: Role_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is not equal to provided value.
+  """
+  ne: Role
+  """
+  ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
+  """
+  ne_expr: Role_Expr @fdc_forbiddenInVariables
+  """
+  When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
+  """
+  isNull: Boolean
+  """
+  Match if field value is among the provided list of values.
+  """
+  in: [Role!]
+  """
+  Match if field value is not among the provided list of values.
+  """
+  nin: [Role!]
+  """
+  Match if field value is greater than the provided value, based on index ordering of supported enum values.
+  """
+  gt: Role
+  """
+  ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
+  """
+  gt_expr: Role_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is greater than or equal to the provided value.
+  """
+  ge: Role
+  """
+  ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
+  """
+  ge_expr: Role_Expr @fdc_forbiddenInVariables
+  """
+  Match if field value is less than the provided value, based on index ordering of supported enum values.
+  """
+  lt: Role
+  """
+  ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
+  """
+  lt_expr: Role_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
+  """
+  le: Role
+  """
+  ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
+  """
+  le_expr: Role_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'Role'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Role_ListFilter {
+  """
+  Match if list field contains the provided value as a member.
+  """
+  includes: Role
+  """
+  ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
+  """
+  includes_expr: Role_Expr @fdc_forbiddenInVariables
+  """
+  Match if list field contains all of the provided values as members.
+  """
+  includesAll: [Role!]
+  """
+  Match if list field does not contain the provided value as a member.
+  """
+  excludes: Role
+  """
+  ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
+  """
+  excludes_expr: Role_Expr @fdc_forbiddenInVariables
+  """
+  Match if list field does not contain any of the provided values as members.
+  """
+  excludesAll: [Role!]
+  """
+  The desired number of enum values that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Role_Filter
+}
+"""
+✨ Generated data input type for table 'SliderSlide'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input SliderSlide_Data {
+  """
+  ✨ Generated from Field `SliderSlide`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `SliderSlide`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `SliderSlide`.`active` of type `Boolean!`
+  """
+  active: Boolean
+  """
+  ✨ `_expr` server value variant of `active` (✨ Generated from Field `SliderSlide`.`active` of type `Boolean!`)
+  """
+  active_expr: Boolean_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `SliderSlide`.`buttonText` of type `String!`
+  """
+  buttonText: String
+  """
+  ✨ `_expr` server value variant of `buttonText` (✨ Generated from Field `SliderSlide`.`buttonText` of type `String!`)
+  """
+  buttonText_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `SliderSlide`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `SliderSlide`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `SliderSlide`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `SliderSlide`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `SliderSlide`.`description` of type `String!`
+  """
+  description: String
+  """
+  ✨ `_expr` server value variant of `description` (✨ Generated from Field `SliderSlide`.`description` of type `String!`)
+  """
+  description_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `SliderSlide`.`image` of type `String!`
+  """
+  image: String
+  """
+  ✨ `_expr` server value variant of `image` (✨ Generated from Field `SliderSlide`.`image` of type `String!`)
+  """
+  image_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `SliderSlide`.`link` of type `String!`
+  """
+  link: String
+  """
+  ✨ `_expr` server value variant of `link` (✨ Generated from Field `SliderSlide`.`link` of type `String!`)
+  """
+  link_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `SliderSlide`.`order` of type `Int!`
+  """
+  order: Int
+  """
+  ✨ `_expr` server value variant of `order` (✨ Generated from Field `SliderSlide`.`order` of type `Int!`)
+  """
+  order_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `order` (✨ Generated from Field `SliderSlide`.`order` of type `Int!`)
+  """
+  order_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `SliderSlide`.`subtitle` of type `String!`
+  """
+  subtitle: String
+  """
+  ✨ `_expr` server value variant of `subtitle` (✨ Generated from Field `SliderSlide`.`subtitle` of type `String!`)
+  """
+  subtitle_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `SliderSlide`.`title` of type `String!`
+  """
+  title: String
+  """
+  ✨ `_expr` server value variant of `title` (✨ Generated from Field `SliderSlide`.`title` of type `String!`)
+  """
+  title_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `SliderSlide`.`translations` of type `String`
+  """
+  translations: String
+  """
+  ✨ `_expr` server value variant of `translations` (✨ Generated from Field `SliderSlide`.`translations` of type `String`)
+  """
+  translations_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `SliderSlide`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `SliderSlide`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `updatedAt` (✨ Generated from Field `SliderSlide`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `updatedAt` (✨ Generated from Field `SliderSlide`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+}
+"""
+✨ Generated filter input type for table 'SliderSlide'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input SliderSlide_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [SliderSlide_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: SliderSlide_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [SliderSlide_Filter!]
+  """
+  ✨ Generated from Field `SliderSlide`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`active` of type `Boolean!`
+  """
+  active: Boolean_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`buttonText` of type `String!`
+  """
+  buttonText: String_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`description` of type `String!`
+  """
+  description: String_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`image` of type `String!`
+  """
+  image: String_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`link` of type `String!`
+  """
+  link: String_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`order` of type `Int!`
+  """
+  order: Int_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`subtitle` of type `String!`
+  """
+  subtitle: String_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`title` of type `String!`
+  """
+  title: String_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`translations` of type `String`
+  """
+  translations: String_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp_Filter
+}
+"""
+✨ Generated first-row input type for table 'SliderSlide'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input SliderSlide_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [SliderSlide_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: SliderSlide_Filter
+}
+"""
+✨ Generated having input type for table 'SliderSlide'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input SliderSlide_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [SliderSlide_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: SliderSlide_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [SliderSlide_Having!]
+  """
+  ✨ Generated from Field `SliderSlide`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`active_count` of type `Int!`
+  """
+  active_count: Int_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`buttonText_count` of type `Int!`
+  """
+  buttonText_count: Int_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`image_count` of type `Int!`
+  """
+  image_count: Int_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`link_count` of type `Int!`
+  """
+  link_count: Int_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`order_count` of type `Int!`
+  """
+  order_count: Int_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`subtitle_count` of type `Int!`
+  """
+  subtitle_count: Int_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`title_count` of type `Int!`
+  """
+  title_count: Int_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`translations_count` of type `Int!`
+  """
+  translations_count: Int_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: Int_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`order_sum` of type `Int`
+  """
+  order_sum: Int_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`order_avg` of type `Float`
+  """
+  order_avg: Float_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`order_min` of type `Int`
+  """
+  order_min: Int_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`order_max` of type `Int`
+  """
+  order_max: Int_Filter
+  """
+  ✨ Generated from Field `SliderSlide`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'SliderSlide'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input SliderSlide_Key {
+  """
+  ✨ Generated from Field `SliderSlide`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `SliderSlide`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'SliderSlide'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input SliderSlide_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: SliderSlide_Filter
+}
+"""
+✨ Generated order input type for table 'SliderSlide'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input SliderSlide_Order {
+  """
+  ✨ Generated from Field `SliderSlide`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`active` of type `Boolean!`
+  """
+  active: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`buttonText` of type `String!`
+  """
+  buttonText: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`description` of type `String!`
+  """
+  description: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`image` of type `String!`
+  """
+  image: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`link` of type `String!`
+  """
+  link: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`order` of type `Int!`
+  """
+  order: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`subtitle` of type `String!`
+  """
+  subtitle: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`title` of type `String!`
+  """
+  title: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`translations` of type `String`
+  """
+  translations: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`active_count` of type `Int!`
+  """
+  active_count: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`buttonText_count` of type `Int!`
+  """
+  buttonText_count: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`description_count` of type `Int!`
+  """
+  description_count: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`image_count` of type `Int!`
+  """
+  image_count: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`link_count` of type `Int!`
+  """
+  link_count: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`order_count` of type `Int!`
+  """
+  order_count: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`subtitle_count` of type `Int!`
+  """
+  subtitle_count: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`title_count` of type `Int!`
+  """
+  title_count: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`translations_count` of type `Int!`
+  """
+  translations_count: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`order_sum` of type `Int`
+  """
+  order_sum: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`order_avg` of type `Float`
+  """
+  order_avg: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`order_min` of type `Int`
+  """
+  order_min: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`order_max` of type `Int`
+  """
+  order_max: OrderDirection
+  """
+  ✨ Generated from Field `SliderSlide`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'Tour'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Tour_Data {
+  """
+  ✨ Generated from Field `Tour`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Tour`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`operatorId` of type `String!`
+  """
+  operatorId: String
+  """
+  ✨ `_expr` server value variant of `operatorId` (✨ Generated from Field `Tour`.`operatorId` of type `String!`)
+  """
+  operatorId_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`operator` of type `User!`
+  """
+  operator: User_Key @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`category` of type `Category!`
+  """
+  category: Category
+  """
+  ✨ `_expr` server value variant of `category` (✨ Generated from Field `Tour`.`category` of type `Category!`)
+  """
+  category_expr: Category_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Tour`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Tour`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Tour`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`description` of type `String!`
+  """
+  description: String
+  """
+  ✨ `_expr` server value variant of `description` (✨ Generated from Field `Tour`.`description` of type `String!`)
+  """
+  description_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`destination` of type `Destination!`
+  """
+  destination: Destination
+  """
+  ✨ `_expr` server value variant of `destination` (✨ Generated from Field `Tour`.`destination` of type `Destination!`)
+  """
+  destination_expr: Destination_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`discount` of type `String`
+  """
+  discount: String
+  """
+  ✨ `_expr` server value variant of `discount` (✨ Generated from Field `Tour`.`discount` of type `String`)
+  """
+  discount_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`duration` of type `String!`
+  """
+  duration: String
+  """
+  ✨ `_expr` server value variant of `duration` (✨ Generated from Field `Tour`.`duration` of type `String!`)
+  """
+  duration_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`durationHours` of type `Int!`
+  """
+  durationHours: Int
+  """
+  ✨ `_expr` server value variant of `durationHours` (✨ Generated from Field `Tour`.`durationHours` of type `Int!`)
+  """
+  durationHours_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `durationHours` (✨ Generated from Field `Tour`.`durationHours` of type `Int!`)
+  """
+  durationHours_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`featured` of type `Boolean!`
+  """
+  featured: Boolean
+  """
+  ✨ `_expr` server value variant of `featured` (✨ Generated from Field `Tour`.`featured` of type `Boolean!`)
+  """
+  featured_expr: Boolean_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`heroBackgroundPosition` of type `String`
+  """
+  heroBackgroundPosition: String
+  """
+  ✨ `_expr` server value variant of `heroBackgroundPosition` (✨ Generated from Field `Tour`.`heroBackgroundPosition` of type `String`)
+  """
+  heroBackgroundPosition_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`heroImages` of type `String`
+  """
+  heroImages: String
+  """
+  ✨ `_expr` server value variant of `heroImages` (✨ Generated from Field `Tour`.`heroImages` of type `String`)
+  """
+  heroImages_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`image` of type `String!`
+  """
+  image: String
+  """
+  ✨ `_expr` server value variant of `image` (✨ Generated from Field `Tour`.`image` of type `String!`)
+  """
+  image_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`lat` of type `Float`
+  """
+  lat: Float
+  """
+  ✨ `_expr` server value variant of `lat` (✨ Generated from Field `Tour`.`lat` of type `Float`)
+  """
+  lat_expr: Float_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `lat` (✨ Generated from Field `Tour`.`lat` of type `Float`)
+  """
+  lat_update: [Float_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`lng` of type `Float`
+  """
+  lng: Float
+  """
+  ✨ `_expr` server value variant of `lng` (✨ Generated from Field `Tour`.`lng` of type `Float`)
+  """
+  lng_expr: Float_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `lng` (✨ Generated from Field `Tour`.`lng` of type `Float`)
+  """
+  lng_update: [Float_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`location` of type `String!`
+  """
+  location: String
+  """
+  ✨ `_expr` server value variant of `location` (✨ Generated from Field `Tour`.`location` of type `String!`)
+  """
+  location_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`oneDay` of type `Boolean!`
+  """
+  oneDay: Boolean
+  """
+  ✨ `_expr` server value variant of `oneDay` (✨ Generated from Field `Tour`.`oneDay` of type `Boolean!`)
+  """
+  oneDay_expr: Boolean_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`originalPrice` of type `Float!`
+  """
+  originalPrice: Float
+  """
+  ✨ `_expr` server value variant of `originalPrice` (✨ Generated from Field `Tour`.`originalPrice` of type `Float!`)
+  """
+  originalPrice_expr: Float_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `originalPrice` (✨ Generated from Field `Tour`.`originalPrice` of type `Float!`)
+  """
+  originalPrice_update: [Float_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`popular` of type `Boolean!`
+  """
+  popular: Boolean
+  """
+  ✨ `_expr` server value variant of `popular` (✨ Generated from Field `Tour`.`popular` of type `Boolean!`)
+  """
+  popular_expr: Boolean_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`price` of type `Float!`
+  """
+  price: Float
+  """
+  ✨ `_expr` server value variant of `price` (✨ Generated from Field `Tour`.`price` of type `Float!`)
+  """
+  price_expr: Float_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `price` (✨ Generated from Field `Tour`.`price` of type `Float!`)
+  """
+  price_update: [Float_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`rating` of type `Float!`
+  """
+  rating: Float
+  """
+  ✨ `_expr` server value variant of `rating` (✨ Generated from Field `Tour`.`rating` of type `Float!`)
+  """
+  rating_expr: Float_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `rating` (✨ Generated from Field `Tour`.`rating` of type `Float!`)
+  """
+  rating_update: [Float_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`reviewsCount` of type `Int!`
+  """
+  reviewsCount: Int
+  """
+  ✨ `_expr` server value variant of `reviewsCount` (✨ Generated from Field `Tour`.`reviewsCount` of type `Int!`)
+  """
+  reviewsCount_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `reviewsCount` (✨ Generated from Field `Tour`.`reviewsCount` of type `Int!`)
+  """
+  reviewsCount_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`status` of type `TourStatus!`
+  """
+  status: TourStatus
+  """
+  ✨ `_expr` server value variant of `status` (✨ Generated from Field `Tour`.`status` of type `TourStatus!`)
+  """
+  status_expr: TourStatus_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`title` of type `String!`
+  """
+  title: String
+  """
+  ✨ `_expr` server value variant of `title` (✨ Generated from Field `Tour`.`title` of type `String!`)
+  """
+  title_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`translations` of type `String`
+  """
+  translations: String
+  """
+  ✨ `_expr` server value variant of `translations` (✨ Generated from Field `Tour`.`translations` of type `String`)
+  """
+  translations_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `Tour`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `updatedAt` (✨ Generated from Field `Tour`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `updatedAt` (✨ Generated from Field `Tour`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`vibeAdrenaline` of type `Int!`
+  """
+  vibeAdrenaline: Int
+  """
+  ✨ `_expr` server value variant of `vibeAdrenaline` (✨ Generated from Field `Tour`.`vibeAdrenaline` of type `Int!`)
+  """
+  vibeAdrenaline_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `vibeAdrenaline` (✨ Generated from Field `Tour`.`vibeAdrenaline` of type `Int!`)
+  """
+  vibeAdrenaline_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`vibeCulture` of type `Int!`
+  """
+  vibeCulture: Int
+  """
+  ✨ `_expr` server value variant of `vibeCulture` (✨ Generated from Field `Tour`.`vibeCulture` of type `Int!`)
+  """
+  vibeCulture_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `vibeCulture` (✨ Generated from Field `Tour`.`vibeCulture` of type `Int!`)
+  """
+  vibeCulture_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`vibeFamily` of type `Int!`
+  """
+  vibeFamily: Int
+  """
+  ✨ `_expr` server value variant of `vibeFamily` (✨ Generated from Field `Tour`.`vibeFamily` of type `Int!`)
+  """
+  vibeFamily_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `vibeFamily` (✨ Generated from Field `Tour`.`vibeFamily` of type `Int!`)
+  """
+  vibeFamily_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`vibeRelax` of type `Int!`
+  """
+  vibeRelax: Int
+  """
+  ✨ `_expr` server value variant of `vibeRelax` (✨ Generated from Field `Tour`.`vibeRelax` of type `Int!`)
+  """
+  vibeRelax_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `vibeRelax` (✨ Generated from Field `Tour`.`vibeRelax` of type `Int!`)
+  """
+  vibeRelax_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Tour`.`bookings_on_tour` of type `[Booking!]!`
+  """
+  bookings_on_tour: [Booking_Data!]
+}
+"""
+✨ Generated filter input type for table 'Tour'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Tour_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Tour_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Tour_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Tour_Filter!]
+  """
+  ✨ Generated from Field `Tour`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Tour`.`operatorId` of type `String!`
+  """
+  operatorId: String_Filter
+  """
+  ✨ Generated from Field `Tour`.`operator` of type `User!`
+  """
+  operator: User_Filter
+  """
+  ✨ Generated from Field `Tour`.`category` of type `Category!`
+  """
+  category: Category_Filter
+  """
+  ✨ Generated from Field `Tour`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `Tour`.`description` of type `String!`
+  """
+  description: String_Filter
+  """
+  ✨ Generated from Field `Tour`.`destination` of type `Destination!`
+  """
+  destination: Destination_Filter
+  """
+  ✨ Generated from Field `Tour`.`discount` of type `String`
+  """
+  discount: String_Filter
+  """
+  ✨ Generated from Field `Tour`.`duration` of type `String!`
+  """
+  duration: String_Filter
+  """
+  ✨ Generated from Field `Tour`.`durationHours` of type `Int!`
+  """
+  durationHours: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`featured` of type `Boolean!`
+  """
+  featured: Boolean_Filter
+  """
+  ✨ Generated from Field `Tour`.`heroBackgroundPosition` of type `String`
+  """
+  heroBackgroundPosition: String_Filter
+  """
+  ✨ Generated from Field `Tour`.`heroImages` of type `String`
+  """
+  heroImages: String_Filter
+  """
+  ✨ Generated from Field `Tour`.`image` of type `String!`
+  """
+  image: String_Filter
+  """
+  ✨ Generated from Field `Tour`.`lat` of type `Float`
+  """
+  lat: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`lng` of type `Float`
+  """
+  lng: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`location` of type `String!`
+  """
+  location: String_Filter
+  """
+  ✨ Generated from Field `Tour`.`oneDay` of type `Boolean!`
+  """
+  oneDay: Boolean_Filter
+  """
+  ✨ Generated from Field `Tour`.`originalPrice` of type `Float!`
+  """
+  originalPrice: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`popular` of type `Boolean!`
+  """
+  popular: Boolean_Filter
+  """
+  ✨ Generated from Field `Tour`.`price` of type `Float!`
+  """
+  price: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`rating` of type `Float!`
+  """
+  rating: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`reviewsCount` of type `Int!`
+  """
+  reviewsCount: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`status` of type `TourStatus!`
+  """
+  status: TourStatus_Filter
+  """
+  ✨ Generated from Field `Tour`.`title` of type `String!`
+  """
+  title: String_Filter
+  """
+  ✨ Generated from Field `Tour`.`translations` of type `String`
+  """
+  translations: String_Filter
+  """
+  ✨ Generated from Field `Tour`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeAdrenaline` of type `Int!`
+  """
+  vibeAdrenaline: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeCulture` of type `Int!`
+  """
+  vibeCulture: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeFamily` of type `Int!`
+  """
+  vibeFamily: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeRelax` of type `Int!`
+  """
+  vibeRelax: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`bookings_on_tour` of type `[Booking!]!`
+  """
+  bookings_on_tour: Booking_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'Tour'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Tour_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Tour_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Tour_Filter
+}
+"""
+✨ Generated having input type for table 'Tour'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Tour_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Tour_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Tour_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Tour_Having!]
+  """
+  ✨ Generated from Field `Tour`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`category_count` of type `Int!`
+  """
+  category_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`destination_count` of type `Int!`
+  """
+  destination_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`discount_count` of type `Int!`
+  """
+  discount_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`durationHours_count` of type `Int!`
+  """
+  durationHours_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`duration_count` of type `Int!`
+  """
+  duration_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`featured_count` of type `Int!`
+  """
+  featured_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`heroBackgroundPosition_count` of type `Int!`
+  """
+  heroBackgroundPosition_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`heroImages_count` of type `Int!`
+  """
+  heroImages_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`image_count` of type `Int!`
+  """
+  image_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`lat_count` of type `Int!`
+  """
+  lat_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`lng_count` of type `Int!`
+  """
+  lng_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`location_count` of type `Int!`
+  """
+  location_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`oneDay_count` of type `Int!`
+  """
+  oneDay_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`operatorId_count` of type `Int!`
+  """
+  operatorId_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`originalPrice_count` of type `Int!`
+  """
+  originalPrice_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`popular_count` of type `Int!`
+  """
+  popular_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`price_count` of type `Int!`
+  """
+  price_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`rating_count` of type `Int!`
+  """
+  rating_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`reviewsCount_count` of type `Int!`
+  """
+  reviewsCount_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`status_count` of type `Int!`
+  """
+  status_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`title_count` of type `Int!`
+  """
+  title_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`translations_count` of type `Int!`
+  """
+  translations_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeAdrenaline_count` of type `Int!`
+  """
+  vibeAdrenaline_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeCulture_count` of type `Int!`
+  """
+  vibeCulture_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeFamily_count` of type `Int!`
+  """
+  vibeFamily_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeRelax_count` of type `Int!`
+  """
+  vibeRelax_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`durationHours_sum` of type `Int`
+  """
+  durationHours_sum: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`lat_sum` of type `Float`
+  """
+  lat_sum: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`lng_sum` of type `Float`
+  """
+  lng_sum: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`originalPrice_sum` of type `Float`
+  """
+  originalPrice_sum: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`price_sum` of type `Float`
+  """
+  price_sum: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`rating_sum` of type `Float`
+  """
+  rating_sum: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`reviewsCount_sum` of type `Int`
+  """
+  reviewsCount_sum: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeAdrenaline_sum` of type `Int`
+  """
+  vibeAdrenaline_sum: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeCulture_sum` of type `Int`
+  """
+  vibeCulture_sum: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeFamily_sum` of type `Int`
+  """
+  vibeFamily_sum: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeRelax_sum` of type `Int`
+  """
+  vibeRelax_sum: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`durationHours_avg` of type `Float`
+  """
+  durationHours_avg: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`lat_avg` of type `Float`
+  """
+  lat_avg: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`lng_avg` of type `Float`
+  """
+  lng_avg: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`originalPrice_avg` of type `Float`
+  """
+  originalPrice_avg: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`price_avg` of type `Float`
+  """
+  price_avg: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`rating_avg` of type `Float`
+  """
+  rating_avg: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`reviewsCount_avg` of type `Float`
+  """
+  reviewsCount_avg: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeAdrenaline_avg` of type `Float`
+  """
+  vibeAdrenaline_avg: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeCulture_avg` of type `Float`
+  """
+  vibeCulture_avg: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeFamily_avg` of type `Float`
+  """
+  vibeFamily_avg: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeRelax_avg` of type `Float`
+  """
+  vibeRelax_avg: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Tour`.`durationHours_min` of type `Int`
+  """
+  durationHours_min: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`lat_min` of type `Float`
+  """
+  lat_min: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`lng_min` of type `Float`
+  """
+  lng_min: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`originalPrice_min` of type `Float`
+  """
+  originalPrice_min: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`price_min` of type `Float`
+  """
+  price_min: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`rating_min` of type `Float`
+  """
+  rating_min: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`reviewsCount_min` of type `Int`
+  """
+  reviewsCount_min: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeAdrenaline_min` of type `Int`
+  """
+  vibeAdrenaline_min: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeCulture_min` of type `Int`
+  """
+  vibeCulture_min: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeFamily_min` of type `Int`
+  """
+  vibeFamily_min: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeRelax_min` of type `Int`
+  """
+  vibeRelax_min: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `Tour`.`durationHours_max` of type `Int`
+  """
+  durationHours_max: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`lat_max` of type `Float`
+  """
+  lat_max: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`lng_max` of type `Float`
+  """
+  lng_max: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`originalPrice_max` of type `Float`
+  """
+  originalPrice_max: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`price_max` of type `Float`
+  """
+  price_max: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`rating_max` of type `Float`
+  """
+  rating_max: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`reviewsCount_max` of type `Int`
+  """
+  reviewsCount_max: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeAdrenaline_max` of type `Int`
+  """
+  vibeAdrenaline_max: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeCulture_max` of type `Int`
+  """
+  vibeCulture_max: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeFamily_max` of type `Int`
+  """
+  vibeFamily_max: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`vibeRelax_max` of type `Int`
+  """
+  vibeRelax_max: Int_Filter
+}
+"""
+✨ Generated key input type for table 'Tour'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Tour_Key {
+  """
+  ✨ Generated from Field `Tour`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Tour`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'Tour'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Tour_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Tour_Filter
+}
+"""
+✨ Generated order input type for table 'Tour'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Tour_Order {
+  """
+  ✨ Generated from Field `Tour`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`operatorId` of type `String!`
+  """
+  operatorId: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`operator` of type `User!`
+  """
+  operator: User_Order
+  """
+  ✨ Generated from Field `Tour`.`category` of type `Category!`
+  """
+  category: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`description` of type `String!`
+  """
+  description: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`destination` of type `Destination!`
+  """
+  destination: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`discount` of type `String`
+  """
+  discount: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`duration` of type `String!`
+  """
+  duration: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`durationHours` of type `Int!`
+  """
+  durationHours: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`featured` of type `Boolean!`
+  """
+  featured: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`heroBackgroundPosition` of type `String`
+  """
+  heroBackgroundPosition: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`heroImages` of type `String`
+  """
+  heroImages: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`image` of type `String!`
+  """
+  image: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`lat` of type `Float`
+  """
+  lat: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`lng` of type `Float`
+  """
+  lng: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`location` of type `String!`
+  """
+  location: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`oneDay` of type `Boolean!`
+  """
+  oneDay: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`originalPrice` of type `Float!`
+  """
+  originalPrice: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`popular` of type `Boolean!`
+  """
+  popular: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`price` of type `Float!`
+  """
+  price: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`rating` of type `Float!`
+  """
+  rating: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`reviewsCount` of type `Int!`
+  """
+  reviewsCount: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`status` of type `TourStatus!`
+  """
+  status: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`title` of type `String!`
+  """
+  title: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`translations` of type `String`
+  """
+  translations: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeAdrenaline` of type `Int!`
+  """
+  vibeAdrenaline: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeCulture` of type `Int!`
+  """
+  vibeCulture: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeFamily` of type `Int!`
+  """
+  vibeFamily: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeRelax` of type `Int!`
+  """
+  vibeRelax: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`category_count` of type `Int!`
+  """
+  category_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`description_count` of type `Int!`
+  """
+  description_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`destination_count` of type `Int!`
+  """
+  destination_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`discount_count` of type `Int!`
+  """
+  discount_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`durationHours_count` of type `Int!`
+  """
+  durationHours_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`duration_count` of type `Int!`
+  """
+  duration_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`featured_count` of type `Int!`
+  """
+  featured_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`heroBackgroundPosition_count` of type `Int!`
+  """
+  heroBackgroundPosition_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`heroImages_count` of type `Int!`
+  """
+  heroImages_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`image_count` of type `Int!`
+  """
+  image_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`lat_count` of type `Int!`
+  """
+  lat_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`lng_count` of type `Int!`
+  """
+  lng_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`location_count` of type `Int!`
+  """
+  location_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`oneDay_count` of type `Int!`
+  """
+  oneDay_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`operatorId_count` of type `Int!`
+  """
+  operatorId_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`originalPrice_count` of type `Int!`
+  """
+  originalPrice_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`popular_count` of type `Int!`
+  """
+  popular_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`price_count` of type `Int!`
+  """
+  price_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`rating_count` of type `Int!`
+  """
+  rating_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`reviewsCount_count` of type `Int!`
+  """
+  reviewsCount_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`status_count` of type `Int!`
+  """
+  status_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`title_count` of type `Int!`
+  """
+  title_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`translations_count` of type `Int!`
+  """
+  translations_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeAdrenaline_count` of type `Int!`
+  """
+  vibeAdrenaline_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeCulture_count` of type `Int!`
+  """
+  vibeCulture_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeFamily_count` of type `Int!`
+  """
+  vibeFamily_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeRelax_count` of type `Int!`
+  """
+  vibeRelax_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`durationHours_sum` of type `Int`
+  """
+  durationHours_sum: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`lat_sum` of type `Float`
+  """
+  lat_sum: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`lng_sum` of type `Float`
+  """
+  lng_sum: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`originalPrice_sum` of type `Float`
+  """
+  originalPrice_sum: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`price_sum` of type `Float`
+  """
+  price_sum: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`rating_sum` of type `Float`
+  """
+  rating_sum: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`reviewsCount_sum` of type `Int`
+  """
+  reviewsCount_sum: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeAdrenaline_sum` of type `Int`
+  """
+  vibeAdrenaline_sum: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeCulture_sum` of type `Int`
+  """
+  vibeCulture_sum: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeFamily_sum` of type `Int`
+  """
+  vibeFamily_sum: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeRelax_sum` of type `Int`
+  """
+  vibeRelax_sum: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`durationHours_avg` of type `Float`
+  """
+  durationHours_avg: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`lat_avg` of type `Float`
+  """
+  lat_avg: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`lng_avg` of type `Float`
+  """
+  lng_avg: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`originalPrice_avg` of type `Float`
+  """
+  originalPrice_avg: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`price_avg` of type `Float`
+  """
+  price_avg: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`rating_avg` of type `Float`
+  """
+  rating_avg: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`reviewsCount_avg` of type `Float`
+  """
+  reviewsCount_avg: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeAdrenaline_avg` of type `Float`
+  """
+  vibeAdrenaline_avg: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeCulture_avg` of type `Float`
+  """
+  vibeCulture_avg: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeFamily_avg` of type `Float`
+  """
+  vibeFamily_avg: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeRelax_avg` of type `Float`
+  """
+  vibeRelax_avg: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`durationHours_min` of type `Int`
+  """
+  durationHours_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`lat_min` of type `Float`
+  """
+  lat_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`lng_min` of type `Float`
+  """
+  lng_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`originalPrice_min` of type `Float`
+  """
+  originalPrice_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`price_min` of type `Float`
+  """
+  price_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`rating_min` of type `Float`
+  """
+  rating_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`reviewsCount_min` of type `Int`
+  """
+  reviewsCount_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeAdrenaline_min` of type `Int`
+  """
+  vibeAdrenaline_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeCulture_min` of type `Int`
+  """
+  vibeCulture_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeFamily_min` of type `Int`
+  """
+  vibeFamily_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeRelax_min` of type `Int`
+  """
+  vibeRelax_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`durationHours_max` of type `Int`
+  """
+  durationHours_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`lat_max` of type `Float`
+  """
+  lat_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`lng_max` of type `Float`
+  """
+  lng_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`originalPrice_max` of type `Float`
+  """
+  originalPrice_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`price_max` of type `Float`
+  """
+  price_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`rating_max` of type `Float`
+  """
+  rating_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`reviewsCount_max` of type `Int`
+  """
+  reviewsCount_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeAdrenaline_max` of type `Int`
+  """
+  vibeAdrenaline_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeCulture_max` of type `Int`
+  """
+  vibeCulture_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeFamily_max` of type `Int`
+  """
+  vibeFamily_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`vibeRelax_max` of type `Int`
+  """
+  vibeRelax_max: OrderDirection
+}
+"""
+✨ Generated filter input type for table 'TourStatus'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input TourStatus_Filter {
+  """
+  Match if field is exactly equal to provided value.
+  """
+  eq: TourStatus
+  """
+  ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
+  """
+  eq_expr: TourStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is not equal to provided value.
+  """
+  ne: TourStatus
+  """
+  ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
+  """
+  ne_expr: TourStatus_Expr @fdc_forbiddenInVariables
+  """
+  When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
+  """
+  isNull: Boolean
+  """
+  Match if field value is among the provided list of values.
+  """
+  in: [TourStatus!]
+  """
+  Match if field value is not among the provided list of values.
+  """
+  nin: [TourStatus!]
+  """
+  Match if field value is greater than the provided value, based on index ordering of supported enum values.
+  """
+  gt: TourStatus
+  """
+  ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
+  """
+  gt_expr: TourStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is greater than or equal to the provided value.
+  """
+  ge: TourStatus
+  """
+  ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
+  """
+  ge_expr: TourStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field value is less than the provided value, based on index ordering of supported enum values.
+  """
+  lt: TourStatus
+  """
+  ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
+  """
+  lt_expr: TourStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
+  """
+  le: TourStatus
+  """
+  ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
+  """
+  le_expr: TourStatus_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'TourStatus'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input TourStatus_ListFilter {
+  """
+  Match if list field contains the provided value as a member.
+  """
+  includes: TourStatus
+  """
+  ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
+  """
+  includes_expr: TourStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if list field contains all of the provided values as members.
+  """
+  includesAll: [TourStatus!]
+  """
+  Match if list field does not contain the provided value as a member.
+  """
+  excludes: TourStatus
+  """
+  ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
+  """
+  excludes_expr: TourStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if list field does not contain any of the provided values as members.
+  """
+  excludesAll: [TourStatus!]
+  """
+  The desired number of enum values that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: TourStatus_Filter
+}
+"""
+✨ Generated data input type for table 'User'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input User_Data {
+  """
+  ✨ Generated from Field `User`.`id` of type `String!`
+  """
+  id: String
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `String!`)
+  """
+  id_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `User`.`description` of type `String`
+  """
+  description: String
+  """
+  ✨ `_expr` server value variant of `description` (✨ Generated from Field `User`.`description` of type `String`)
+  """
+  description_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `User`.`email` of type `String!`
+  """
+  email: String
+  """
+  ✨ `_expr` server value variant of `email` (✨ Generated from Field `User`.`email` of type `String!`)
+  """
+  email_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `User`.`name` of type `String!`
+  """
+  name: String
+  """
+  ✨ `_expr` server value variant of `name` (✨ Generated from Field `User`.`name` of type `String!`)
+  """
+  name_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `User`.`role` of type `Role!`
+  """
+  role: Role
+  """
+  ✨ `_expr` server value variant of `role` (✨ Generated from Field `User`.`role` of type `Role!`)
+  """
+  role_expr: Role_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `User`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `User`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `updatedAt` (✨ Generated from Field `User`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `updatedAt` (✨ Generated from Field `User`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `User`.`bookings_on_user` of type `[Booking!]!`
+  """
+  bookings_on_user: [Booking_Data!]
+  """
+  ✨ Generated from Field `User`.`guides_on_operator` of type `[Guide!]!`
+  """
+  guides_on_operator: [Guide_Data!]
+  """
+  ✨ Generated from Field `User`.`tours_on_operator` of type `[Tour!]!`
+  """
+  tours_on_operator: [Tour_Data!]
+  """
+  ✨ Generated from Field `User`.`vehicles_on_operator` of type `[Vehicle!]!`
+  """
+  vehicles_on_operator: [Vehicle_Data!]
+}
+"""
+✨ Generated filter input type for table 'User'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input User_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [User_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: User_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [User_Filter!]
+  """
+  ✨ Generated from Field `User`.`id` of type `String!`
+  """
+  id: String_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`description` of type `String`
+  """
+  description: String_Filter
+  """
+  ✨ Generated from Field `User`.`email` of type `String!`
+  """
+  email: String_Filter
+  """
+  ✨ Generated from Field `User`.`name` of type `String!`
+  """
+  name: String_Filter
+  """
+  ✨ Generated from Field `User`.`role` of type `Role!`
+  """
+  role: Role_Filter
+  """
+  ✨ Generated from Field `User`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`bookings_on_user` of type `[Booking!]!`
+  """
+  bookings_on_user: Booking_ListFilter
+  """
+  ✨ Generated from Field `User`.`guides_on_operator` of type `[Guide!]!`
+  """
+  guides_on_operator: Guide_ListFilter
+  """
+  ✨ Generated from Field `User`.`tours_on_operator` of type `[Tour!]!`
+  """
+  tours_on_operator: Tour_ListFilter
+  """
+  ✨ Generated from Field `User`.`vehicles_on_operator` of type `[Vehicle!]!`
+  """
+  vehicles_on_operator: Vehicle_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'User'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input User_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [User_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: User_Filter
+}
+"""
+✨ Generated having input type for table 'User'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input User_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [User_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: User_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [User_Having!]
+  """
+  ✨ Generated from Field `User`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`email_count` of type `Int!`
+  """
+  email_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`role_count` of type `Int!`
+  """
+  role_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'User'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input User_Key {
+  """
+  ✨ Generated from Field `User`.`id` of type `String!`
+  """
+  id: String
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `String!`)
+  """
+  id_expr: String_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'User'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input User_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: User_Filter
+}
+"""
+✨ Generated order input type for table 'User'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input User_Order {
+  """
+  ✨ Generated from Field `User`.`id` of type `String!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `User`.`description` of type `String`
+  """
+  description: OrderDirection
+  """
+  ✨ Generated from Field `User`.`email` of type `String!`
+  """
+  email: OrderDirection
+  """
+  ✨ Generated from Field `User`.`name` of type `String!`
+  """
+  name: OrderDirection
+  """
+  ✨ Generated from Field `User`.`role` of type `Role!`
+  """
+  role: OrderDirection
+  """
+  ✨ Generated from Field `User`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: OrderDirection
+  """
+  ✨ Generated from Field `User`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`description_count` of type `Int!`
+  """
+  description_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`email_count` of type `Int!`
+  """
+  email_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`name_count` of type `Int!`
+  """
+  name_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`role_count` of type `Int!`
+  """
+  role_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `User`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+  """
+  ✨ Generated from Field `User`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'Vehicle'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Vehicle_Data {
+  """
+  ✨ Generated from Field `Vehicle`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Vehicle`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Vehicle`.`operatorId` of type `String!`
+  """
+  operatorId: String
+  """
+  ✨ `_expr` server value variant of `operatorId` (✨ Generated from Field `Vehicle`.`operatorId` of type `String!`)
+  """
+  operatorId_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Vehicle`.`operator` of type `User!`
+  """
+  operator: User_Key @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Vehicle`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Vehicle`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Vehicle`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Vehicle`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Vehicle`.`name` of type `String!`
+  """
+  name: String
+  """
+  ✨ `_expr` server value variant of `name` (✨ Generated from Field `Vehicle`.`name` of type `String!`)
+  """
+  name_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Vehicle`.`seats` of type `Int!`
+  """
+  seats: Int
+  """
+  ✨ `_expr` server value variant of `seats` (✨ Generated from Field `Vehicle`.`seats` of type `Int!`)
+  """
+  seats_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `seats` (✨ Generated from Field `Vehicle`.`seats` of type `Int!`)
+  """
+  seats_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Vehicle`.`status` of type `VehicleStatus!`
+  """
+  status: VehicleStatus
+  """
+  ✨ `_expr` server value variant of `status` (✨ Generated from Field `Vehicle`.`status` of type `VehicleStatus!`)
+  """
+  status_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Vehicle`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `Vehicle`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `updatedAt` (✨ Generated from Field `Vehicle`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `updatedAt` (✨ Generated from Field `Vehicle`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+}
+"""
+✨ Generated filter input type for table 'Vehicle'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Vehicle_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Vehicle_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Vehicle_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Vehicle_Filter!]
+  """
+  ✨ Generated from Field `Vehicle`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`operatorId` of type `String!`
+  """
+  operatorId: String_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`operator` of type `User!`
+  """
+  operator: User_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`name` of type `String!`
+  """
+  name: String_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`seats` of type `Int!`
+  """
+  seats: Int_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`status` of type `VehicleStatus!`
+  """
+  status: VehicleStatus_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp_Filter
+}
+"""
+✨ Generated first-row input type for table 'Vehicle'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Vehicle_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Vehicle_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Vehicle_Filter
+}
+"""
+✨ Generated having input type for table 'Vehicle'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Vehicle_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Vehicle_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Vehicle_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Vehicle_Having!]
+  """
+  ✨ Generated from Field `Vehicle`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`operatorId_count` of type `Int!`
+  """
+  operatorId_count: Int_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`seats_count` of type `Int!`
+  """
+  seats_count: Int_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`status_count` of type `Int!`
+  """
+  status_count: Int_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`seats_sum` of type `Int`
+  """
+  seats_sum: Int_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`seats_avg` of type `Float`
+  """
+  seats_avg: Float_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`seats_min` of type `Int`
+  """
+  seats_min: Int_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`seats_max` of type `Int`
+  """
+  seats_max: Int_Filter
+  """
+  ✨ Generated from Field `Vehicle`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'Vehicle'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Vehicle_Key {
+  """
+  ✨ Generated from Field `Vehicle`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Vehicle`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'Vehicle'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Vehicle_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Vehicle_Filter
+}
+"""
+✨ Generated order input type for table 'Vehicle'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Vehicle_Order {
+  """
+  ✨ Generated from Field `Vehicle`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`operatorId` of type `String!`
+  """
+  operatorId: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`operator` of type `User!`
+  """
+  operator: User_Order
+  """
+  ✨ Generated from Field `Vehicle`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`name` of type `String!`
+  """
+  name: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`seats` of type `Int!`
+  """
+  seats: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`status` of type `VehicleStatus!`
+  """
+  status: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`name_count` of type `Int!`
+  """
+  name_count: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`operatorId_count` of type `Int!`
+  """
+  operatorId_count: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`seats_count` of type `Int!`
+  """
+  seats_count: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`status_count` of type `Int!`
+  """
+  status_count: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`seats_sum` of type `Int`
+  """
+  seats_sum: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`seats_avg` of type `Float`
+  """
+  seats_avg: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`seats_min` of type `Int`
+  """
+  seats_min: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`seats_max` of type `Int`
+  """
+  seats_max: OrderDirection
+  """
+  ✨ Generated from Field `Vehicle`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: OrderDirection
+}
+"""
+✨ Generated filter input type for table 'VehicleStatus'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input VehicleStatus_Filter {
+  """
+  Match if field is exactly equal to provided value.
+  """
+  eq: VehicleStatus
+  """
+  ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
+  """
+  eq_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is not equal to provided value.
+  """
+  ne: VehicleStatus
+  """
+  ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
+  """
+  ne_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+  """
+  When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
+  """
+  isNull: Boolean
+  """
+  Match if field value is among the provided list of values.
+  """
+  in: [VehicleStatus!]
+  """
+  Match if field value is not among the provided list of values.
+  """
+  nin: [VehicleStatus!]
+  """
+  Match if field value is greater than the provided value, based on index ordering of supported enum values.
+  """
+  gt: VehicleStatus
+  """
+  ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
+  """
+  gt_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is greater than or equal to the provided value.
+  """
+  ge: VehicleStatus
+  """
+  ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
+  """
+  ge_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field value is less than the provided value, based on index ordering of supported enum values.
+  """
+  lt: VehicleStatus
+  """
+  ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
+  """
+  lt_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
+  """
+  le: VehicleStatus
+  """
+  ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
+  """
+  le_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'VehicleStatus'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input VehicleStatus_ListFilter {
+  """
+  Match if list field contains the provided value as a member.
+  """
+  includes: VehicleStatus
+  """
+  ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
+  """
+  includes_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if list field contains all of the provided values as members.
+  """
+  includesAll: [VehicleStatus!]
+  """
+  Match if list field does not contain the provided value as a member.
+  """
+  excludes: VehicleStatus
+  """
+  ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
+  """
+  excludes_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+  """
+  Match if list field does not contain any of the provided values as members.
+  """
+  excludesAll: [VehicleStatus!]
+  """
+  The desired number of enum values that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: VehicleStatus_Filter
+}

@@ -1,0 +1,26 @@
+# Postgres local persistente para Busca Tours (opcional: usa Docker en vez de
+# instalar PostgreSQL nativo en Windows). Equivalente a tu "MySQL local".
+#
+# Uso:
+#   docker compose up -d        # levanta y persiste en el volumen pg-data
+#   docker compose down         # apaga (la data queda en el volumen)
+#   docker compose down -v      # borra también la data
+#
+# El frontend sigue usando el emulador de Data Connect (VITE_USE_EMULATORS=true).
+# El seed SQL (functions/scripts/seed-dataconnect-sql.mjs) apunta a este Postgres
+# vía DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:5432/buscatours_local
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: buscatours-pg
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: buscatours_local
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+
+volumes:
+  pg-data:

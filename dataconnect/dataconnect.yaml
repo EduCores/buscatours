@@ -1,0 +1,13 @@
+specVersion: "v1"
+serviceId: "buscatours-e0816-service"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+      postgresql:
+        database: "buscatours-e0816-database"
+        cloudSql:
+          instanceId: "buscatours-e0816-instance"
+          # schemaValidation: "STRICT"
+          # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]

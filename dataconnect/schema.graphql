@@ -1,0 +1,439 @@
+generator client {
+  provider = "firebase-data-connect"
+}
+
+datasource db {
+  provider = "cloudsql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  PLATFORM_ADMIN
+  OPERATOR
+  TOUR_ADMIN
+  CUSTOMER
+}
+
+enum TourStatus {
+  DRAFT
+  PENDING
+  PUBLISHED
+  ARCHIVED
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}
+
+enum GuideStatus {
+  DISPONIBLE
+  EN_TOUR
+  OFFLINE
+}
+
+enum VehicleStatus {
+  DISPONIBLE
+  EN_USO
+  OFFLINE
+}
+
+enum CheckinStatus {
+  PENDING
+  SYNCED
+  PENDIENTE_SYNC
+}
+
+enum Category {
+  OUTDOOR
+  RELAXACION
+  FERIADO
+  TEMPORADA
+  SALVAJE
+  AVENTURA
+  TEMATICO
+  CULTURAL
+  CIUDAD
+  MONTANA
+  GLACIAR
+  LUJO
+  HISTORICO
+  FAMILIAR
+  SELVA
+  FULLDAY
+  NAVEGACION
+}
+
+enum Destination {
+  ARGENTINA
+  PERU
+  BOLIVIA
+  BRAZIL
+  COLOMBIA
+  ECUADOR
+  CHILE
+  MEXICO
+  DOMINICAN_REPUBLIC
+}
+
+type User @auth(level: PUBLIC) @table(name: "users") {
+  id: UUID! @id(default: uuid())
+  email: String! @unique
+  name: String!
+  role: Role! @default(value: "CUSTOMER")
+  description: String
+  createdAt: DateTime! @default(value: "now()")
+  updatedAt: DateTime! @default(value: "now()") @updateTimestamp
+  tours: [Tour!]! @relation(name: "TourOperator")
+  bookings: [Booking!]!
+}
+
+type Tour @auth(level: PUBLIC) @table(name: "tours") {
+  id: UUID! @id(default: uuid())
+  title: String!
+  location: String!
+  duration: String!
+  durationHours: Int!
+  durationDays: Int! @default(value: 1)
+  originalPrice: Float!
+  price: Float!
+  discount: String
+  rating: Float! @default(value: 0)
+  reviewsCount: Int! @default(value: 0)
+  category: Category!
+  description: String!
+  shortDescription: String
+  image: String!
+  featured: Boolean! @default(value: false)
+  oneDay: Boolean! @default(value: true)
+  popular: Boolean! @default(value: false)
+  status: TourStatus! @default(value: "PUBLISHED")
+  destination: Destination!
+  vibeAdrenaline: Int! @default(value: 50)
+  vibeRelax: Int! @default(value: 50)
+  vibeCulture: Int! @default(value: 50)
+  vibeFamily: Int! @default(value: 50)
+  lat: Float
+  lng: Float
+  heroImages: String
+  heroBackgroundPosition: String
+  translations: String
+  operatorId: UUID!
+  operator: User! @relation(name: "TourOperator", field: "operatorId")
+  availableDates: JSON
+  
+  // Nuevos campos profesionales
+  itinerary: JSON
+  minAge: Int! @default(value: 12)
+  maxPassengers: Int! @default(value: 15)
+  trailerUrl: String
+  galleryImages: JSON
+  mapCenterLat: Float
+  mapCenterLng: Float
+  mapZoom: Int! @default(value: 12)
+  difficulty: Difficulty! @default(value: "MODERATE")
+  seasonality: JSON
+  includes: JSON
+  excludes: JSON
+  requirements: JSON
+  pickupInfo: String
+  cancellationPolicy: String
+  languages: JSON
+  groupType: GroupType! @default(value: "SHARED")
+  
+  createdAt: DateTime! @default(value: "now()")
+  updatedAt: DateTime! @default(value: "now()") @updateTimestamp
+  bookings: [Booking!]!
+}
+
+enum Difficulty {
+  EASY
+  MODERATE
+  DIFFICULT
+  EXTREME
+}
+
+enum GroupType {
+  PRIVATE
+  SHARED
+  BOTH
+}
+
+type Booking @auth(level: PUBLIC) @table(name: "bookings") {
+  id: UUID! @id(default: uuid())
+  bookingId: String! @unique
+  tourId: UUID!
+  tour: Tour! @relation(field: "tourId")
+  userId: UUID!
+  user: User! @relation(field: "userId")
+  guests: Int!
+  date: DateTime!
+  totalPrice: Float!
+  currency: String! @default(value: "USD")
+  status: BookingStatus! @default(value: "PENDING")
+  addons: JSON
+  specialRequests: String
+  createdAt: DateTime! @default(value: "now()")
+  updatedAt: DateTime! @default(value: "now()") @updateTimestamp
+}
+
+type Guide @auth(level: PUBLIC) @table(name: "guides") {
+  id: UUID! @id(default: uuid())
+  name: String!
+  specialty: String!
+  status: GuideStatus! @default(value: "DISPONIBLE")
+  operatorId: UUID!
+  operator: User! @relation(name: "GuideOperator", field: "operatorId")
+  createdAt: DateTime! @default(value: "now()")
+  updatedAt: DateTime! @default(value: "now()") @updateTimestamp
+}
+
+type Vehicle @auth(level: PUBLIC) @table(name: "vehicles") {
+  id: UUID! @id(default: uuid())
+  name: String!
+  seats: Int!
+  status: VehicleStatus! @default(value: "DISPONIBLE")
+  operatorId: UUID!
+  operator: User! @relation(name: "VehicleOperator", field: "operatorId")
+  createdAt: DateTime! @default(value: "now()")
+  updatedAt: DateTime! @default(value: "now()") @updateTimestamp
+}
+
+type PwaCheckin @auth(level: PUBLIC) @table(name: "pwa_checkins") {
+  id: UUID! @id(default: uuid())
+  tourId: UUID
+  bookingId: UUID
+  isOffline: Boolean
+  status: CheckinStatus! @default(value: "PENDING")
+  timestamp: DateTime!
+  tourTitle: String
+  customerName: String
+  operator: String
+  createdAt: DateTime! @default(value: "now()")
+  updatedAt: DateTime! @default(value: "now()") @updateTimestamp
+}
+
+type SliderSlide @auth(level: PUBLIC) @table(name: "slider_slides") {
+  id: UUID! @id(default: uuid())
+  subtitle: String!
+  title: String!
+  description: String!
+  buttonText: String!
+  image: String!
+  link: String!
+  translations: String
+  order: Int! @default(value: 0)
+  active: Boolean! @default(value: true)
+  createdAt: DateTime! @default(value: "now()")
+  updatedAt: DateTime! @default(value: "now()") @updateTimestamp
+}
+
+input TourFilter {
+  query: String
+  category: Category
+  destination: Destination
+  maxPrice: Float
+  minPrice: Float
+  oneDay: Boolean
+  featured: Boolean
+  popular: Boolean
+  status: TourStatus
+  operatorId: UUID
+}
+
+input CreateTourInput {
+  title: String!
+  location: String!
+  duration: String!
+  durationHours: Int!
+  originalPrice: Float!
+  price: Float!
+  discount: String
+  category: Category!
+  description: String!
+  image: String!
+  featured: Boolean
+  oneDay: Boolean
+  popular: Boolean
+  status: TourStatus
+  destination: Destination!
+  vibeAdrenaline: Int
+  vibeRelax: Int
+  vibeCulture: Int
+  vibeFamily: Int
+  lat: Float
+  lng: Float
+  heroImages: String
+  heroBackgroundPosition: String
+  operatorId: UUID!
+  translations: String
+}
+
+input UpdateTourInput {
+  title: String
+  location: String
+  duration: String
+  durationHours: Int
+  originalPrice: Float
+  price: Float
+  discount: String
+  category: Category
+  description: String
+  image: String
+  featured: Boolean
+  oneDay: Boolean
+  popular: Boolean
+  status: TourStatus
+  destination: Destination
+  vibeAdrenaline: Int
+  vibeRelax: Int
+  vibeCulture: Int
+  vibeFamily: Int
+  lat: Float
+  lng: Float
+  heroImages: String
+  heroBackgroundPosition: String
+  operatorId: UUID
+  translations: String
+}
+
+input BookingFilter {
+  userId: UUID
+  tourId: UUID
+  status: BookingStatus
+  dateFrom: DateTime
+  dateTo: DateTime
+}
+
+input CreateBookingInput {
+  tourId: UUID!
+  userId: UUID!
+  guests: Int!
+  date: DateTime!
+  totalPrice: Float!
+  currency: String
+  status: BookingStatus
+  addons: JSON
+  specialRequests: String
+}
+
+input UpdateBookingInput {
+  tourId: UUID
+  userId: UUID
+  guests: Int
+  date: DateTime
+  totalPrice: Float
+  currency: String
+  status: BookingStatus
+  addons: JSON
+  specialRequests: String
+}
+
+input GuideFilter {
+  operatorId: UUID
+  status: GuideStatus
+}
+
+input CreateGuideInput {
+  name: String!
+  specialty: String!
+  status: GuideStatus
+  operatorId: UUID!
+}
+
+input UpdateGuideInput {
+  name: String
+  specialty: String
+  status: GuideStatus
+  operatorId: UUID
+}
+
+input VehicleFilter {
+  operatorId: UUID
+  status: VehicleStatus
+}
+
+input CreateVehicleInput {
+  name: String!
+  seats: Int!
+  status: VehicleStatus
+  operatorId: UUID!
+}
+
+input UpdateVehicleInput {
+  name: String
+  seats: Int
+  status: VehicleStatus
+  operatorId: UUID
+}
+
+input PwaCheckinFilter {
+  operator: String
+  status: CheckinStatus
+  tourId: UUID
+  bookingId: UUID
+  dateFrom: DateTime
+  dateTo: DateTime
+}
+
+input CreatePwaCheckinInput {
+  tourId: UUID
+  bookingId: UUID
+  tourTitle: String
+  customerName: String!
+  operator: String!
+  status: CheckinStatus
+  timestamp: DateTime!
+}
+
+input UpdatePwaCheckinInput {
+  tourId: UUID
+  bookingId: UUID
+  tourTitle: String
+  customerName: String
+  operator: String
+  status: CheckinStatus
+  timestamp: DateTime
+}
+
+input UserFilter {
+  role: Role
+  email: String
+}
+
+input CreateUserInput {
+  email: String!
+  name: String!
+  role: Role!
+  description: String
+}
+
+input SliderSlideInput {
+  subtitle: String!
+  title: String!
+  description: String!
+  buttonText: String!
+  image: String!
+  link: String!
+  order: Int
+  active: Boolean
+  translations: String
+}
+
+enum TourOrderBy {
+  CREATED_AT_DESC
+  CREATED_AT_ASC
+  PRICE_ASC
+  PRICE_DESC
+  RATING_DESC
+  POPULAR_DESC
+}
+
+input SplitPaymentInput {
+  bookingId: UUID!
+  amount: Float!
+  currency: String
+  paymentMethodId: String
+}

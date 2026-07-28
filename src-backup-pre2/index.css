@@ -1,0 +1,1875 @@
+@import "tailwindcss";
+@source "./components/admin/**/*.tsx";
+@source "./components/AdminPanel.jsx";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+/* MODERN CSS RESET & VARIABLES */
+:root {
+  /* Fonts */
+  --font-title: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* HSL Color System */
+  --hue-primary: 204;
+  /* Ocean Blue */
+  --hue-accent: 45;
+  /* Gold/Yellow */
+  --hue-yellow: 45;
+  /* Gold/Yellow */
+  --hue-base: 220;
+  /* Slate */
+
+  --primary: hsl(var(--hue-primary), 90%, 40%);
+  --primary-hover: hsl(var(--hue-primary), 90%, 32%);
+  --primary-glow: hsla(var(--hue-primary), 90%, 40%, 0.25);
+
+  --accent: hsl(var(--hue-accent), 100%, 50%);
+  --secondary: hsl(var(--hue-yellow), 100%, 50%);
+  --secondary-hover: hsl(var(--hue-yellow), 100%, 43%);
+  --secondary-glow: hsla(var(--hue-yellow), 100%, 50%, 0.35);
+
+  /* Yellow button colors for Tour Detail page (user specification) */
+  --yellow-btn: hsl(var(--hue-yellow), 100%, 50%);
+  --yellow-btn-hover: hsl(var(--hue-yellow), 100%, 43%);
+  --yellow-btn-glow: hsla(var(--hue-yellow), 100%, 50%, 0.35);
+
+  --topbar-bg: #002c4e;
+  /* Dark Blue from WordPress demo */
+  --topbar-bg-glass: rgba(0, 44, 78, 0.1);
+
+  --bg-main: hsl(var(--hue-base), 30%, 98%);
+  --bg-surface: hsl(0, 0%, 100%);
+  --bg-surface-glass: rgba(255, 255, 255, 0.1);
+  --border-color: hsl(var(--hue-base), 20%, 90%);
+  --border-glass: rgba(255, 255, 255, 0.4);
+
+  --text-main: hsl(var(--hue-base), 20%, 35%);
+  --text-heading: hsl(var(--hue-base), 30%, 15%);
+  --text-muted: hsl(var(--hue-base), 15%, 50%);
+  --text-inverse: hsl(0, 0%, 100%);
+
+  --shadow-sm: 0 2px 8px -1px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 16px -6px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.1), 0 12px 20px -8px rgba(0, 0, 0, 0.05);
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  --nav-padding-x: 48px;
+
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* DARK MODE THEME - BLUE BUTTONS */
+body.dark-blue {
+  --primary: #0081de;
+  --primary-hover: hsl(var(--hue-primary), 95%, 65%);
+  --primary-glow: hsla(var(--hue-primary), 95%, 55%, 0.3);
+
+  --bg-main: hsl(220deg 51.03% 7.86%);
+  --bg-surface: hsl(var(--hue-base), 40%, 9%);
+  --bg-surface-glass: rgba(15, 23, 42, 0.1);
+  --topbar-bg-glass: rgba(5, 15, 30, 0.1);
+  --border-color: hsl(var(--hue-base), 30%, 16%);
+  --border-glass: rgba(255, 255, 255, 0.04);
+
+  --text-main: hsl(var(--hue-base), 15%, 78%);
+  --text-heading: hsl(var(--hue-base), 20%, 93%);
+  --text-muted: hsl(var(--hue-base), 10%, 52%);
+  --text-inverse: #ffffff;
+
+  --shadow-sm: 0 2px 8px -1px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 16px -6px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* DARK MODE THEME - YELLOW BUTTONS (SATCOM TACTICAL) */
+body.dark-yellow {
+  --primary: #eab308;
+  --primary-hover: #ca8a04;
+  --primary-glow: rgba(234, 179, 8, 0.3);
+
+  --accent: #fbbf24;
+  --secondary: #eab308;
+  --secondary-hover: #ca8a04;
+  --secondary-glow: rgba(234, 179, 8, 0.35);
+
+  --yellow-btn: #eab308;
+  --yellow-btn-hover: #ca8a04;
+  --yellow-btn-glow: rgba(234, 179, 8, 0.3);
+
+  --bg-main: #0a0f1a;
+  --bg-surface: #111827;
+  --bg-surface-glass: rgba(15, 23, 42, 0.4);
+  --topbar-bg-glass: rgba(5, 15, 30, 0.85);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-glass: rgba(255, 255, 255, 0.04);
+
+  --text-heading: #fafafa;
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --text-inverse: #000000;
+
+  --shadow-sm: 0 2px 8px -1px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 16px -6px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* AVENTURA NATURAL - DARK */
+body.theme-nature-dark {
+  /* Modo Oscuro - Aventura Natural */
+  --color-bg-primary: #1A1C19;
+  --color-surface: #242923;
+  --color-primary: #47d57a;
+  --color-secondary: #FDE047;
+  --color-text-primary: #F0F2EE;
+  --color-text-secondary: #A1A89F;
+  --color-accent: #47d57a;
+  --color-primary-hover: #6EE7A0;
+  --color-primary-active: #56E092;
+  --color-secondary-hover: #FADC3A;
+
+  /* Mapeo de variables de Buscatours */
+  --bg-main: var(--color-bg-primary);
+  --bg-surface: var(--color-surface);
+  --primary: var(--color-primary);
+  --primary-hover: var(--color-primary-hover);
+  --primary-glow: rgba(71, 213, 122, 0.3);
+  --accent: var(--color-accent);
+  --secondary: var(--color-secondary);
+  --yellow-btn: var(--color-accent);
+  --yellow-btn-hover: var(--color-primary-hover);
+  --yellow-btn-glow: rgba(71, 213, 122, 0.3);
+
+  --bg-surface-glass: rgba(36, 41, 35, 0.4);
+  --topbar-bg-glass: rgba(26, 28, 25, 0.3);
+  --border-color: #384037;
+  --border-glass: rgba(255, 255, 255, 0.05);
+
+  --text-main: var(--color-text-secondary);
+  --text-heading: var(--color-text-primary);
+  --text-muted: #7A8078;
+  --text-inverse: #1A1C19;
+
+  --shadow-sm: 0 2px 8px -1px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 16px -6px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 20;
+  padding: 20;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* TYPOGRAPHY */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  color: var(--text-heading);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+/* GLASSMORPHISM CLASSES */
+.glass-nav {
+  background: var(--bg-surface-glass);
+  backdrop-filter: blur(1.1px);
+  -webkit-backdrop-filter: blur(1.1px);
+  border-bottom: 1px solid var(--border-glass);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+@property --glow-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes borderGlowSpin {
+  0% {
+    --glow-angle: 0deg;
+  }
+
+  100% {
+    --glow-angle: 360deg;
+  }
+}
+
+.glass-card {
+  position: relative;
+  background: var(--bg-surface-glass);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow-md);
+  border-radius: 10px;
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  padding: 1px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--glow-angle),
+      transparent 10%,
+      var(--accent) 30%,
+      transparent 50%,
+      var(--primary) 80%,
+      transparent 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.65;
+  transition: opacity 0.3s ease;
+  animation: borderGlowSpin 5s linear infinite;
+  z-index: 1;
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+.glass-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Glassmorphism for Modals */
+.glass-card.modal {
+  background: rgba(255, 255, 255, 0.35) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+}
+
+body.dark-blue .glass-card.modal,
+body.dark-yellow .glass-card.modal {
+  background: rgba(10, 20, 38, 0.45) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Button Action styles & No-rotate override */
+.btn-card-action.no-rotate:hover {
+  transform: scale(1.1) !important;
+}
+
+/* 100% WIDTH CONTAINER CONFIGURATION (AS REQUESTED) */
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+/* CUSTOM BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 8px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--text-inverse);
+  box-shadow: 0 4px 14px var(--primary-glow);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--primary-glow);
+}
+
+.btn.btn-primary.hero-btn {
+  background-color: #0081de8c;
+  color: #ffffff;
+  backdrop-filter: blur(0px);
+}
+
+.btn.btn-primary.hero-btn:hover {
+  background-color: #0081deb3;
+  color: #ffffff;
+}
+
+/* Yellow Button Styles for Booking widget */
+.btn-yellow {
+  background-color: hsl(45deg 100% 50% / 78%);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 14px var(--yellow-btn-glow);
+}
+
+.btn-yellow:hover {
+  background-color: var(--yellow-btn-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--yellow-btn-glow);
+}
+
+.btn-yellow:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--text-inverse);
+  backdrop-filter: blur(1.1px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--text-heading);
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ACCENTS & HOVERS */
+.hover-zoom-img {
+  overflow: hidden;
+}
+
+.hover-zoom-img img {
+  transition: transform 0.5s ease;
+}
+
+.hover-zoom-img:hover img {
+  transform: scale(1.06);
+}
+
+.glow-blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-radius: 50%;
+  background: radial-gradient(circle, hsla(var(--hue-primary), 90%, 40%, 0.06) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ACCORDION/COLLAPSE ANIMATION */
+.accordion-content {
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* ACTIVITIES PILLS */
+.activities-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.activities-container::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: var(--radius-full);
+}
+
+.activity-pill:hover {
+  border-color: var(--primary) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.activity-pill.active {
+  border-color: var(--primary) !important;
+  box-shadow: 0 4px 10px var(--primary-glow) !important;
+}
+
+/* MICRO-ANIMATIONS AND SUBTLETIES */
+
+/* 1. Pulse FOMO & Pinging Dot */
+.pulse-fomo {
+  animation: fomoPulse 2s infinite ease-in-out;
+}
+
+@keyframes fomoPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.4);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.ping-dot {
+  position: relative;
+  display: inline-block;
+}
+
+.ping-dot::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: inherit;
+  animation: dotPing 1.5s infinite ease-out;
+}
+
+@keyframes dotPing {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+/* 2. Weather Widget Icon Animations */
+.weather-icon-pulse {
+  animation: weatherFloat 4s ease-in-out infinite;
+}
+
+@keyframes weatherFloat {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* 3. Flexible dates selection interactions */
+.flex-date-row {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.flex-date-row:hover {
+  transform: translateX(4px);
+  border-color: #10b981 !important;
+  background-color: rgba(16, 185, 129, 0.03) !important;
+}
+
+/* 4. Bounce/Hover State animations for Reservation CTA Buttons */
+.animate-bounce-on-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-bounce-on-hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-25deg);
+  transition: 0.75s;
+  opacity: 0;
+}
+
+.animate-bounce-on-hover:hover::after {
+  opacity: 1;
+  left: 125%;
+}
+
+.animate-bounce-on-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--yellow-btn-glow) !important;
+}
+
+/* 5. Wishlist heart bounce interaction */
+.wishlist-detail-btn:hover svg {
+  transform: scale(1.25);
+  filter: drop-shadow(0 2px 6px rgba(239, 68, 68, 0.3));
+}
+
+/* 6. Modal Fade-in and scale zoom entry */
+@keyframes scale-up-fade {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* 7. Hover effects for dropdowns/selectors in header */
+.currency-selector:hover,
+.language-selector:hover {
+  transform: scale(1.02);
+  border-color: var(--primary) !important;
+}
+
+/* Pulse badge details */
+.pulse-badge {
+  animation: textPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes textPulse {
+
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+
+  50% {
+    opacity: 1;
+    color: var(--accent);
+  }
+}
+
+/* RESPONSIVE UTILITIES */
+@media (max-width: 768px) {
+  :root {
+    --nav-padding-x: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --nav-padding-x: 16px;
+  }
+
+  .container {
+    padding: 0 16px !important;
+  }
+
+  .mobile-stack-flex {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .mobile-stack-flex-align-start {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .mobile-stack-flex>*,
+  .mobile-stack-flex-align-start>* {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .modal-responsive-card {
+    width: calc(100% - 24px) !important;
+    margin: 12px !important;
+    max-height: 92vh !important;
+  }
+
+  .mobile-hide {
+    display: none !important;
+  }
+}
+
+/* Horizontal scrolling for tab navigation on small screens */
+.tabs-scrollable {
+  display: flex !important;
+  overflow-x: auto !important;
+  white-space: nowrap !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.tabs-scrollable::-webkit-scrollbar {
+  height: 0px !important;
+  background: transparent !important;
+}
+
+.tabs-scrollable>* {
+  flex-shrink: 0 !important;
+}
+
+/* CUSTOM DATE INPUT STYLING */
+.custom-date-input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  /* Make the calendar icon yellow to match var(--secondary) */
+  filter: invert(0.8) sepia(1) saturate(10) hue-rotate(360deg);
+  opacity: 0.85;
+  transition: all 0.2s ease;
+}
+
+.custom-date-input::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.custom-date-input:focus {
+  border-color: var(--secondary) !important;
+  box-shadow: 0 0 0 2px rgba(255, 204, 0, 0.2);
+}
+
+/* MARQUEE COMPONENT */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 16px 0;
+  background-color: var(--bg-surface-glass);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-sm);
+  margin-top: 30px;
+}
+
+.marquee-content {
+  display: inline-flex;
+  gap: 30px;
+  animation: scrollMarquee 35s linear infinite;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--bg-main);
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  width: 280px;
+  white-space: normal;
+}
+
+.marquee-avatar {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--text-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   INNOVATIVE & COMPETITIVE FEATURES STYLING
+   ========================================================================== */
+
+/* 1. Availability Calendar */
+.availability-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-top: 15px;
+}
+
+.calendar-header {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  padding-bottom: 4px;
+}
+
+.calendar-cell {
+  aspect-ratio: 1.1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: rgba(255, 255, 255, 0.02);
+  position: relative;
+}
+
+.calendar-cell:not(.booked-out):hover {
+  background-color: var(--border-color);
+  transform: translateY(-2px);
+}
+
+.calendar-cell.available {
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.calendar-cell.low-occupancy {
+  border-color: rgba(234, 179, 8, 0.4);
+}
+
+.calendar-cell.booked-out {
+  opacity: 0.25;
+  cursor: not-allowed;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.calendar-cell.selected {
+  background-color: var(--secondary) !important;
+  color: #000000 !important;
+  border-color: var(--secondary) !important;
+  box-shadow: 0 4px 12px var(--secondary-glow);
+}
+
+.calendar-price-tag {
+  font-size: 0.55rem;
+  font-weight: 700;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+/* 2. Boarding Pass Voucher */
+.boarding-pass {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  font-family: var(--font-title);
+  color: var(--text-heading);
+  position: relative;
+  animation: scale-up-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.boarding-pass-header {
+  background: linear-gradient(135deg, var(--topbar-bg) 0%, var(--primary) 100%);
+  color: #ffffff;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.boarding-pass-body {
+  padding: 28px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 20px;
+}
+
+.boarding-pass-footer {
+  border-top: 2px dashed var(--border-color);
+  padding: 24px;
+  background-color: rgba(0, 0, 0, 0.02);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.boarding-pass-footer::before,
+.boarding-pass-footer::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--bg-main);
+  z-index: 10;
+}
+
+.boarding-pass-footer::before {
+  left: -11px;
+}
+
+.boarding-pass-footer::after {
+  right: -11px;
+}
+
+/* 3. Tour Comparator Drawer */
+.compare-drawer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-color);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.12);
+  z-index: 999;
+  padding: 16px 48px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(100%);
+}
+
+.compare-drawer.open {
+  transform: translateY(0);
+}
+
+/* 4. Live Tour Tracker & SVG Map Animation */
+.tracker-route-line {
+  stroke-dasharray: 8, 4;
+  animation: routeMove 20s linear infinite;
+}
+
+@keyframes routeMove {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+.tracker-pulse-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tracker-pulse-ring {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--secondary);
+  border-radius: 50%;
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  animation: pulseRing 1.8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.8;
+  }
+
+  75%,
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* 5. Reels player styling */
+.reel-modal-container {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: scale-up-fade 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reel-phone-wrapper {
+  width: 375px;
+  height: 85vh;
+  max-height: 720px;
+  border-radius: 36px;
+  border: 10px solid #1a1a1a;
+  overflow: hidden;
+  background-color: #000000;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 480px) {
+  .reel-phone-wrapper {
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+    border: none;
+  }
+}
+
+.reel-video-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.reel-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reel-overlay-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+
+.reel-actions-column {
+  position: absolute;
+  right: 16px;
+  bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 20;
+}
+
+.reel-action-btn {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reel-action-btn:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   INTERACTIVE MAP CUSTOM STYLES (GETYOURGUIDE STYLE & VIBE MODE)
+   ========================================================================== */
+
+/* Leaflet container resets */
+.map-view .leaflet-container {
+  font-family: var(--font-body);
+}
+
+/* Capsule design for the pins */
+.custom-map-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  color: var(--text-heading);
+  font-family: var(--font-title);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.custom-map-pin:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+/* Active Highlight Style: High-contrast (black/inverse bg) */
+.custom-map-pin.pin-active {
+  background-color: var(--text-heading);
+  color: var(--bg-surface) !important;
+  border-color: var(--text-heading);
+  transform: scale(1.15) translateY(-4px);
+  z-index: 99999 !important;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Inside container formatting */
+.pin-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  height: 100%;
+  padding: 0 4px;
+}
+
+.vibe-svg {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Vibe classes */
+.custom-map-pin.vibe-pin-adventure {
+  background-color: #ef4444;
+  /* Rojo adrenalina */
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+.custom-map-pin.vibe-pin-relax {
+  background-color: #3b82f6;
+  /* Azul relax */
+  color: #ffffff;
+  border-color: #3b82f6;
+}
+
+.custom-map-pin.vibe-pin-culture {
+  background-color: #8b5cf6;
+  /* Violeta cultura */
+  color: #ffffff;
+  border-color: #8b5cf6;
+}
+
+.custom-map-pin.vibe-pin-family {
+  background-color: #10b981;
+  /* Verde familiar */
+  color: #ffffff;
+  border-color: #10b981;
+}
+
+.text-slate-950 {
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+/* Vibe Hover states: darker colors */
+.custom-map-pin.vibe-pin-adventure.pin-active {
+  background-color: #dc2626;
+  border-color: #b91c1c;
+  color: #ffffff !important;
+}
+
+.custom-map-pin.vibe-pin-relax.pin-active {
+  background-color: #2563eb;
+  border-color: #1d4ed8;
+  color: #ffffff !important;
+}
+
+.custom-map-pin.vibe-pin-culture.pin-active {
+  background-color: #7c3aed;
+  border-color: #6d28d9;
+  color: #ffffff !important;
+}
+
+.custom-map-pin.vibe-pin-family.pin-active {
+  background-color: #059669;
+  border-color: #047857;
+  color: #ffffff !important;
+}
+
+/* Float controls on Map */
+.map-floating-overlay {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  gap: 12px;
+}
+
+.map-control-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  pointer-events: auto;
+  transition: all 0.3s ease;
+}
+
+body.dark-blue .map-control-card,
+body.dark-yellow .map-control-card,
+body.theme-nature-dark .map-control-card {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-color: var(--border-color);
+}
+
+/* Custom Styled Switch / Checkbox */
+.map-switch-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.map-switch-input {
+  display: none;
+}
+
+.map-switch-slider {
+  width: 36px;
+  height: 20px;
+  background-color: var(--border-color);
+  border-radius: var(--radius-full);
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.map-switch-slider::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--bg-surface);
+  top: 3px;
+  left: 3px;
+  transition: transform 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.map-switch-input:checked+.map-switch-slider {
+  background-color: var(--primary);
+}
+
+.map-switch-input:checked+.map-switch-slider::before {
+  transform: translateX(16px);
+}
+
+/* Mode toggles (Buttons group) */
+.mode-toggle-group {
+  display: flex;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  padding: 3px;
+  gap: 2px;
+  pointer-events: auto;
+}
+
+body.dark-blue .mode-toggle-group,
+body.dark-yellow .mode-toggle-group,
+body.theme-nature-dark .mode-toggle-group {
+  background: rgba(30, 41, 59, 0.7);
+}
+
+.mode-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-title);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mode-toggle-btn.active {
+  background: var(--primary);
+  color: var(--text-inverse) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+.mode-toggle-btn:not(.active):hover {
+  color: var(--text-heading);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body.dark-blue .mode-toggle-btn:not(.active):hover,
+body.dark-yellow .mode-toggle-btn:not(.active):hover,
+body.theme-nature-dark .mode-toggle-btn:not(.active):hover {
+  color: var(--text-heading);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Vibe Legend Card */
+.map-legend-card {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  z-index: 1000;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 10px 14px;
+  pointer-events: auto;
+  font-family: var(--font-body);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 130px;
+}
+
+body.dark-blue .map-legend-card,
+body.dark-yellow .map-legend-card,
+body.theme-nature-dark .map-legend-card {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-color: var(--border-color);
+}
+
+.legend-title {
+  font-weight: 800;
+  font-family: var(--font-title);
+  color: var(--text-heading);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.legend-color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Leaflet default UI overrides to match style */
+.map-view .leaflet-bar {
+  border: 1px solid var(--border-color) !important;
+  box-shadow: var(--shadow-md) !important;
+  border-radius: var(--radius-sm) !important;
+  overflow: hidden;
+}
+
+.map-view .leaflet-bar a {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-heading) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  transition: background-color 0.2s ease;
+}
+
+.map-view .leaflet-bar a:hover {
+  background-color: var(--bg-main) !important;
+}
+
+/* Map popup styled to match */
+.map-view .custom-popup .leaflet-popup-content-wrapper {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 4px;
+}
+
+body.dark-blue .map-view .custom-popup .leaflet-popup-content-wrapper,
+body.dark-yellow .map-view .custom-popup .leaflet-popup-content-wrapper,
+body.theme-nature-dark .map-view .custom-popup .leaflet-popup-content-wrapper {
+  background: hsl(var(--hue-base), 40%, 9%);
+  border-color: var(--border-color);
+}
+
+.map-view .custom-popup .leaflet-popup-content {
+  margin: 8px 10px !important;
+}
+
+.map-view .custom-popup .leaflet-popup-tip {
+  background: var(--bg-surface);
+  border-left: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+body.dark-blue .map-view .custom-popup .leaflet-popup-tip,
+body.dark-yellow .map-view .custom-popup .leaflet-popup-tip,
+body.theme-nature-dark .map-view .custom-popup .leaflet-popup-tip {
+  background: hsl(var(--hue-base), 40%, 9%);
+  border-color: var(--border-color);
+}
+
+/* ==========================================================================
+   SATCOM TACTICAL ADMIN - BuscaTours B2B
+   Estilo: dark-mode táctico, scrollbars sutiles, glassmorphism, badges
+   ========================================================================== */
+
+/* Wrapper scope - solo aplica al admin */
+.satcom-admin {
+  background: var(--bg-main);
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--text-main);
+}
+
+/* Scrollbar táctico 6px */
+.satcom-admin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.satcom-admin::-webkit-scrollbar-track {
+  background: #0a0f1a;
+}
+
+.satcom-admin::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.satcom-admin::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Header admin bar */
+.satcom-admin .admin-header {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: var(--topbar-bg-glass);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Tab navigation buttons */
+.admin-tab {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.admin-tab.active {
+  background: var(--primary);
+  color: #000;
+}
+
+.admin-tab:not(.active) {
+  background: transparent;
+  color: var(--text-heading);
+}
+
+.admin-tab:not(.active):hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* KPI Dashboard cards */
+.kpi-card {
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kpi-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-md);
+}
+
+/* Badges de estado SATCOM */
+.badge-satcom {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-published {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid #10b981;
+  color: #10b981;
+}
+
+.badge-draft {
+  background: rgba(234, 179, 8, 0.15);
+  border: 1px solid #eab308;
+  color: #eab308;
+}
+
+.badge-pending {
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid #3b82f6;
+  color: #3b82f6;
+}
+
+.badge-conflict {
+  background: rgba(244, 63, 94, 0.15);
+  border: 1px solid #f43f5e;
+  color: #f43f5e;
+}
+
+.badge-archived {
+  background: rgba(156, 163, 175, 0.15);
+  border: 1px solid #9ca3af;
+  color: #9ca3af;
+}
+
+/* Status indicator dots */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-dot.online {
+  background: #10b981;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
+}
+
+.status-dot.offline {
+  background: #6b7280;
+}
+
+.status-dot.conflict {
+  background: #f43f5e;
+  animation: dotPing 1.5s infinite ease-out;
+}
+
+/* Glass card admin override */
+.satcom-admin .glass-card {
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+}
+
+.satcom-admin .glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Telemetry panel card */
+.telemetry-card {
+  padding: 16px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Form inputs admin */
+.satcom-admin input,
+.satcom-admin select,
+.satcom-admin textarea {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: var(--text-heading);
+  font-size: 0.85rem;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.satcom-admin input:focus,
+.satcom-admin select:focus,
+.satcom-admin textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(234, 179, 8, 0.15);
+}
+
+/* Button primary admin */
+.satcom-admin .btn-admin-primary {
+  background: var(--primary);
+  color: #000;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  transition: all 0.15s ease;
+}
+
+.satcom-admin .btn-admin-primary:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+/* Button ghost admin */
+.satcom-admin .btn-admin-ghost {
+  background: transparent;
+  color: var(--text-heading);
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  transition: all 0.15s ease;
+}
+
+.satcom-admin .btn-admin-ghost:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Animaciones de telemetría */
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+.animate-pulse-ring {
+  animation: pulseRing 2s infinite;
+}
+
+.animate-pulse-dot {
+  animation: dotPing 1.5s infinite ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Grid responsive admin */
+.admin-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.admin-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+
+  .admin-grid-2,
+  .admin-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Section divider admin */
+.admin-divider {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+
+/* Table admin styles */
+.satcom-admin table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.satcom-admin table th {
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.satcom-admin table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+}
+
+.satcom-admin table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* CIRCULAR GLASS BUTTON SYSTEM */
+.btn-circular-glass {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  backdrop-filter: blur(1.1px);
+  padding: 0;
+  outline: none;
+}
+
+.btn-circular-glass.btn-md {
+  width: 34px;
+  height: 34px;
+}
+
+.btn-circular-glass.btn-lg {
+  width: 40px;
+  height: 40px;
+}
+
+.btn-circular-glass.btn-blue-glass {
+  background-color: rgba(31, 162, 249, 0.21);
+  border: none;
+  color: var(--primary);
+}
+
+.btn-circular-glass.btn-active-compare {
+  background-color: var(--secondary);
+  border: none;
+  color: #000000;
+  box-shadow: 0 0 12px var(--secondary-glow);
+}
+
+.btn-circular-glass.btn-card-action:hover {
+  background-color: var(--primary) !important;
+  color: var(--text-inverse) !important;
+  transform: scale(1.1) rotate(-45deg);
+}
+
+.btn-circular-glass.btn-card-action.no-rotate:hover {
+  transform: scale(1.1) !important;
+}
+
+.btn-circular-glass.btn-card-action:hover .arrow-icon {
+  transform: translate(1px, -1px);
+}
+
+/* Destinations specific hover */
+.destination-card:hover .dest-arrow-icon {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--text-inverse) !important;
+  transform: rotate(45deg);
+}
+
+/* ==========================================================================
+   ADMIN BUTTONS BORDER-RADIUS
+   ========================================================================== */
+#admin-view button:not(.rounded-full):not([class*="rounded-full"]):not(.btn-circular-glass),
+#portal-view button:not(.rounded-full):not([class*="rounded-full"]):not(.btn-circular-glass),
+#main-app-container button:not(.rounded-full):not([class*="rounded-full"]):not(.btn-circular-glass) {
+  border-radius: 4px !important;
+}
+
+/* ==========================================================================
+   ADMIN BUTTON SHADOWS (USER SPECIFICATION)
+   ========================================================================== */
+
+/* 1. Default shadow style (Yellow/Amber glow) for all buttons in Admin and Portal */
+#admin-view button,
+#admin-view .btn,
+#portal-view button,
+#portal-view .btn {
+  box-shadow: 0 4px 14px var(--yellow-btn-glow) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. Red / Rose / Danger buttons (e.g. Delete, Cancel, Logout) */
+#admin-view button[class*="bg-rose-"],
+#admin-view button[class*="bg-red-"],
+#admin-view button[class*="hover:bg-rose-"],
+#admin-view button[class*="hover:bg-red-"],
+#admin-view button[class*="text-rose-"],
+#admin-view button[class*="border-rose-"],
+#bt-mobile-drawer button[class*="text-rose-"],
+#bt-sidebar button[class*="text-rose-"] {
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.35) !important;
+}
+
+/* 3. Blue / Sky / Telemetry buttons */
+#admin-view button[class*="bg-blue-"],
+#admin-view button[class*="bg-sky-"],
+#admin-view button[class*="hover:bg-blue-"],
+#admin-view button[class*="hover:bg-sky-"] {
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35) !important;
+}
+
+/* 4. Emerald / Green / Success buttons */
+#admin-view button[class*="bg-emerald-"],
+#admin-view button[class*="bg-green-"],
+#admin-view button[class*="hover:bg-emerald-"],
+#admin-view button[class*="hover:bg-green-"] {
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35) !important;
+}
+
+/* 5. Neutral / Gray / Glass / Outline / Slate buttons */
+#admin-view button[class*="bg-slate-"],
+#admin-view button[class*="bg-white/"],
+#admin-view button[class*="hover:bg-slate-"],
+#admin-view button[class*="hover:bg-white/"],
+#admin-view button[class*="border-white/5"],
+#admin-view button.bg-slate-900,
+#admin-view button.bg-white\/5,
+  #admin-view button:not([class*="bg-amber-"]):not([class*="bg-yellow-"]):not([class*="bg-rose-"]):not([class*="bg-red-"]):not([class*="bg-blue-"]):not([class*="bg-sky-"]):not([class*="bg-emerald-"]):not([class*="bg-green-"]) {
+    box-shadow: none !important;
+  }
+
+  /* Remove box-shadows from sidebar navigation buttons (user request) */
+  #bt-sidebar nav button {
+    box-shadow: none !important;
+  }
+
+/* CUSTOM CLOSE BUTTONS STYLING */
+.lucide-x {
+  color: hsl(160.12deg 84.08% 39.41%) !important;
+  stroke: hsl(160.12deg 84.08% 39.41%) !important;
+  stroke-width: 2.8px !important;
+}
