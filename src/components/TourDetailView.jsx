@@ -248,17 +248,17 @@ export default function TourDetailView({
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px" }}>
                 <Calendar size={24} style={{ color: "var(--primary)" }} />
                 <span style={{ fontSize: "0.75rem", color: "var(--text-muted)", fontWeight: 600 }}>{tText('disponibilidad', 'DISPONIBILIDAD')}</span>
-                <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--text-heading)" }}>{tText('todoElAno', 'Todo el Año')}</span>
+                <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--text-heading)" }}>{tour.seasonality?.length ? tour.seasonality.join(', ') : tText('todoElAno', 'Todo el Año')}</span>
               </div>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px" }}>
                 <Users size={24} style={{ color: "var(--primary)" }} />
                 <span style={{ fontSize: "0.75rem", color: "var(--text-muted)", fontWeight: 600 }}>{tText('edadMinima', 'EDAD MÍNIMA')}</span>
-                <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--text-heading)" }}>{tText('edad12', '12+ años')}</span>
+                <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--text-heading)" }}>{tour.minAge ? `${tour.minAge}+ años` : tText('edad12', '12+ años')}</span>
               </div>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px" }}>
                 <ShieldAlert size={24} style={{ color: "var(--primary)" }} />
                 <span style={{ fontSize: "0.75rem", color: "var(--text-muted)", fontWeight: 600 }}>{tText('pasajerosMax', 'PASAJEROS MÁX.')}</span>
-                <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--text-heading)" }}>{tText('pax15', '15 personas')}</span>
+                <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--text-heading)" }}>{tour.maxPassengers ? `${tour.maxPassengers} personas` : tText('pax15', '15 personas')}</span>
               </div>
             </div>
 
@@ -374,10 +374,9 @@ export default function TourDetailView({
                         <Check size={18} style={{ color: "var(--accent)" }} /> {tText('precioIncluye', 'El Precio Incluye')}
                       </h4>
                       <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "10px", fontSize: "0.9rem" }}>
-                         <li style={{ display: "flex", gap: "8px", alignItems: "center" }}><Check size={14} style={{ color: "var(--primary)" }} /> {tText('tdCertGuide', 'Guía local certificado (Español/Inglés)')}</li>
-                        <li style={{ display: "flex", gap: "8px", alignItems: "center" }}><Check size={14} style={{ color: "var(--primary)" }} /> {tText('tdIncludeTransport', 'Transporte privado ida y vuelta')}</li>
-                        <li style={{ display: "flex", gap: "8px", alignItems: "center" }}><Check size={14} style={{ color: "var(--primary)" }} /> {tText('tdIncludeLunch', 'Box Lunch premium con hidratación')}</li>
-                        <li style={{ display: "flex", gap: "8px", alignItems: "center" }}><Check size={14} style={{ color: "var(--primary)" }} /> {tText('tdIncludeInsurance', 'Seguros de viaje contra accidentes')}</li>
+                        {(tour.includes?.length ? tour.includes : [tText('tdCertGuide', 'Guía local certificado (Español/Inglés)'), tText('tdIncludeTransport', 'Transporte privado ida y vuelta'), tText('tdIncludeLunch', 'Box Lunch premium con hidratación'), tText('tdIncludeInsurance', 'Seguros de viaje contra accidentes')]).map((item, i) => (
+                          <li key={i} style={{ display: "flex", gap: "8px", alignItems: "center" }}><Check size={14} style={{ color: "var(--primary)" }} /> {item}</li>
+                        ))}
                       </ul>
                     </div>
 
@@ -387,10 +386,9 @@ export default function TourDetailView({
                         <X size={18} style={{ color: "var(--accent)" }} /> {tText('precioNoIncluye', 'El Precio No Incluye')}
                       </h4>
                       <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "10px", fontSize: "0.9rem" }}>
-                        <li style={{ display: "flex", gap: "8px", alignItems: "center" }}><X size={14} style={{ color: "var(--accent)" }} /> {tText('tdExcludeParks', 'Entradas a Parques Nacionales')}</li>
-                        <li style={{ display: "flex", gap: "8px", alignItems: "center" }}><X size={14} style={{ color: "var(--accent)" }} /> {tText('tdExcludeTips', 'Propinas para el guía / chofer')}</li>
-                        <li style={{ display: "flex", gap: "8px", alignItems: "center" }}><X size={14} style={{ color: "var(--accent)" }} /> {tText('tdExcludeGear', 'Equipamiento de montaña personal')}</li>
-                        <li style={{ display: "flex", gap: "8px", alignItems: "center" }}><X size={14} style={{ color: "var(--accent)" }} /> {tText('tdExcludeSnacks', 'Snacks adicionales en el trayecto')}</li>
+                        {(tour.excludes?.length ? tour.excludes : [tText('tdExcludeParks', 'Entradas a Parques Nacionales'), tText('tdExcludeTips', 'Propinas para el guía / chofer'), tText('tdExcludeGear', 'Equipamiento de montaña personal'), tText('tdExcludeSnacks', 'Snacks adicionales en el trayecto')]).map((item, i) => (
+                          <li key={i} style={{ display: "flex", gap: "8px", alignItems: "center" }}><X size={14} style={{ color: "var(--accent)" }} /> {item}</li>
+                        ))}
                       </ul>
                     </div>
                   </div>
@@ -606,7 +604,7 @@ export default function TourDetailView({
                   >
                     <iframe
                       style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
-                      src="https://www.youtube.com/embed/xvFZjo5PgG0?autoplay=1&mute=1&rel=0&modestbranding=1"
+                      src={tour.trailerUrl || "https://www.youtube.com/embed/xvFZjo5PgG0?autoplay=1&mute=1&rel=0&modestbranding=1"}
                       title={`Trailer: ${tour.title}`}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen

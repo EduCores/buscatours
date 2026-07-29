@@ -1,8 +1,9 @@
 import { Client } from 'pg';
-const connectionString = process.env.DATABASE_URL || 'postgresql://postgres:postgres@127.0.0.1:5432/buscatours-e0816-database';
+const connectionString = process.env.DATABASE_URL || 'postgresql://postgres:postgres@127.0.0.1:5433/buscatours-e0816-database';
 const client = new Client({ connectionString, ssl: false });
 
 const USERS = [
+  { id: '11111111-1111-4111-8111-111111111111', email: 'admin@buscatours.com', name: 'Busca Tours', role: 'PLATFORM_ADMIN', description: 'Dueño de la plataforma' },
   { id: '22222222-2222-4222-8222-222222222222', email: 'operador1@buscatours.com', name: 'Andes Expeditions', role: 'OPERATOR', description: 'Operador turístico - Andes' },
   { id: '33333333-3333-4333-8333-333333333333', email: 'operador2@buscatours.com', name: 'Patagonia Wild Outdoors', role: 'OPERATOR', description: 'Operador turístico - Patagonia' },
   { id: '44444444-4444-4444-8444-444444444444', email: 'operador3@buscatours.com', name: 'Amazon Green Travel', role: 'OPERATOR', description: 'Operador turístico - Amazonia' },

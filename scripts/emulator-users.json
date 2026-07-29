@@ -4,27 +4,48 @@
     "email": "admin@buscatours.com",
     "password": "admin123",
     "emailVerified": true,
-    "displayName": "Administrador Plataforma"
+    "displayName": "Busca Tours"
   },
   {
     "localId": "uid-operador1",
     "email": "operador1@buscatours.com",
-    "password": "admin123",
+    "password": "op123456",
     "emailVerified": true,
-    "displayName": "Operador 1"
+    "displayName": "Andes Expeditions"
+  },
+  {
+    "localId": "uid-operador2",
+    "email": "operador2@buscatours.com",
+    "password": "op123456",
+    "emailVerified": true,
+    "displayName": "Patagonia Wild Outdoors"
+  },
+  {
+    "localId": "uid-operador3",
+    "email": "operador3@buscatours.com",
+    "password": "op123456",
+    "emailVerified": true,
+    "displayName": "Amazon Green Travel"
+  },
+  {
+    "localId": "uid-operador4",
+    "email": "operador4@buscatours.com",
+    "password": "op123456",
+    "emailVerified": true,
+    "displayName": "Maya Tours S.A."
   },
   {
     "localId": "uid-editor",
     "email": "editor@buscatours.com",
-    "password": "admin123",
+    "password": "edit123",
     "emailVerified": true,
-    "displayName": "Editor Tours"
+    "displayName": "Admin de Contenido"
   },
   {
     "localId": "uid-cliente",
     "email": "cliente@buscatours.com",
-    "password": "admin123",
+    "password": "client123",
     "emailVerified": true,
-    "displayName": "Cliente"
+    "displayName": "Cliente Frecuente"
   }
 ]

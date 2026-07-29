@@ -60,16 +60,32 @@ export default function ToursManagement({
   const [relax, setRelax] = useState(50);
   const [cultura, setCultura] = useState(50);
   const [familia, setFamilia] = useState(50);
-  const [destinationCountry, setDestinationCountry] = useState<'Chile' | 'Perú' | 'Colombia' | 'México' | 'Argentina' | 'Ecuador' | 'Bolivia' | 'Brasil'>('Perú');
+  const [destinationCountry, setDestinationCountry] = useState<Tour['destinationCountry']>('Perú');
   const [lat, setLat] = useState(-13.163);
   const [lng, setLng] = useState(-72.545);
   const [heroImagesText, setHeroImagesText] = useState('');
   const [bgPosition, setBgPosition] = useState<Tour['bgPosition']>('center');
   const [status, setStatus] = useState<Tour['status']>('DRAFT');
 
+  // Professional tour details
+  const [minAge, setMinAge] = useState(12);
+  const [maxPassengers, setMaxPassengers] = useState(15);
+  const [difficulty, setDifficulty] = useState('MODERATE');
+  const [seasonality, setSeasonality] = useState('');
+  const [trailerUrl, setTrailerUrl] = useState('');
+  const [galleryImagesText, setGalleryImagesText] = useState('');
+  const [includesText, setIncludesText] = useState('');
+  const [excludesText, setExcludesText] = useState('');
+  const [requirementsText, setRequirementsText] = useState('');
+  const [cancellationPolicy, setCancellationPolicy] = useState('');
+  const [pickupInfo, setPickupInfo] = useState('');
+  const [languagesText, setLanguagesText] = useState('');
+  const [groupType, setGroupType] = useState('SHARED');
+  const [itineraryDays, setItineraryDays] = useState<Array<{ title: string; content: string }>>([{ title: '', content: '' }]);
+
   // Multilingual state (ES source + EN/PT auto-translated)
   const [activeLang, setActiveLang] = useState<string>('es');
-  const [translations, setTranslations] = useState<Record<string, { title: string; location: string; description: string }>>({
+  const [translations, setTranslations] = useState<Record<string, Record<string, string>>>({
     es: { title: '', location: '', description: '' },
     en: { title: '', location: '', description: '' },
     pt: { title: '', location: '', description: '' },
@@ -160,6 +176,25 @@ export default function ToursManagement({
       pt: (initData?.translations?.pt as Record<string, string>) || {},
     });
 
+    setMinAge(initData?.minAge || 12);
+    setMaxPassengers(initData?.maxPassengers || 15);
+    setDifficulty(initData?.difficulty || 'MODERATE');
+    setSeasonality(Array.isArray(initData?.seasonality) ? initData.seasonality.join(', ') : '');
+    setTrailerUrl(initData?.trailerUrl || '');
+    setGalleryImagesText(Array.isArray(initData?.galleryImages) ? initData.galleryImages.join(', ') : '');
+    setIncludesText(Array.isArray(initData?.includes) ? initData.includes.join('\n') : '');
+    setExcludesText(Array.isArray(initData?.excludes) ? initData.excludes.join('\n') : '');
+    setRequirementsText(Array.isArray(initData?.requirements) ? initData.requirements.join('\n') : '');
+    setCancellationPolicy(initData?.cancellationPolicy || '');
+    setPickupInfo(initData?.pickupInfo || '');
+    setLanguagesText(Array.isArray(initData?.languages) ? initData.languages.join(', ') : '');
+    setGroupType(initData?.groupType || 'SHARED');
+    setItineraryDays(
+      Array.isArray(initData?.itinerary) && initData.itinerary.length > 0
+        ? initData.itinerary.map((d: any) => ({ title: d.title || '', content: d.content || '' }))
+        : [{ title: '', content: '' }]
+    );
+
     if (currentRole === 'operator') {
       setStatus('DRAFT');
     } else {
@@ -174,7 +209,10 @@ export default function ToursManagement({
     setImage, setOneDay, setPopular, setGuideId, setVehicleId, setOperator,
     setAdrenalina, setRelax, setCultura, setFamilia, setDestinationCountry,
     setLat, setLng, setHeroImagesText, setBgPosition, setStatus, setIsFormOpen,
-    setActiveLang, setTranslations
+    setActiveLang, setTranslations,
+    setMinAge, setMaxPassengers, setDifficulty, setSeasonality, setTrailerUrl,
+    setGalleryImagesText, setIncludesText, setExcludesText, setRequirementsText,
+    setCancellationPolicy, setPickupInfo, setLanguagesText, setGroupType, setItineraryDays
   ]);
 
   // Load prefills (e.g. from AI)
@@ -213,6 +251,24 @@ export default function ToursManagement({
     setHeroImagesText(tour.heroImages?.join(', ') || tour.image);
     setBgPosition(tour.bgPosition);
     setStatus(tour.status);
+    setMinAge(tour.minAge || 12);
+    setMaxPassengers(tour.maxPassengers || 15);
+    setDifficulty(tour.difficulty || 'MODERATE');
+    setSeasonality(Array.isArray(tour.seasonality) ? tour.seasonality.join(', ') : '');
+    setTrailerUrl(tour.trailerUrl || '');
+    setGalleryImagesText(Array.isArray(tour.galleryImages) ? tour.galleryImages.join(', ') : '');
+    setIncludesText(Array.isArray(tour.includes) ? tour.includes.join('\n') : '');
+    setExcludesText(Array.isArray(tour.excludes) ? tour.excludes.join('\n') : '');
+    setRequirementsText(Array.isArray(tour.requirements) ? tour.requirements.join('\n') : '');
+    setCancellationPolicy(tour.cancellationPolicy || '');
+    setPickupInfo(tour.pickupInfo || '');
+    setLanguagesText(Array.isArray(tour.languages) ? tour.languages.join(', ') : '');
+    setGroupType(tour.groupType || 'SHARED');
+    setItineraryDays(
+      Array.isArray(tour.itinerary) && tour.itinerary.length > 0
+        ? tour.itinerary.map((d: any) => ({ title: d.title || '', content: d.content || '' }))
+        : [{ title: '', content: '' }]
+    );
     setActiveLang('es');
     setTranslations({
       es: { title: tour.title, location: tour.location, description: tour.description },
@@ -258,6 +314,30 @@ export default function ToursManagement({
       heroImages: heroImagesText.split(',').map(s => s.trim()).filter(s => s.length > 0),
       bgPosition,
       status,
+      // Professional tour details
+      durationDays: 1,
+      featured: false,
+      rating: 0,
+      reviewsCount: 0,
+      shortDescription: '',
+      itinerary: itineraryDays.filter(d => d.title.trim() || d.content.trim()).map(d => ({ title: d.title.trim(), content: d.content.trim() })),
+      minAge,
+      maxPassengers,
+      trailerUrl,
+      galleryImages: galleryImagesText.split(',').map(s => s.trim()).filter(s => s.length > 0),
+      mapCenterLat: lat,
+      mapCenterLng: lng,
+      mapZoom: 12,
+      difficulty,
+      seasonality: seasonality.split(',').map(s => s.trim()).filter(s => s.length > 0),
+      includes: includesText.split('\n').map(s => s.trim()).filter(s => s.length > 0),
+      excludes: excludesText.split('\n').map(s => s.trim()).filter(s => s.length > 0),
+      requirements: requirementsText.split('\n').map(s => s.trim()).filter(s => s.length > 0),
+      pickupInfo,
+      cancellationPolicy,
+      languages: languagesText.split(',').map(s => s.trim()).filter(s => s.length > 0),
+      groupType,
+      availableDates: {},
       translations: {
         es: { title, location, description },
         en: translations.en || {},
@@ -404,6 +484,226 @@ export default function ToursManagement({
                       rows={3}
                       className="w-full bg-slate-900 border border-white/5 rounded px-3.5 py-2 text-slate-200 text-xs focus:outline-none focus:border-amber-500/50 resize-none"
                     />
+                  </div>
+
+                  {/* ===== SECCIÓN: DETALLES PROFESIONALES DEL TOUR ===== */}
+                  <div className="space-y-4 pt-4 border-t border-white/5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Compass size={16} className="text-amber-500" />
+                      <h4 className="text-[11px] font-black text-amber-500 font-mono uppercase tracking-wider">Detalles Profesionales del Tour</h4>
+                    </div>
+
+                    {/* Metadata Grid */}
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-1">
+                        <label className="text-[10px] font-bold text-slate-400 font-mono">{t('toursLblMinAge', 'EDAD MÍNIMA')}</label>
+                        <input
+                          type="number"
+                          min="0"
+                          value={minAge}
+                          onChange={(e) => setMinAge(Number(e.target.value))}
+                          className="w-full bg-slate-900 border border-white/5 rounded px-3 py-2 text-slate-200 text-xs focus:outline-none focus:border-amber-500/50"
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <label className="text-[10px] font-bold text-slate-400 font-mono">{t('toursLblMaxPassengers', 'PASAJEROS MÁX.')}</label>
+                        <input
+                          type="number"
+                          min="1"
+                          value={maxPassengers}
+                          onChange={(e) => setMaxPassengers(Number(e.target.value))}
+                          className="w-full bg-slate-900 border border-white/5 rounded px-3 py-2 text-slate-200 text-xs focus:outline-none focus:border-amber-500/50"
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <label className="text-[10px] font-bold text-slate-400 font-mono">{t('toursLblDifficulty', 'DIFICULTAD')}</label>
+                        <select
+                          value={difficulty}
+                          onChange={(e) => setDifficulty(e.target.value)}
+                          className="w-full bg-slate-900 border border-white/5 rounded px-3 py-2 text-slate-300 text-xs"
+                        >
+                          <option value="EASY">Fácil</option>
+                          <option value="MODERATE">Moderada</option>
+                          <option value="CHALLENGING">Desafiante</option>
+                          <option value="HARD">Difícil</option>
+                        </select>
+                      </div>
+                      <div className="space-y-1">
+                        <label className="text-[10px] font-bold text-slate-400 font-mono">{t('toursLblGroupType', 'TIPO DE GRUPO')}</label>
+                        <select
+                          value={groupType}
+                          onChange={(e) => setGroupType(e.target.value)}
+                          className="w-full bg-slate-900 border border-white/5 rounded px-3 py-2 text-slate-300 text-xs"
+                        >
+                          <option value="SHARED">Compartido</option>
+                          <option value="PRIVATE">Privado</option>
+                          <option value="GROUP">Grupo</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    {/* Seasonality */}
+                    <div className="space-y-1">
+                      <label className="text-[10px] font-bold text-slate-400 font-mono">{t('toursLblSeasonality', 'DISPONIBILIDAD / TEMPORADA')}</label>
+                      <input
+                        type="text"
+                        value={seasonality}
+                        onChange={(e) => setSeasonality(e.target.value)}
+                        placeholder={t('tours.phSeasonality', 'Ej: Todo el Año, Verano, Invierno...')}
+                        className="w-full bg-slate-900 border border-white/5 rounded px-3.5 py-2 text-slate-200 text-xs focus:outline-none focus:border-amber-500/50"
+                      />
+                      <p className="text-[9px] text-slate-500">Separa múltiples temporadas con coma</p>
+                    </div>
+
+                    {/* Trailer URL */}
+                    <div className="space-y-1">
+                      <label className="text-[10px] font-bold text-slate-400 font-mono">{t('toursLblTrailer', 'URL DEL TRAILER (YouTube)')}</label>
+                      <input
+                        type="url"
+                        value={trailerUrl}
+                        onChange={(e) => setTrailerUrl(e.target.value)}
+                        placeholder="https://www.youtube.com/embed/..."
+                        className="w-full bg-slate-900 border border-white/5 rounded px-3.5 py-2 text-slate-200 text-xs focus:outline-none focus:border-amber-500/50"
+                      />
+                    </div>
+
+                    {/* Gallery Images */}
+                    <div className="space-y-1">
+                      <ImageUploader
+                        value={galleryImagesText}
+                        onChange={setGalleryImagesText}
+                        folder="tours"
+                        multiple
+                        recommended="1280x720 (varias)"
+                        label={t('toursLblGallery', 'GALERÍA DE FOTOS')}
+                      />
+                    </div>
+
+                    {/* Itinerary Editor */}
+                    <div className="space-y-1">
+                      <label className="text-[10px] font-bold text-slate-400 font-mono">{t('toursLblItinerary', 'ITINERARIO (DÍAS)')}</label>
+                      <div className="space-y-3">
+                        {itineraryDays.map((day, idx) => (
+                          <div key={idx} className="space-y-2 p-3 bg-slate-900/40 border border-white/5 rounded-lg">
+                            <div className="flex items-center justify-between">
+                              <span className="text-[9px] font-mono text-slate-500">DÍA {idx + 1}</span>
+                              {itineraryDays.length > 1 && (
+                                <button
+                                  type="button"
+                                  onClick={() => setItineraryDays(days => days.filter((_, i) => i !== idx))}
+                                  className="text-[9px] text-rose-400 hover:text-rose-300 font-bold"
+                                >
+                                  ✕ Quitar
+                                </button>
+                              )}
+                            </div>
+                            <input
+                              type="text"
+                              placeholder="Título del día (Ej: Día 1: Llegada y Acomodación)"
+                              value={day.title}
+                              onChange={(e) => {
+                                const newDays = [...itineraryDays];
+                                newDays[idx] = { ...newDays[idx], title: e.target.value };
+                                setItineraryDays(newDays);
+                              }}
+                              className="w-full bg-slate-900 border border-white/5 rounded px-3 py-1.5 text-slate-200 text-xs focus:outline-none focus:border-amber-500/50"
+                            />
+                            <textarea
+                              placeholder="Descripción detallada del día..."
+                              value={day.content}
+                              onChange={(e) => {
+                                const newDays = [...itineraryDays];
+                                newDays[idx] = { ...newDays[idx], content: e.target.value };
+                                setItineraryDays(newDays);
+                              }}
+                              rows={2}
+                              className="w-full bg-slate-900 border border-white/5 rounded px-3 py-1.5 text-slate-200 text-xs focus:outline-none focus:border-amber-500/50 resize-none"
+                            />
+                          </div>
+                        ))}
+                        <button
+                          type="button"
+                          onClick={() => setItineraryDays([...itineraryDays, { title: '', content: '' }])}
+                          className="w-full py-1.5 text-[10px] font-bold text-amber-400 hover:text-amber-300 border border-dashed border-white/10 rounded hover:border-amber-500/30 transition-all flex items-center justify-center gap-1"
+                        >
+                          + Agregar Día
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Includes / Excludes / Requirements */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div className="space-y-1">
+                        <label className="text-[10px] font-bold text-slate-400 font-mono">{t('toursLblIncludes', 'INCLUYE')}</label>
+                        <textarea
+                          value={includesText}
+                          onChange={(e) => setIncludesText(e.target.value)}
+                          placeholder="Guía certificado, Transporte, Seguro..."
+                          rows={3}
+                          className="w-full bg-slate-900 border border-white/5 rounded px-3 py-1.5 text-slate-200 text-xs focus:outline-none focus:border-amber-500/50 resize-none"
+                        />
+                        <p className="text-[8px] text-slate-600">Un ítem por línea</p>
+                      </div>
+                      <div className="space-y-1">
+                        <label className="text-[10px] font-bold text-slate-400 font-mono">{t('toursLblExcludes', 'NO INCLUYE')}</label>
+                        <textarea
+                          value={excludesText}
+                          onChange={(e) => setExcludesText(e.target.value)}
+                          placeholder="Entradas, Propinas, Equipamiento..."
+                          rows={3}
+                          className="w-full bg-slate-900 border border-white/5 rounded px-3 py-1.5 text-slate-200 text-xs focus:outline-none focus:border-amber-500/50 resize-none"
+                        />
+                        <p className="text-[8px] text-slate-600">Un ítem por línea</p>
+                      </div>
+                      <div className="space-y-1">
+                        <label className="text-[10px] font-bold text-slate-400 font-mono">{t('toursLblRequirements', 'REQUISITOS')}</label>
+                        <textarea
+                          value={requirementsText}
+                          onChange={(e) => setRequirementsText(e.target.value)}
+                          placeholder="Edad mínima, Ropa recomendada, Documentos..."
+                          rows={3}
+                          className="w-full bg-slate-900 border border-white/5 rounded px-3 py-1.5 text-slate-200 text-xs focus:outline-none focus:border-amber-500/50 resize-none"
+                        />
+                        <p className="text-[8px] text-slate-600">Un ítem por línea</p>
+                      </div>
+                    </div>
+
+                    {/* Cancellation Policy & Pickup Info */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-1">
+                        <label className="text-[10px] font-bold text-slate-400 font-mono">{t('toursLblCancellation', 'POLÍTICA DE CANCELACIÓN')}</label>
+                        <textarea
+                          value={cancellationPolicy}
+                          onChange={(e) => setCancellationPolicy(e.target.value)}
+                          placeholder="Cancelación gratuita hasta 48h antes..."
+                          rows={2}
+                          className="w-full bg-slate-900 border border-white/5 rounded px-3 py-1.5 text-slate-200 text-xs focus:outline-none focus:border-amber-500/50 resize-none"
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <label className="text-[10px] font-bold text-slate-400 font-mono">{t('toursLblPickup', 'INFO DE RECOJO')}</label>
+                        <textarea
+                          value={pickupInfo}
+                          onChange={(e) => setPickupInfo(e.target.value)}
+                          placeholder="Punto de encuentro: Av. Principal 123..."
+                          rows={2}
+                          className="w-full bg-slate-900 border border-white/5 rounded px-3 py-1.5 text-slate-200 text-xs focus:outline-none focus:border-amber-500/50 resize-none"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Languages */}
+                    <div className="space-y-1">
+                      <label className="text-[10px] font-bold text-slate-400 font-mono">{t('toursLblLanguages', 'IDIOMAS DEL TOUR')}</label>
+                      <input
+                        type="text"
+                        value={languagesText}
+                        onChange={(e) => setLanguagesText(e.target.value)}
+                        placeholder="Español, Inglés, Portugués..."
+                        className="w-full bg-slate-900 border border-white/5 rounded px-3.5 py-2 text-slate-200 text-xs focus:outline-none focus:border-amber-500/50"
+                      />
+                      <p className="text-[9px] text-slate-500">Separa múltiples idiomas con coma</p>
+                    </div>
                   </div>
                 </div>
             </div>

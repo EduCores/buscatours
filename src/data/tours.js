@@ -22,7 +22,34 @@ export const toursData = [
     vibeCulture: 40,
     vibeFamily: 70,
     lat: -51.2533,
-    lng: -72.9814
+    lng: -72.9814,
+    // Professional tour details
+    minAge: 12,
+    maxPassengers: 15,
+    difficulty: 'MODERATE',
+    seasonality: ['Todo el Año'],
+    trailerUrl: 'https://www.youtube.com/embed/xvFZjo5PgG0',
+    galleryImages: ['/uploads/tours/torres-del-paine-card-tour.webp'],
+    itinerary: [
+      { title: 'Día 1: Salida y Exploración Principal', content: 'Iniciamos temprano por la mañana saliendo de nuestro punto de encuentro. Nos dirigimos en transporte premium hacia el destino principal disfrutando de las vistas panorámicas. Realizaremos las caminatas principales y paradas de fotografías guiadas por nuestro experto local.' },
+      { title: 'Día 1 (Tarde): Almuerzo Patagónico y Retorno', content: 'Disfrutaremos de un Box Lunch premium en un punto panorámico. Por la tarde realizaremos las últimas exploraciones arqueológicas o de glaciares antes de emprender el viaje de regreso al punto de partida.' }
+    ],
+    includes: ['Guía local certificado (Español/Inglés)', 'Transporte privado ida y vuelta', 'Box Lunch premium con hidratación', 'Seguros de viaje contra accidentes'],
+    excludes: ['Entradas a Parques Nacionales', 'Propinas para el guía / chofer', 'Equipamiento de montaña personal', 'Snacks adicionales en el trayecto'],
+    requirements: ['Edad mínima 12 años', 'Ropa térmica recomendada', 'Documentos de identificación'],
+    cancellationPolicy: 'Cancelación gratuita hasta 48 horas antes del tour. Reembolso del 50% hasta 24 horas antes.',
+    pickupInfo: 'Punto de encuentro: Av. del Parque 123, Puerto Natales. Traslado privado incluido.',
+    languages: ['Español', 'Inglés'],
+    groupType: 'SHARED',
+    availableDates: {},
+    destinationCountry: 'Argentina',
+    heroImages: ['/uploads/tours/torres-del-paine-card-tour.webp'],
+    bgPosition: 'center',
+    status: 'PUBLISHED',
+    operator: 'Andes Expeditions',
+    guideId: 'g1',
+    vehicleId: 'v1',
+    vibeScores: { adrenalina: 75, relax: 30, cultura: 40, familia: 70 }
   },
   {
     id: 2,
@@ -47,7 +74,34 @@ export const toursData = [
     vibeCulture: 95,
     vibeFamily: 50,
     lat: -13.1631,
-    lng: -72.5450
+    lng: -72.5450,
+    // Professional tour details
+    minAge: 12,
+    maxPassengers: 15,
+    difficulty: 'CHALLENGING',
+    seasonality: ['Todo el Año'],
+    trailerUrl: 'https://www.youtube.com/embed/xvFZjo5PgG0',
+    galleryImages: ['/uploads/tours/Machu-Picchu-card-tour.webp'],
+    itinerary: [
+      { title: 'Día 1: Llegada a Cusco y Aclimatación', content: 'Recepción en el aeropuerto de Cusco. Traslado al hotel de altura. Día de aclimatación para preparar el cuerpo al nivel de altura. Cena de bienvenida con comida típica cusqueña.' },
+      { title: 'Día 2: Trekking al Camino Inca y Machu Picchu', content: 'Desayuno temprano. Iniciamos el trekking por el Camino Inca tradicional hasta la Ciudadela de Machu Picchu. Recorrido por las principales estructuras arqueológicas con nuestro guía certificado.' }
+    ],
+    includes: ['Guía local certificado (Español/Inglés)', 'Transporte privado ida y vuelta', 'Box Lunch premium con hidratación', 'Seguros de viaje contra accidentes'],
+    excludes: ['Entradas a Parques Nacionales', 'Propinas para el guía / chofer', 'Equipamiento de montaña personal', 'Snacks adicionales en el trayecto'],
+    requirements: ['Edad mínima 12 años', 'Ropa térmica recomendada', 'Documentos de identificación'],
+    cancellationPolicy: 'Cancelación gratuita hasta 48 horas antes del tour. Reembolso del 50% hasta 24 horas antes.',
+    pickupInfo: 'Punto de encuentro: Av. del Sol 456, Cusco. Traslado privado incluido.',
+    languages: ['Español', 'Inglés'],
+    groupType: 'SHARED',
+    availableDates: {},
+    destinationCountry: 'Perú',
+    heroImages: ['/uploads/tours/Machu-Picchu-card-tour.webp'],
+    bgPosition: 'center',
+    status: 'PUBLISHED',
+    operator: 'Andes Expeditions',
+    guideId: 'g2',
+    vehicleId: 'v2',
+    vibeScores: { adrenalina: 85, relax: 15, cultura: 95, familia: 50 }
   },
   {
     id: 3,

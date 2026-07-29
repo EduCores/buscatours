@@ -99,7 +99,7 @@ input Booking_Data {
   """
   ✨ `_expr` server value variant of `id` (✨ Generated from Field `Booking`.`id` of type `UUID!`)
   """
-  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  id_expr: UUID_Expr
   """
   ✨ Generated from Field `Booking`.`tourId` of type `UUID!`
   """
@@ -107,7 +107,7 @@ input Booking_Data {
   """
   ✨ `_expr` server value variant of `tourId` (✨ Generated from Field `Booking`.`tourId` of type `UUID!`)
   """
-  tourId_expr: UUID_Expr @fdc_forbiddenInVariables
+  tourId_expr: UUID_Expr
   """
   ✨ Generated from Field `Booking`.`userId` of type `String!`
   """
@@ -115,15 +115,15 @@ input Booking_Data {
   """
   ✨ `_expr` server value variant of `userId` (✨ Generated from Field `Booking`.`userId` of type `String!`)
   """
-  userId_expr: String_Expr @fdc_forbiddenInVariables
+  userId_expr: String_Expr
   """
   ✨ Generated from Field `Booking`.`tour` of type `Tour!`
   """
-  tour: Tour_Key @fdc_forbiddenInVariables
+  tour: Tour_Key
   """
   ✨ Generated from Field `Booking`.`user` of type `User!`
   """
-  user: User_Key @fdc_forbiddenInVariables
+  user: User_Key
   """
   ✨ Generated from Field `Booking`.`addons` of type `Any`
   """
@@ -131,7 +131,7 @@ input Booking_Data {
   """
   ✨ `_expr` server value variant of `addons` (✨ Generated from Field `Booking`.`addons` of type `Any`)
   """
-  addons_expr: Any_Expr @fdc_forbiddenInVariables
+  addons_expr: Any_Expr
   """
   ✨ Generated from Field `Booking`.`bookingId` of type `String!`
   """
@@ -139,7 +139,7 @@ input Booking_Data {
   """
   ✨ `_expr` server value variant of `bookingId` (✨ Generated from Field `Booking`.`bookingId` of type `String!`)
   """
-  bookingId_expr: String_Expr @fdc_forbiddenInVariables
+  bookingId_expr: String_Expr
   """
   ✨ Generated from Field `Booking`.`createdAt` of type `Timestamp!`
   """
@@ -147,15 +147,15 @@ input Booking_Data {
   """
   ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Booking`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  createdAt_expr: Timestamp_Expr
   """
   ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Booking`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  createdAt_time: Timestamp_Relative
   """
   ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Booking`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  createdAt_update: [Timestamp_Update!]
   """
   ✨ Generated from Field `Booking`.`currency` of type `String!`
   """
@@ -163,7 +163,7 @@ input Booking_Data {
   """
   ✨ `_expr` server value variant of `currency` (✨ Generated from Field `Booking`.`currency` of type `String!`)
   """
-  currency_expr: String_Expr @fdc_forbiddenInVariables
+  currency_expr: String_Expr
   """
   ✨ Generated from Field `Booking`.`date` of type `Timestamp!`
   """
@@ -171,15 +171,15 @@ input Booking_Data {
   """
   ✨ `_expr` server value variant of `date` (✨ Generated from Field `Booking`.`date` of type `Timestamp!`)
   """
-  date_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  date_expr: Timestamp_Expr
   """
   ✨ `_time` server value variant of `date` (✨ Generated from Field `Booking`.`date` of type `Timestamp!`)
   """
-  date_time: Timestamp_Relative @fdc_forbiddenInVariables
+  date_time: Timestamp_Relative
   """
   ✨ `_update` server value variant of `date` (✨ Generated from Field `Booking`.`date` of type `Timestamp!`)
   """
-  date_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  date_update: [Timestamp_Update!]
   """
   ✨ Generated from Field `Booking`.`guests` of type `Int!`
   """
@@ -187,11 +187,11 @@ input Booking_Data {
   """
   ✨ `_expr` server value variant of `guests` (✨ Generated from Field `Booking`.`guests` of type `Int!`)
   """
-  guests_expr: Int_Expr @fdc_forbiddenInVariables
+  guests_expr: Int_Expr
   """
   ✨ `_update` server value variant of `guests` (✨ Generated from Field `Booking`.`guests` of type `Int!`)
   """
-  guests_update: [Int_Update!] @fdc_forbiddenInVariables
+  guests_update: [Int_Update!]
   """
   ✨ Generated from Field `Booking`.`specialRequests` of type `String`
   """
@@ -199,7 +199,7 @@ input Booking_Data {
   """
   ✨ `_expr` server value variant of `specialRequests` (✨ Generated from Field `Booking`.`specialRequests` of type `String`)
   """
-  specialRequests_expr: String_Expr @fdc_forbiddenInVariables
+  specialRequests_expr: String_Expr
   """
   ✨ Generated from Field `Booking`.`status` of type `BookingStatus!`
   """
@@ -207,7 +207,7 @@ input Booking_Data {
   """
   ✨ `_expr` server value variant of `status` (✨ Generated from Field `Booking`.`status` of type `BookingStatus!`)
   """
-  status_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+  status_expr: BookingStatus_Expr
   """
   ✨ Generated from Field `Booking`.`totalPrice` of type `Float!`
   """
@@ -215,11 +215,11 @@ input Booking_Data {
   """
   ✨ `_expr` server value variant of `totalPrice` (✨ Generated from Field `Booking`.`totalPrice` of type `Float!`)
   """
-  totalPrice_expr: Float_Expr @fdc_forbiddenInVariables
+  totalPrice_expr: Float_Expr
   """
   ✨ `_update` server value variant of `totalPrice` (✨ Generated from Field `Booking`.`totalPrice` of type `Float!`)
   """
-  totalPrice_update: [Float_Update!] @fdc_forbiddenInVariables
+  totalPrice_update: [Float_Update!]
   """
   ✨ Generated from Field `Booking`.`updatedAt` of type `Timestamp!`
   """
@@ -227,15 +227,15 @@ input Booking_Data {
   """
   ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `Booking`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  updatedAt_expr: Timestamp_Expr
   """
   ✨ `_time` server value variant of `updatedAt` (✨ Generated from Field `Booking`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  updatedAt_time: Timestamp_Relative
   """
   ✨ `_update` server value variant of `updatedAt` (✨ Generated from Field `Booking`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  updatedAt_update: [Timestamp_Update!]
 }
 """
 ✨ Generated filter input type for table 'Booking'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
@@ -479,7 +479,7 @@ input Booking_Key {
   """
   ✨ `_expr` server value variant of `id` (✨ Generated from Field `Booking`.`id` of type `UUID!`)
   """
-  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  id_expr: UUID_Expr
 }
 """
 ✨ Generated list filter input type for table 'Booking'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
@@ -690,7 +690,7 @@ input BookingStatus_Filter {
   """
   ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
   """
-  eq_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+  eq_expr: BookingStatus_Expr
   """
   Match if field is not equal to provided value.
   """
@@ -698,7 +698,7 @@ input BookingStatus_Filter {
   """
   ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
   """
-  ne_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+  ne_expr: BookingStatus_Expr
   """
   When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
   """
@@ -718,7 +718,7 @@ input BookingStatus_Filter {
   """
   ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
   """
-  gt_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+  gt_expr: BookingStatus_Expr
   """
   Match if field is greater than or equal to the provided value.
   """
@@ -726,7 +726,7 @@ input BookingStatus_Filter {
   """
   ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
   """
-  ge_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+  ge_expr: BookingStatus_Expr
   """
   Match if field value is less than the provided value, based on index ordering of supported enum values.
   """
@@ -734,7 +734,7 @@ input BookingStatus_Filter {
   """
   ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
   """
-  lt_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+  lt_expr: BookingStatus_Expr
   """
   Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
   """
@@ -742,7 +742,7 @@ input BookingStatus_Filter {
   """
   ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
   """
-  le_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+  le_expr: BookingStatus_Expr
 }
 """
 ✨ Generated list filter input type for table 'BookingStatus'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
@@ -755,7 +755,7 @@ input BookingStatus_ListFilter {
   """
   ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
   """
-  includes_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+  includes_expr: BookingStatus_Expr
   """
   Match if list field contains all of the provided values as members.
   """
@@ -767,7 +767,7 @@ input BookingStatus_ListFilter {
   """
   ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
   """
-  excludes_expr: BookingStatus_Expr @fdc_forbiddenInVariables
+  excludes_expr: BookingStatus_Expr
   """
   Match if list field does not contain any of the provided values as members.
   """
@@ -792,7 +792,7 @@ input Category_Filter {
   """
   ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
   """
-  eq_expr: Category_Expr @fdc_forbiddenInVariables
+  eq_expr: Category_Expr
   """
   Match if field is not equal to provided value.
   """
@@ -800,7 +800,7 @@ input Category_Filter {
   """
   ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
   """
-  ne_expr: Category_Expr @fdc_forbiddenInVariables
+  ne_expr: Category_Expr
   """
   When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
   """
@@ -820,7 +820,7 @@ input Category_Filter {
   """
   ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
   """
-  gt_expr: Category_Expr @fdc_forbiddenInVariables
+  gt_expr: Category_Expr
   """
   Match if field is greater than or equal to the provided value.
   """
@@ -828,7 +828,7 @@ input Category_Filter {
   """
   ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
   """
-  ge_expr: Category_Expr @fdc_forbiddenInVariables
+  ge_expr: Category_Expr
   """
   Match if field value is less than the provided value, based on index ordering of supported enum values.
   """
@@ -836,7 +836,7 @@ input Category_Filter {
   """
   ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
   """
-  lt_expr: Category_Expr @fdc_forbiddenInVariables
+  lt_expr: Category_Expr
   """
   Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
   """
@@ -844,7 +844,7 @@ input Category_Filter {
   """
   ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
   """
-  le_expr: Category_Expr @fdc_forbiddenInVariables
+  le_expr: Category_Expr
 }
 """
 ✨ Generated list filter input type for table 'Category'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
@@ -857,7 +857,7 @@ input Category_ListFilter {
   """
   ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
   """
-  includes_expr: Category_Expr @fdc_forbiddenInVariables
+  includes_expr: Category_Expr
   """
   Match if list field contains all of the provided values as members.
   """
@@ -869,7 +869,7 @@ input Category_ListFilter {
   """
   ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
   """
-  excludes_expr: Category_Expr @fdc_forbiddenInVariables
+  excludes_expr: Category_Expr
   """
   Match if list field does not contain any of the provided values as members.
   """
@@ -894,7 +894,7 @@ input CheckinStatus_Filter {
   """
   ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
   """
-  eq_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+  eq_expr: CheckinStatus_Expr
   """
   Match if field is not equal to provided value.
   """
@@ -902,7 +902,7 @@ input CheckinStatus_Filter {
   """
   ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
   """
-  ne_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+  ne_expr: CheckinStatus_Expr
   """
   When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
   """
@@ -922,7 +922,7 @@ input CheckinStatus_Filter {
   """
   ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
   """
-  gt_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+  gt_expr: CheckinStatus_Expr
   """
   Match if field is greater than or equal to the provided value.
   """
@@ -930,7 +930,7 @@ input CheckinStatus_Filter {
   """
   ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
   """
-  ge_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+  ge_expr: CheckinStatus_Expr
   """
   Match if field value is less than the provided value, based on index ordering of supported enum values.
   """
@@ -938,7 +938,7 @@ input CheckinStatus_Filter {
   """
   ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
   """
-  lt_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+  lt_expr: CheckinStatus_Expr
   """
   Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
   """
@@ -946,7 +946,7 @@ input CheckinStatus_Filter {
   """
   ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
   """
-  le_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+  le_expr: CheckinStatus_Expr
 }
 """
 ✨ Generated list filter input type for table 'CheckinStatus'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
@@ -959,7 +959,7 @@ input CheckinStatus_ListFilter {
   """
   ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
   """
-  includes_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+  includes_expr: CheckinStatus_Expr
   """
   Match if list field contains all of the provided values as members.
   """
@@ -971,7 +971,7 @@ input CheckinStatus_ListFilter {
   """
   ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
   """
-  excludes_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+  excludes_expr: CheckinStatus_Expr
   """
   Match if list field does not contain any of the provided values as members.
   """
@@ -996,7 +996,7 @@ input Destination_Filter {
   """
   ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
   """
-  eq_expr: Destination_Expr @fdc_forbiddenInVariables
+  eq_expr: Destination_Expr
   """
   Match if field is not equal to provided value.
   """
@@ -1004,7 +1004,7 @@ input Destination_Filter {
   """
   ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
   """
-  ne_expr: Destination_Expr @fdc_forbiddenInVariables
+  ne_expr: Destination_Expr
   """
   When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
   """
@@ -1024,7 +1024,7 @@ input Destination_Filter {
   """
   ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
   """
-  gt_expr: Destination_Expr @fdc_forbiddenInVariables
+  gt_expr: Destination_Expr
   """
   Match if field is greater than or equal to the provided value.
   """
@@ -1032,7 +1032,7 @@ input Destination_Filter {
   """
   ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
   """
-  ge_expr: Destination_Expr @fdc_forbiddenInVariables
+  ge_expr: Destination_Expr
   """
   Match if field value is less than the provided value, based on index ordering of supported enum values.
   """
@@ -1040,7 +1040,7 @@ input Destination_Filter {
   """
   ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
   """
-  lt_expr: Destination_Expr @fdc_forbiddenInVariables
+  lt_expr: Destination_Expr
   """
   Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
   """
@@ -1048,7 +1048,7 @@ input Destination_Filter {
   """
   ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
   """
-  le_expr: Destination_Expr @fdc_forbiddenInVariables
+  le_expr: Destination_Expr
 }
 """
 ✨ Generated list filter input type for table 'Destination'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
@@ -1061,7 +1061,7 @@ input Destination_ListFilter {
   """
   ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
   """
-  includes_expr: Destination_Expr @fdc_forbiddenInVariables
+  includes_expr: Destination_Expr
   """
   Match if list field contains all of the provided values as members.
   """
@@ -1073,7 +1073,7 @@ input Destination_ListFilter {
   """
   ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
   """
-  excludes_expr: Destination_Expr @fdc_forbiddenInVariables
+  excludes_expr: Destination_Expr
   """
   Match if list field does not contain any of the provided values as members.
   """
@@ -1098,7 +1098,7 @@ input Guide_Data {
   """
   ✨ `_expr` server value variant of `id` (✨ Generated from Field `Guide`.`id` of type `UUID!`)
   """
-  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  id_expr: UUID_Expr
   """
   ✨ Generated from Field `Guide`.`operatorId` of type `String!`
   """
@@ -1106,11 +1106,11 @@ input Guide_Data {
   """
   ✨ `_expr` server value variant of `operatorId` (✨ Generated from Field `Guide`.`operatorId` of type `String!`)
   """
-  operatorId_expr: String_Expr @fdc_forbiddenInVariables
+  operatorId_expr: String_Expr
   """
   ✨ Generated from Field `Guide`.`operator` of type `User!`
   """
-  operator: User_Key @fdc_forbiddenInVariables
+  operator: User_Key
   """
   ✨ Generated from Field `Guide`.`createdAt` of type `Timestamp!`
   """
@@ -1118,15 +1118,15 @@ input Guide_Data {
   """
   ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Guide`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  createdAt_expr: Timestamp_Expr
   """
   ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Guide`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  createdAt_time: Timestamp_Relative
   """
   ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Guide`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  createdAt_update: [Timestamp_Update!]
   """
   ✨ Generated from Field `Guide`.`name` of type `String!`
   """
@@ -1134,7 +1134,7 @@ input Guide_Data {
   """
   ✨ `_expr` server value variant of `name` (✨ Generated from Field `Guide`.`name` of type `String!`)
   """
-  name_expr: String_Expr @fdc_forbiddenInVariables
+  name_expr: String_Expr
   """
   ✨ Generated from Field `Guide`.`specialty` of type `String!`
   """
@@ -1142,7 +1142,7 @@ input Guide_Data {
   """
   ✨ `_expr` server value variant of `specialty` (✨ Generated from Field `Guide`.`specialty` of type `String!`)
   """
-  specialty_expr: String_Expr @fdc_forbiddenInVariables
+  specialty_expr: String_Expr
   """
   ✨ Generated from Field `Guide`.`status` of type `GuideStatus!`
   """
@@ -1150,7 +1150,7 @@ input Guide_Data {
   """
   ✨ `_expr` server value variant of `status` (✨ Generated from Field `Guide`.`status` of type `GuideStatus!`)
   """
-  status_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+  status_expr: GuideStatus_Expr
   """
   ✨ Generated from Field `Guide`.`updatedAt` of type `Timestamp!`
   """
@@ -1158,15 +1158,15 @@ input Guide_Data {
   """
   ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `Guide`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  updatedAt_expr: Timestamp_Expr
   """
   ✨ `_time` server value variant of `updatedAt` (✨ Generated from Field `Guide`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  updatedAt_time: Timestamp_Relative
   """
   ✨ `_update` server value variant of `updatedAt` (✨ Generated from Field `Guide`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  updatedAt_update: [Timestamp_Update!]
 }
 """
 ✨ Generated filter input type for table 'Guide'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
@@ -1310,7 +1310,7 @@ input Guide_Key {
   """
   ✨ `_expr` server value variant of `id` (✨ Generated from Field `Guide`.`id` of type `UUID!`)
   """
-  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  id_expr: UUID_Expr
 }
 """
 ✨ Generated list filter input type for table 'Guide'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
@@ -1421,7 +1421,7 @@ input GuideStatus_Filter {
   """
   ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
   """
-  eq_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+  eq_expr: GuideStatus_Expr
   """
   Match if field is not equal to provided value.
   """
@@ -1429,7 +1429,7 @@ input GuideStatus_Filter {
   """
   ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
   """
-  ne_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+  ne_expr: GuideStatus_Expr
   """
   When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
   """
@@ -1449,7 +1449,7 @@ input GuideStatus_Filter {
   """
   ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
   """
-  gt_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+  gt_expr: GuideStatus_Expr
   """
   Match if field is greater than or equal to the provided value.
   """
@@ -1457,7 +1457,7 @@ input GuideStatus_Filter {
   """
   ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
   """
-  ge_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+  ge_expr: GuideStatus_Expr
   """
   Match if field value is less than the provided value, based on index ordering of supported enum values.
   """
@@ -1465,7 +1465,7 @@ input GuideStatus_Filter {
   """
   ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
   """
-  lt_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+  lt_expr: GuideStatus_Expr
   """
   Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
   """
@@ -1473,7 +1473,7 @@ input GuideStatus_Filter {
   """
   ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
   """
-  le_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+  le_expr: GuideStatus_Expr
 }
 """
 ✨ Generated list filter input type for table 'GuideStatus'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
@@ -1486,7 +1486,7 @@ input GuideStatus_ListFilter {
   """
   ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
   """
-  includes_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+  includes_expr: GuideStatus_Expr
   """
   Match if list field contains all of the provided values as members.
   """
@@ -1498,7 +1498,7 @@ input GuideStatus_ListFilter {
   """
   ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
   """
-  excludes_expr: GuideStatus_Expr @fdc_forbiddenInVariables
+  excludes_expr: GuideStatus_Expr
   """
   Match if list field does not contain any of the provided values as members.
   """
@@ -1523,7 +1523,7 @@ input PwaCheckin_Data {
   """
   ✨ `_expr` server value variant of `id` (✨ Generated from Field `PwaCheckin`.`id` of type `UUID!`)
   """
-  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  id_expr: UUID_Expr
   """
   ✨ Generated from Field `PwaCheckin`.`bookingId` of type `UUID`
   """
@@ -1531,7 +1531,7 @@ input PwaCheckin_Data {
   """
   ✨ `_expr` server value variant of `bookingId` (✨ Generated from Field `PwaCheckin`.`bookingId` of type `UUID`)
   """
-  bookingId_expr: UUID_Expr @fdc_forbiddenInVariables
+  bookingId_expr: UUID_Expr
   """
   ✨ Generated from Field `PwaCheckin`.`createdAt` of type `Timestamp!`
   """
@@ -1539,15 +1539,15 @@ input PwaCheckin_Data {
   """
   ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `PwaCheckin`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  createdAt_expr: Timestamp_Expr
   """
   ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `PwaCheckin`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  createdAt_time: Timestamp_Relative
   """
   ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `PwaCheckin`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  createdAt_update: [Timestamp_Update!]
   """
   ✨ Generated from Field `PwaCheckin`.`customerName` of type `String`
   """
@@ -1555,7 +1555,7 @@ input PwaCheckin_Data {
   """
   ✨ `_expr` server value variant of `customerName` (✨ Generated from Field `PwaCheckin`.`customerName` of type `String`)
   """
-  customerName_expr: String_Expr @fdc_forbiddenInVariables
+  customerName_expr: String_Expr
   """
   ✨ Generated from Field `PwaCheckin`.`operator` of type `String!`
   """
@@ -1563,7 +1563,7 @@ input PwaCheckin_Data {
   """
   ✨ `_expr` server value variant of `operator` (✨ Generated from Field `PwaCheckin`.`operator` of type `String!`)
   """
-  operator_expr: String_Expr @fdc_forbiddenInVariables
+  operator_expr: String_Expr
   """
   ✨ Generated from Field `PwaCheckin`.`status` of type `CheckinStatus!`
   """
@@ -1571,7 +1571,7 @@ input PwaCheckin_Data {
   """
   ✨ `_expr` server value variant of `status` (✨ Generated from Field `PwaCheckin`.`status` of type `CheckinStatus!`)
   """
-  status_expr: CheckinStatus_Expr @fdc_forbiddenInVariables
+  status_expr: CheckinStatus_Expr
   """
   ✨ Generated from Field `PwaCheckin`.`timestamp` of type `Timestamp!`
   """
@@ -1579,15 +1579,15 @@ input PwaCheckin_Data {
   """
   ✨ `_expr` server value variant of `timestamp` (✨ Generated from Field `PwaCheckin`.`timestamp` of type `Timestamp!`)
   """
-  timestamp_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  timestamp_expr: Timestamp_Expr
   """
   ✨ `_time` server value variant of `timestamp` (✨ Generated from Field `PwaCheckin`.`timestamp` of type `Timestamp!`)
   """
-  timestamp_time: Timestamp_Relative @fdc_forbiddenInVariables
+  timestamp_time: Timestamp_Relative
   """
   ✨ `_update` server value variant of `timestamp` (✨ Generated from Field `PwaCheckin`.`timestamp` of type `Timestamp!`)
   """
-  timestamp_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  timestamp_update: [Timestamp_Update!]
   """
   ✨ Generated from Field `PwaCheckin`.`tourId` of type `UUID`
   """
@@ -1595,7 +1595,7 @@ input PwaCheckin_Data {
   """
   ✨ `_expr` server value variant of `tourId` (✨ Generated from Field `PwaCheckin`.`tourId` of type `UUID`)
   """
-  tourId_expr: UUID_Expr @fdc_forbiddenInVariables
+  tourId_expr: UUID_Expr
   """
   ✨ Generated from Field `PwaCheckin`.`tourTitle` of type `String`
   """
@@ -1603,7 +1603,7 @@ input PwaCheckin_Data {
   """
   ✨ `_expr` server value variant of `tourTitle` (✨ Generated from Field `PwaCheckin`.`tourTitle` of type `String`)
   """
-  tourTitle_expr: String_Expr @fdc_forbiddenInVariables
+  tourTitle_expr: String_Expr
   """
   ✨ Generated from Field `PwaCheckin`.`updatedAt` of type `Timestamp!`
   """
@@ -1611,15 +1611,15 @@ input PwaCheckin_Data {
   """
   ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `PwaCheckin`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  updatedAt_expr: Timestamp_Expr
   """
   ✨ `_time` server value variant of `updatedAt` (✨ Generated from Field `PwaCheckin`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  updatedAt_time: Timestamp_Relative
   """
   ✨ `_update` server value variant of `updatedAt` (✨ Generated from Field `PwaCheckin`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  updatedAt_update: [Timestamp_Update!]
 }
 """
 ✨ Generated filter input type for table 'PwaCheckin'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
@@ -1791,7 +1791,7 @@ input PwaCheckin_Key {
   """
   ✨ `_expr` server value variant of `id` (✨ Generated from Field `PwaCheckin`.`id` of type `UUID!`)
   """
-  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  id_expr: UUID_Expr
 }
 """
 ✨ Generated list filter input type for table 'PwaCheckin'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
@@ -1930,7 +1930,7 @@ input Role_Filter {
   """
   ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
   """
-  eq_expr: Role_Expr @fdc_forbiddenInVariables
+  eq_expr: Role_Expr
   """
   Match if field is not equal to provided value.
   """
@@ -1938,7 +1938,7 @@ input Role_Filter {
   """
   ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
   """
-  ne_expr: Role_Expr @fdc_forbiddenInVariables
+  ne_expr: Role_Expr
   """
   When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
   """
@@ -1958,7 +1958,7 @@ input Role_Filter {
   """
   ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
   """
-  gt_expr: Role_Expr @fdc_forbiddenInVariables
+  gt_expr: Role_Expr
   """
   Match if field is greater than or equal to the provided value.
   """
@@ -1966,7 +1966,7 @@ input Role_Filter {
   """
   ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
   """
-  ge_expr: Role_Expr @fdc_forbiddenInVariables
+  ge_expr: Role_Expr
   """
   Match if field value is less than the provided value, based on index ordering of supported enum values.
   """
@@ -1974,7 +1974,7 @@ input Role_Filter {
   """
   ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
   """
-  lt_expr: Role_Expr @fdc_forbiddenInVariables
+  lt_expr: Role_Expr
   """
   Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
   """
@@ -1982,7 +1982,7 @@ input Role_Filter {
   """
   ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
   """
-  le_expr: Role_Expr @fdc_forbiddenInVariables
+  le_expr: Role_Expr
 }
 """
 ✨ Generated list filter input type for table 'Role'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
@@ -1995,7 +1995,7 @@ input Role_ListFilter {
   """
   ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
   """
-  includes_expr: Role_Expr @fdc_forbiddenInVariables
+  includes_expr: Role_Expr
   """
   Match if list field contains all of the provided values as members.
   """
@@ -2007,7 +2007,7 @@ input Role_ListFilter {
   """
   ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
   """
-  excludes_expr: Role_Expr @fdc_forbiddenInVariables
+  excludes_expr: Role_Expr
   """
   Match if list field does not contain any of the provided values as members.
   """
@@ -2032,7 +2032,7 @@ input SliderSlide_Data {
   """
   ✨ `_expr` server value variant of `id` (✨ Generated from Field `SliderSlide`.`id` of type `UUID!`)
   """
-  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  id_expr: UUID_Expr
   """
   ✨ Generated from Field `SliderSlide`.`active` of type `Boolean!`
   """
@@ -2040,7 +2040,7 @@ input SliderSlide_Data {
   """
   ✨ `_expr` server value variant of `active` (✨ Generated from Field `SliderSlide`.`active` of type `Boolean!`)
   """
-  active_expr: Boolean_Expr @fdc_forbiddenInVariables
+  active_expr: Boolean_Expr
   """
   ✨ Generated from Field `SliderSlide`.`buttonText` of type `String!`
   """
@@ -2048,7 +2048,7 @@ input SliderSlide_Data {
   """
   ✨ `_expr` server value variant of `buttonText` (✨ Generated from Field `SliderSlide`.`buttonText` of type `String!`)
   """
-  buttonText_expr: String_Expr @fdc_forbiddenInVariables
+  buttonText_expr: String_Expr
   """
   ✨ Generated from Field `SliderSlide`.`createdAt` of type `Timestamp!`
   """
@@ -2056,15 +2056,15 @@ input SliderSlide_Data {
   """
   ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `SliderSlide`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  createdAt_expr: Timestamp_Expr
   """
   ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `SliderSlide`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  createdAt_time: Timestamp_Relative
   """
   ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `SliderSlide`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  createdAt_update: [Timestamp_Update!]
   """
   ✨ Generated from Field `SliderSlide`.`description` of type `String!`
   """
@@ -2072,7 +2072,7 @@ input SliderSlide_Data {
   """
   ✨ `_expr` server value variant of `description` (✨ Generated from Field `SliderSlide`.`description` of type `String!`)
   """
-  description_expr: String_Expr @fdc_forbiddenInVariables
+  description_expr: String_Expr
   """
   ✨ Generated from Field `SliderSlide`.`image` of type `String!`
   """
@@ -2080,7 +2080,7 @@ input SliderSlide_Data {
   """
   ✨ `_expr` server value variant of `image` (✨ Generated from Field `SliderSlide`.`image` of type `String!`)
   """
-  image_expr: String_Expr @fdc_forbiddenInVariables
+  image_expr: String_Expr
   """
   ✨ Generated from Field `SliderSlide`.`link` of type `String!`
   """
@@ -2088,7 +2088,7 @@ input SliderSlide_Data {
   """
   ✨ `_expr` server value variant of `link` (✨ Generated from Field `SliderSlide`.`link` of type `String!`)
   """
-  link_expr: String_Expr @fdc_forbiddenInVariables
+  link_expr: String_Expr
   """
   ✨ Generated from Field `SliderSlide`.`order` of type `Int!`
   """
@@ -2096,11 +2096,11 @@ input SliderSlide_Data {
   """
   ✨ `_expr` server value variant of `order` (✨ Generated from Field `SliderSlide`.`order` of type `Int!`)
   """
-  order_expr: Int_Expr @fdc_forbiddenInVariables
+  order_expr: Int_Expr
   """
   ✨ `_update` server value variant of `order` (✨ Generated from Field `SliderSlide`.`order` of type `Int!`)
   """
-  order_update: [Int_Update!] @fdc_forbiddenInVariables
+  order_update: [Int_Update!]
   """
   ✨ Generated from Field `SliderSlide`.`subtitle` of type `String!`
   """
@@ -2108,7 +2108,7 @@ input SliderSlide_Data {
   """
   ✨ `_expr` server value variant of `subtitle` (✨ Generated from Field `SliderSlide`.`subtitle` of type `String!`)
   """
-  subtitle_expr: String_Expr @fdc_forbiddenInVariables
+  subtitle_expr: String_Expr
   """
   ✨ Generated from Field `SliderSlide`.`title` of type `String!`
   """
@@ -2116,7 +2116,7 @@ input SliderSlide_Data {
   """
   ✨ `_expr` server value variant of `title` (✨ Generated from Field `SliderSlide`.`title` of type `String!`)
   """
-  title_expr: String_Expr @fdc_forbiddenInVariables
+  title_expr: String_Expr
   """
   ✨ Generated from Field `SliderSlide`.`translations` of type `String`
   """
@@ -2124,7 +2124,7 @@ input SliderSlide_Data {
   """
   ✨ `_expr` server value variant of `translations` (✨ Generated from Field `SliderSlide`.`translations` of type `String`)
   """
-  translations_expr: String_Expr @fdc_forbiddenInVariables
+  translations_expr: String_Expr
   """
   ✨ Generated from Field `SliderSlide`.`updatedAt` of type `Timestamp!`
   """
@@ -2132,15 +2132,15 @@ input SliderSlide_Data {
   """
   ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `SliderSlide`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  updatedAt_expr: Timestamp_Expr
   """
   ✨ `_time` server value variant of `updatedAt` (✨ Generated from Field `SliderSlide`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  updatedAt_time: Timestamp_Relative
   """
   ✨ `_update` server value variant of `updatedAt` (✨ Generated from Field `SliderSlide`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  updatedAt_update: [Timestamp_Update!]
 }
 """
 ✨ Generated filter input type for table 'SliderSlide'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
@@ -2336,7 +2336,7 @@ input SliderSlide_Key {
   """
   ✨ `_expr` server value variant of `id` (✨ Generated from Field `SliderSlide`.`id` of type `UUID!`)
   """
-  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  id_expr: UUID_Expr
 }
 """
 ✨ Generated list filter input type for table 'SliderSlide'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
@@ -2499,7 +2499,7 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `id` (✨ Generated from Field `Tour`.`id` of type `UUID!`)
   """
-  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  id_expr: UUID_Expr
   """
   ✨ Generated from Field `Tour`.`operatorId` of type `String!`
   """
@@ -2507,11 +2507,11 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `operatorId` (✨ Generated from Field `Tour`.`operatorId` of type `String!`)
   """
-  operatorId_expr: String_Expr @fdc_forbiddenInVariables
+  operatorId_expr: String_Expr
   """
   ✨ Generated from Field `Tour`.`operator` of type `User!`
   """
-  operator: User_Key @fdc_forbiddenInVariables
+  operator: User_Key
   """
   ✨ Generated from Field `Tour`.`category` of type `Category!`
   """
@@ -2519,7 +2519,7 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `category` (✨ Generated from Field `Tour`.`category` of type `Category!`)
   """
-  category_expr: Category_Expr @fdc_forbiddenInVariables
+  category_expr: Category_Expr
   """
   ✨ Generated from Field `Tour`.`createdAt` of type `Timestamp!`
   """
@@ -2527,15 +2527,15 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Tour`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  createdAt_expr: Timestamp_Expr
   """
   ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Tour`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  createdAt_time: Timestamp_Relative
   """
   ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Tour`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  createdAt_update: [Timestamp_Update!]
   """
   ✨ Generated from Field `Tour`.`description` of type `String!`
   """
@@ -2543,7 +2543,7 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `description` (✨ Generated from Field `Tour`.`description` of type `String!`)
   """
-  description_expr: String_Expr @fdc_forbiddenInVariables
+  description_expr: String_Expr
   """
   ✨ Generated from Field `Tour`.`destination` of type `Destination!`
   """
@@ -2551,7 +2551,7 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `destination` (✨ Generated from Field `Tour`.`destination` of type `Destination!`)
   """
-  destination_expr: Destination_Expr @fdc_forbiddenInVariables
+  destination_expr: Destination_Expr
   """
   ✨ Generated from Field `Tour`.`discount` of type `String`
   """
@@ -2559,7 +2559,7 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `discount` (✨ Generated from Field `Tour`.`discount` of type `String`)
   """
-  discount_expr: String_Expr @fdc_forbiddenInVariables
+  discount_expr: String_Expr
   """
   ✨ Generated from Field `Tour`.`duration` of type `String!`
   """
@@ -2567,7 +2567,7 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `duration` (✨ Generated from Field `Tour`.`duration` of type `String!`)
   """
-  duration_expr: String_Expr @fdc_forbiddenInVariables
+  duration_expr: String_Expr
   """
   ✨ Generated from Field `Tour`.`durationHours` of type `Int!`
   """
@@ -2575,11 +2575,11 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `durationHours` (✨ Generated from Field `Tour`.`durationHours` of type `Int!`)
   """
-  durationHours_expr: Int_Expr @fdc_forbiddenInVariables
+  durationHours_expr: Int_Expr
   """
   ✨ `_update` server value variant of `durationHours` (✨ Generated from Field `Tour`.`durationHours` of type `Int!`)
   """
-  durationHours_update: [Int_Update!] @fdc_forbiddenInVariables
+  durationHours_update: [Int_Update!]
   """
   ✨ Generated from Field `Tour`.`featured` of type `Boolean!`
   """
@@ -2587,7 +2587,7 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `featured` (✨ Generated from Field `Tour`.`featured` of type `Boolean!`)
   """
-  featured_expr: Boolean_Expr @fdc_forbiddenInVariables
+  featured_expr: Boolean_Expr
   """
   ✨ Generated from Field `Tour`.`heroBackgroundPosition` of type `String`
   """
@@ -2595,7 +2595,7 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `heroBackgroundPosition` (✨ Generated from Field `Tour`.`heroBackgroundPosition` of type `String`)
   """
-  heroBackgroundPosition_expr: String_Expr @fdc_forbiddenInVariables
+  heroBackgroundPosition_expr: String_Expr
   """
   ✨ Generated from Field `Tour`.`heroImages` of type `String`
   """
@@ -2603,7 +2603,7 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `heroImages` (✨ Generated from Field `Tour`.`heroImages` of type `String`)
   """
-  heroImages_expr: String_Expr @fdc_forbiddenInVariables
+  heroImages_expr: String_Expr
   """
   ✨ Generated from Field `Tour`.`image` of type `String!`
   """
@@ -2611,7 +2611,7 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `image` (✨ Generated from Field `Tour`.`image` of type `String!`)
   """
-  image_expr: String_Expr @fdc_forbiddenInVariables
+  image_expr: String_Expr
   """
   ✨ Generated from Field `Tour`.`lat` of type `Float`
   """
@@ -2619,11 +2619,11 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `lat` (✨ Generated from Field `Tour`.`lat` of type `Float`)
   """
-  lat_expr: Float_Expr @fdc_forbiddenInVariables
+  lat_expr: Float_Expr
   """
   ✨ `_update` server value variant of `lat` (✨ Generated from Field `Tour`.`lat` of type `Float`)
   """
-  lat_update: [Float_Update!] @fdc_forbiddenInVariables
+  lat_update: [Float_Update!]
   """
   ✨ Generated from Field `Tour`.`lng` of type `Float`
   """
@@ -2631,11 +2631,11 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `lng` (✨ Generated from Field `Tour`.`lng` of type `Float`)
   """
-  lng_expr: Float_Expr @fdc_forbiddenInVariables
+  lng_expr: Float_Expr
   """
   ✨ `_update` server value variant of `lng` (✨ Generated from Field `Tour`.`lng` of type `Float`)
   """
-  lng_update: [Float_Update!] @fdc_forbiddenInVariables
+  lng_update: [Float_Update!]
   """
   ✨ Generated from Field `Tour`.`location` of type `String!`
   """
@@ -2643,7 +2643,7 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `location` (✨ Generated from Field `Tour`.`location` of type `String!`)
   """
-  location_expr: String_Expr @fdc_forbiddenInVariables
+  location_expr: String_Expr
   """
   ✨ Generated from Field `Tour`.`oneDay` of type `Boolean!`
   """
@@ -2651,7 +2651,7 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `oneDay` (✨ Generated from Field `Tour`.`oneDay` of type `Boolean!`)
   """
-  oneDay_expr: Boolean_Expr @fdc_forbiddenInVariables
+  oneDay_expr: Boolean_Expr
   """
   ✨ Generated from Field `Tour`.`originalPrice` of type `Float!`
   """
@@ -2659,11 +2659,11 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `originalPrice` (✨ Generated from Field `Tour`.`originalPrice` of type `Float!`)
   """
-  originalPrice_expr: Float_Expr @fdc_forbiddenInVariables
+  originalPrice_expr: Float_Expr
   """
   ✨ `_update` server value variant of `originalPrice` (✨ Generated from Field `Tour`.`originalPrice` of type `Float!`)
   """
-  originalPrice_update: [Float_Update!] @fdc_forbiddenInVariables
+  originalPrice_update: [Float_Update!]
   """
   ✨ Generated from Field `Tour`.`popular` of type `Boolean!`
   """
@@ -2671,7 +2671,7 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `popular` (✨ Generated from Field `Tour`.`popular` of type `Boolean!`)
   """
-  popular_expr: Boolean_Expr @fdc_forbiddenInVariables
+  popular_expr: Boolean_Expr
   """
   ✨ Generated from Field `Tour`.`price` of type `Float!`
   """
@@ -2679,11 +2679,11 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `price` (✨ Generated from Field `Tour`.`price` of type `Float!`)
   """
-  price_expr: Float_Expr @fdc_forbiddenInVariables
+  price_expr: Float_Expr
   """
   ✨ `_update` server value variant of `price` (✨ Generated from Field `Tour`.`price` of type `Float!`)
   """
-  price_update: [Float_Update!] @fdc_forbiddenInVariables
+  price_update: [Float_Update!]
   """
   ✨ Generated from Field `Tour`.`rating` of type `Float!`
   """
@@ -2691,11 +2691,11 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `rating` (✨ Generated from Field `Tour`.`rating` of type `Float!`)
   """
-  rating_expr: Float_Expr @fdc_forbiddenInVariables
+  rating_expr: Float_Expr
   """
   ✨ `_update` server value variant of `rating` (✨ Generated from Field `Tour`.`rating` of type `Float!`)
   """
-  rating_update: [Float_Update!] @fdc_forbiddenInVariables
+  rating_update: [Float_Update!]
   """
   ✨ Generated from Field `Tour`.`reviewsCount` of type `Int!`
   """
@@ -2703,11 +2703,11 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `reviewsCount` (✨ Generated from Field `Tour`.`reviewsCount` of type `Int!`)
   """
-  reviewsCount_expr: Int_Expr @fdc_forbiddenInVariables
+  reviewsCount_expr: Int_Expr
   """
   ✨ `_update` server value variant of `reviewsCount` (✨ Generated from Field `Tour`.`reviewsCount` of type `Int!`)
   """
-  reviewsCount_update: [Int_Update!] @fdc_forbiddenInVariables
+  reviewsCount_update: [Int_Update!]
   """
   ✨ Generated from Field `Tour`.`status` of type `TourStatus!`
   """
@@ -2715,7 +2715,7 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `status` (✨ Generated from Field `Tour`.`status` of type `TourStatus!`)
   """
-  status_expr: TourStatus_Expr @fdc_forbiddenInVariables
+  status_expr: TourStatus_Expr
   """
   ✨ Generated from Field `Tour`.`title` of type `String!`
   """
@@ -2723,7 +2723,7 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `title` (✨ Generated from Field `Tour`.`title` of type `String!`)
   """
-  title_expr: String_Expr @fdc_forbiddenInVariables
+  title_expr: String_Expr
   """
   ✨ Generated from Field `Tour`.`translations` of type `String`
   """
@@ -2731,7 +2731,7 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `translations` (✨ Generated from Field `Tour`.`translations` of type `String`)
   """
-  translations_expr: String_Expr @fdc_forbiddenInVariables
+  translations_expr: String_Expr
   """
   ✨ Generated from Field `Tour`.`updatedAt` of type `Timestamp!`
   """
@@ -2739,15 +2739,15 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `Tour`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  updatedAt_expr: Timestamp_Expr
   """
   ✨ `_time` server value variant of `updatedAt` (✨ Generated from Field `Tour`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  updatedAt_time: Timestamp_Relative
   """
   ✨ `_update` server value variant of `updatedAt` (✨ Generated from Field `Tour`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  updatedAt_update: [Timestamp_Update!]
   """
   ✨ Generated from Field `Tour`.`vibeAdrenaline` of type `Int!`
   """
@@ -2755,11 +2755,11 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `vibeAdrenaline` (✨ Generated from Field `Tour`.`vibeAdrenaline` of type `Int!`)
   """
-  vibeAdrenaline_expr: Int_Expr @fdc_forbiddenInVariables
+  vibeAdrenaline_expr: Int_Expr
   """
   ✨ `_update` server value variant of `vibeAdrenaline` (✨ Generated from Field `Tour`.`vibeAdrenaline` of type `Int!`)
   """
-  vibeAdrenaline_update: [Int_Update!] @fdc_forbiddenInVariables
+  vibeAdrenaline_update: [Int_Update!]
   """
   ✨ Generated from Field `Tour`.`vibeCulture` of type `Int!`
   """
@@ -2767,11 +2767,11 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `vibeCulture` (✨ Generated from Field `Tour`.`vibeCulture` of type `Int!`)
   """
-  vibeCulture_expr: Int_Expr @fdc_forbiddenInVariables
+  vibeCulture_expr: Int_Expr
   """
   ✨ `_update` server value variant of `vibeCulture` (✨ Generated from Field `Tour`.`vibeCulture` of type `Int!`)
   """
-  vibeCulture_update: [Int_Update!] @fdc_forbiddenInVariables
+  vibeCulture_update: [Int_Update!]
   """
   ✨ Generated from Field `Tour`.`vibeFamily` of type `Int!`
   """
@@ -2779,11 +2779,11 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `vibeFamily` (✨ Generated from Field `Tour`.`vibeFamily` of type `Int!`)
   """
-  vibeFamily_expr: Int_Expr @fdc_forbiddenInVariables
+  vibeFamily_expr: Int_Expr
   """
   ✨ `_update` server value variant of `vibeFamily` (✨ Generated from Field `Tour`.`vibeFamily` of type `Int!`)
   """
-  vibeFamily_update: [Int_Update!] @fdc_forbiddenInVariables
+  vibeFamily_update: [Int_Update!]
   """
   ✨ Generated from Field `Tour`.`vibeRelax` of type `Int!`
   """
@@ -2791,15 +2791,11 @@ input Tour_Data {
   """
   ✨ `_expr` server value variant of `vibeRelax` (✨ Generated from Field `Tour`.`vibeRelax` of type `Int!`)
   """
-  vibeRelax_expr: Int_Expr @fdc_forbiddenInVariables
+  vibeRelax_expr: Int_Expr
   """
   ✨ `_update` server value variant of `vibeRelax` (✨ Generated from Field `Tour`.`vibeRelax` of type `Int!`)
   """
-  vibeRelax_update: [Int_Update!] @fdc_forbiddenInVariables
-  """
-  ✨ Generated from Field `Tour`.`bookings_on_tour` of type `[Booking!]!`
-  """
-  bookings_on_tour: [Booking_Data!]
+  vibeRelax_update: [Int_Update!]
 }
 """
 ✨ Generated filter input type for table 'Tour'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
@@ -3307,7 +3303,7 @@ input Tour_Key {
   """
   ✨ `_expr` server value variant of `id` (✨ Generated from Field `Tour`.`id` of type `UUID!`)
   """
-  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  id_expr: UUID_Expr
 }
 """
 ✨ Generated list filter input type for table 'Tour'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
@@ -3778,7 +3774,7 @@ input TourStatus_Filter {
   """
   ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
   """
-  eq_expr: TourStatus_Expr @fdc_forbiddenInVariables
+  eq_expr: TourStatus_Expr
   """
   Match if field is not equal to provided value.
   """
@@ -3786,7 +3782,7 @@ input TourStatus_Filter {
   """
   ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
   """
-  ne_expr: TourStatus_Expr @fdc_forbiddenInVariables
+  ne_expr: TourStatus_Expr
   """
   When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
   """
@@ -3806,7 +3802,7 @@ input TourStatus_Filter {
   """
   ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
   """
-  gt_expr: TourStatus_Expr @fdc_forbiddenInVariables
+  gt_expr: TourStatus_Expr
   """
   Match if field is greater than or equal to the provided value.
   """
@@ -3814,7 +3810,7 @@ input TourStatus_Filter {
   """
   ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
   """
-  ge_expr: TourStatus_Expr @fdc_forbiddenInVariables
+  ge_expr: TourStatus_Expr
   """
   Match if field value is less than the provided value, based on index ordering of supported enum values.
   """
@@ -3822,7 +3818,7 @@ input TourStatus_Filter {
   """
   ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
   """
-  lt_expr: TourStatus_Expr @fdc_forbiddenInVariables
+  lt_expr: TourStatus_Expr
   """
   Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
   """
@@ -3830,7 +3826,7 @@ input TourStatus_Filter {
   """
   ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
   """
-  le_expr: TourStatus_Expr @fdc_forbiddenInVariables
+  le_expr: TourStatus_Expr
 }
 """
 ✨ Generated list filter input type for table 'TourStatus'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
@@ -3843,7 +3839,7 @@ input TourStatus_ListFilter {
   """
   ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
   """
-  includes_expr: TourStatus_Expr @fdc_forbiddenInVariables
+  includes_expr: TourStatus_Expr
   """
   Match if list field contains all of the provided values as members.
   """
@@ -3855,7 +3851,7 @@ input TourStatus_ListFilter {
   """
   ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
   """
-  excludes_expr: TourStatus_Expr @fdc_forbiddenInVariables
+  excludes_expr: TourStatus_Expr
   """
   Match if list field does not contain any of the provided values as members.
   """
@@ -3880,7 +3876,7 @@ input User_Data {
   """
   ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `String!`)
   """
-  id_expr: String_Expr @fdc_forbiddenInVariables
+  id_expr: String_Expr
   """
   ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
   """
@@ -3888,15 +3884,15 @@ input User_Data {
   """
   ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  createdAt_expr: Timestamp_Expr
   """
   ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  createdAt_time: Timestamp_Relative
   """
   ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  createdAt_update: [Timestamp_Update!]
   """
   ✨ Generated from Field `User`.`description` of type `String`
   """
@@ -3904,7 +3900,7 @@ input User_Data {
   """
   ✨ `_expr` server value variant of `description` (✨ Generated from Field `User`.`description` of type `String`)
   """
-  description_expr: String_Expr @fdc_forbiddenInVariables
+  description_expr: String_Expr
   """
   ✨ Generated from Field `User`.`email` of type `String!`
   """
@@ -3912,7 +3908,7 @@ input User_Data {
   """
   ✨ `_expr` server value variant of `email` (✨ Generated from Field `User`.`email` of type `String!`)
   """
-  email_expr: String_Expr @fdc_forbiddenInVariables
+  email_expr: String_Expr
   """
   ✨ Generated from Field `User`.`name` of type `String!`
   """
@@ -3920,7 +3916,7 @@ input User_Data {
   """
   ✨ `_expr` server value variant of `name` (✨ Generated from Field `User`.`name` of type `String!`)
   """
-  name_expr: String_Expr @fdc_forbiddenInVariables
+  name_expr: String_Expr
   """
   ✨ Generated from Field `User`.`role` of type `Role!`
   """
@@ -3928,7 +3924,7 @@ input User_Data {
   """
   ✨ `_expr` server value variant of `role` (✨ Generated from Field `User`.`role` of type `Role!`)
   """
-  role_expr: Role_Expr @fdc_forbiddenInVariables
+  role_expr: Role_Expr
   """
   ✨ Generated from Field `User`.`updatedAt` of type `Timestamp!`
   """
@@ -3936,31 +3932,15 @@ input User_Data {
   """
   ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `User`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  updatedAt_expr: Timestamp_Expr
   """
   ✨ `_time` server value variant of `updatedAt` (✨ Generated from Field `User`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  updatedAt_time: Timestamp_Relative
   """
   ✨ `_update` server value variant of `updatedAt` (✨ Generated from Field `User`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
-  """
-  ✨ Generated from Field `User`.`bookings_on_user` of type `[Booking!]!`
-  """
-  bookings_on_user: [Booking_Data!]
-  """
-  ✨ Generated from Field `User`.`guides_on_operator` of type `[Guide!]!`
-  """
-  guides_on_operator: [Guide_Data!]
-  """
-  ✨ Generated from Field `User`.`tours_on_operator` of type `[Tour!]!`
-  """
-  tours_on_operator: [Tour_Data!]
-  """
-  ✨ Generated from Field `User`.`vehicles_on_operator` of type `[Vehicle!]!`
-  """
-  vehicles_on_operator: [Vehicle_Data!]
+  updatedAt_update: [Timestamp_Update!]
 }
 """
 ✨ Generated filter input type for table 'User'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
@@ -4116,7 +4096,7 @@ input User_Key {
   """
   ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `String!`)
   """
-  id_expr: String_Expr @fdc_forbiddenInVariables
+  id_expr: String_Expr
 }
 """
 ✨ Generated list filter input type for table 'User'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
@@ -4223,7 +4203,7 @@ input Vehicle_Data {
   """
   ✨ `_expr` server value variant of `id` (✨ Generated from Field `Vehicle`.`id` of type `UUID!`)
   """
-  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  id_expr: UUID_Expr
   """
   ✨ Generated from Field `Vehicle`.`operatorId` of type `String!`
   """
@@ -4231,11 +4211,11 @@ input Vehicle_Data {
   """
   ✨ `_expr` server value variant of `operatorId` (✨ Generated from Field `Vehicle`.`operatorId` of type `String!`)
   """
-  operatorId_expr: String_Expr @fdc_forbiddenInVariables
+  operatorId_expr: String_Expr
   """
   ✨ Generated from Field `Vehicle`.`operator` of type `User!`
   """
-  operator: User_Key @fdc_forbiddenInVariables
+  operator: User_Key
   """
   ✨ Generated from Field `Vehicle`.`createdAt` of type `Timestamp!`
   """
@@ -4243,15 +4223,15 @@ input Vehicle_Data {
   """
   ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Vehicle`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  createdAt_expr: Timestamp_Expr
   """
   ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Vehicle`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  createdAt_time: Timestamp_Relative
   """
   ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Vehicle`.`createdAt` of type `Timestamp!`)
   """
-  createdAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  createdAt_update: [Timestamp_Update!]
   """
   ✨ Generated from Field `Vehicle`.`name` of type `String!`
   """
@@ -4259,7 +4239,7 @@ input Vehicle_Data {
   """
   ✨ `_expr` server value variant of `name` (✨ Generated from Field `Vehicle`.`name` of type `String!`)
   """
-  name_expr: String_Expr @fdc_forbiddenInVariables
+  name_expr: String_Expr
   """
   ✨ Generated from Field `Vehicle`.`seats` of type `Int!`
   """
@@ -4267,11 +4247,11 @@ input Vehicle_Data {
   """
   ✨ `_expr` server value variant of `seats` (✨ Generated from Field `Vehicle`.`seats` of type `Int!`)
   """
-  seats_expr: Int_Expr @fdc_forbiddenInVariables
+  seats_expr: Int_Expr
   """
   ✨ `_update` server value variant of `seats` (✨ Generated from Field `Vehicle`.`seats` of type `Int!`)
   """
-  seats_update: [Int_Update!] @fdc_forbiddenInVariables
+  seats_update: [Int_Update!]
   """
   ✨ Generated from Field `Vehicle`.`status` of type `VehicleStatus!`
   """
@@ -4279,7 +4259,7 @@ input Vehicle_Data {
   """
   ✨ `_expr` server value variant of `status` (✨ Generated from Field `Vehicle`.`status` of type `VehicleStatus!`)
   """
-  status_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+  status_expr: VehicleStatus_Expr
   """
   ✨ Generated from Field `Vehicle`.`updatedAt` of type `Timestamp!`
   """
@@ -4287,15 +4267,15 @@ input Vehicle_Data {
   """
   ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `Vehicle`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  updatedAt_expr: Timestamp_Expr
   """
   ✨ `_time` server value variant of `updatedAt` (✨ Generated from Field `Vehicle`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  updatedAt_time: Timestamp_Relative
   """
   ✨ `_update` server value variant of `updatedAt` (✨ Generated from Field `Vehicle`.`updatedAt` of type `Timestamp!`)
   """
-  updatedAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  updatedAt_update: [Timestamp_Update!]
 }
 """
 ✨ Generated filter input type for table 'Vehicle'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
@@ -4455,7 +4435,7 @@ input Vehicle_Key {
   """
   ✨ `_expr` server value variant of `id` (✨ Generated from Field `Vehicle`.`id` of type `UUID!`)
   """
-  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  id_expr: UUID_Expr
 }
 """
 ✨ Generated list filter input type for table 'Vehicle'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
@@ -4582,7 +4562,7 @@ input VehicleStatus_Filter {
   """
   ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
   """
-  eq_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+  eq_expr: VehicleStatus_Expr
   """
   Match if field is not equal to provided value.
   """
@@ -4590,7 +4570,7 @@ input VehicleStatus_Filter {
   """
   ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
   """
-  ne_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+  ne_expr: VehicleStatus_Expr
   """
   When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
   """
@@ -4610,7 +4590,7 @@ input VehicleStatus_Filter {
   """
   ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
   """
-  gt_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+  gt_expr: VehicleStatus_Expr
   """
   Match if field is greater than or equal to the provided value.
   """
@@ -4618,7 +4598,7 @@ input VehicleStatus_Filter {
   """
   ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
   """
-  ge_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+  ge_expr: VehicleStatus_Expr
   """
   Match if field value is less than the provided value, based on index ordering of supported enum values.
   """
@@ -4626,7 +4606,7 @@ input VehicleStatus_Filter {
   """
   ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
   """
-  lt_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+  lt_expr: VehicleStatus_Expr
   """
   Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
   """
@@ -4634,7 +4614,7 @@ input VehicleStatus_Filter {
   """
   ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
   """
-  le_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+  le_expr: VehicleStatus_Expr
 }
 """
 ✨ Generated list filter input type for table 'VehicleStatus'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
@@ -4647,7 +4627,7 @@ input VehicleStatus_ListFilter {
   """
   ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
   """
-  includes_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+  includes_expr: VehicleStatus_Expr
   """
   Match if list field contains all of the provided values as members.
   """
@@ -4659,7 +4639,7 @@ input VehicleStatus_ListFilter {
   """
   ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
   """
-  excludes_expr: VehicleStatus_Expr @fdc_forbiddenInVariables
+  excludes_expr: VehicleStatus_Expr
   """
   Match if list field does not contain any of the provided values as members.
   """

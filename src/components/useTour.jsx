@@ -162,6 +162,9 @@ export function useTour({ tour, allTours, setSelectedTourId, activeCurrency, wis
 
   // Itinerary
   const getItineraryDays = () => {
+    if (Array.isArray(tour.itinerary) && tour.itinerary.length > 0) {
+      return tour.itinerary.map((d) => ({ title: d.title || '', content: d.content || '' }));
+    }
     const isOneDay = tour.oneDay;
     if (isOneDay) {
       return [

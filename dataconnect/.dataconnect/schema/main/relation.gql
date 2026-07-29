@@ -211,7 +211,7 @@ extend type Booking {
   """
   A generated field that is used for caching results in SDKs.
   """
-  _id: ID! @fdc_generated(from: "Booking.id", purpose: ENTITY_ID)
+  _id: ID! @fdc_generated(from: "Booking.id", purpose: GLOBAL_ID)
 }
 extend type Guide {
   """
@@ -304,7 +304,7 @@ extend type Guide {
   """
   A generated field that is used for caching results in SDKs.
   """
-  _id: ID! @fdc_generated(from: "Guide.id", purpose: ENTITY_ID)
+  _id: ID! @fdc_generated(from: "Guide.id", purpose: GLOBAL_ID)
 }
 extend type PwaCheckin {
   """
@@ -432,7 +432,7 @@ extend type PwaCheckin {
   """
   A generated field that is used for caching results in SDKs.
   """
-  _id: ID! @fdc_generated(from: "PwaCheckin.id", purpose: ENTITY_ID)
+  _id: ID! @fdc_generated(from: "PwaCheckin.id", purpose: GLOBAL_ID)
 }
 extend type SliderSlide {
   """
@@ -596,7 +596,7 @@ extend type SliderSlide {
   """
   A generated field that is used for caching results in SDKs.
   """
-  _id: ID! @fdc_generated(from: "SliderSlide.id", purpose: ENTITY_ID)
+  _id: ID! @fdc_generated(from: "SliderSlide.id", purpose: GLOBAL_ID)
 }
 extend type Tour {
   """
@@ -1216,7 +1216,7 @@ extend type Tour {
   """
   A generated field that is used for caching results in SDKs.
   """
-  _id: ID! @fdc_generated(from: "Tour.id", purpose: ENTITY_ID)
+  _id: ID! @fdc_generated(from: "Tour.id", purpose: GLOBAL_ID)
 }
 extend type User {
   """
@@ -1445,7 +1445,7 @@ extend type User {
   """
   A generated field that is used for caching results in SDKs.
   """
-  _id: ID! @fdc_generated(from: "User.id", purpose: ENTITY_ID)
+  _id: ID! @fdc_generated(from: "User.id", purpose: GLOBAL_ID)
 }
 extend type Vehicle {
   """
@@ -1564,5 +1564,5 @@ extend type Vehicle {
   """
   A generated field that is used for caching results in SDKs.
   """
-  _id: ID! @fdc_generated(from: "Vehicle.id", purpose: ENTITY_ID)
+  _id: ID! @fdc_generated(from: "Vehicle.id", purpose: GLOBAL_ID)
 }

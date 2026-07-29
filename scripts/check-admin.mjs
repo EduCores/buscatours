@@ -1,5 +1,5 @@
 import { Client } from 'pg';
-const connectionString = process.env.DATABASE_URL || 'postgresql://postgres:postgres@127.0.0.1:5432/buscatours-e0816-database';
+const connectionString = process.env.DATABASE_URL || 'postgresql://postgres:postgres@127.0.0.1:5433/buscatours-e0816-database';
 const client = new Client({ connectionString, ssl: false });
 
 try {
