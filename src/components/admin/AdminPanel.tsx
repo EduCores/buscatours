@@ -119,6 +119,7 @@ export default function AdminPanel({
   const [slides, setSlides] = useState<Slide[]>(slidesProp || []);
   const [offlineQueue, setOfflineQueue] = useState<PwaCheckin[]>(offlineQueueProp || []);
   const [prefilledTour, setPrefilledTour] = useState<Tour | null>(prefilledTourProp || null);
+  const [operators, setOperators] = useState<Array<Record<string, unknown>>>([]);
 
   const resolveOperatorId = useCallback((tour: Record<string, unknown>): string | null => {
     if (tour && typeof tour.operatorId === 'string' && tour.operatorId) return tour.operatorId;
@@ -188,6 +189,17 @@ export default function AdminPanel({
           console.error('Error loading slides:', error);
         });
     }
+    // Load operators (users with role OPERATOR, TOUR_ADMIN, PLATFORM_ADMIN)
+    dataService.getUsers()
+      .then((users) => {
+        const ops = (users as Array<Record<string, unknown>>).filter(
+          (u) => u && (u.role === 'operator' || u.role === 'tour-admin' || u.role === 'platform-admin')
+        );
+        setOperators(ops);
+      })
+      .catch((error) => {
+        console.error('Error loading operators:', error);
+      });
   }, [
       toursProp,
       bookingsProp,
@@ -398,6 +410,34 @@ export default function AdminPanel({
       setBookings(bookingsData);
     } catch (error) {
       showToast(t('admin.errorSyncing', 'Error sincronizando: ') + (error as Error).message, 'error');
+    }
+  };
+
+  const handleSaveOperator = async (savedOperator: Record<string, unknown>) => {
+    try {
+      // Use addUser to create/update the operator in the DB
+      const result = await dataService.addUser({
+        name: savedOperator.name as string,
+        email: savedOperator.email as string,
+        role: savedOperator.role as string,
+      });
+      const updatedOps = (result as Array<Record<string, unknown>>).filter(
+        (u) => u && (u.role === 'operator' || u.role === 'tour-admin' || u.role === 'platform-admin')
+      );
+      setOperators(updatedOps);
+      showToast(`Operador "${savedOperator.name}" guardado correctamente.`, 'success');
+    } catch (error) {
+      showToast('Error guardando operador: ' + (error as Error).message, 'error');
+    }
+  };
+
+  const handleDeleteOperator = async (id: string) => {
+    try {
+      // Note: dataService doesn't have a deleteUser method, so we just remove from local state
+      setOperators((prev) => prev.filter((o) => o.id !== id));
+      showToast('Operador removido del listado.', 'warning');
+    } catch (error) {
+      showToast('Error eliminando operador: ' + (error as Error).message, 'error');
     }
   };
 
@@ -741,6 +781,10 @@ export default function AdminPanel({
                   {activeTab === 'operators' && (
                     <Suspense fallback={<div className="flex items-center justify-center h-64"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-amber-500" /></div>}>
                       <OperatorsManagement
+                        operators={operators}
+                        tours={tours as unknown as Array<Record<string, unknown>>}
+                        onSaveOperator={handleSaveOperator}
+                        onDeleteOperator={handleDeleteOperator}
                         currentRole={currentRole}
                         currentOperator={currentOperator}
                       />
