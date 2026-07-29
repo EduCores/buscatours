@@ -389,9 +389,9 @@ export default function TourCard({ tour, onClick, activeCurrency,   onToggleComp
             <button
               className="btn-circular-glass btn-card-action btn-lg btn-blue-glass"
               onClick={(e) => {
+                e.stopPropagation();
                 if (onClick) {
-                  e.stopPropagation();
-                  onClick();
+                  onClick(id);
                 } else {
                    alert(`${t('reservaDe', 'Reserva de:')} ${title}`);
                 }
