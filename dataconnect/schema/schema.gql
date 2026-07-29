@@ -49,8 +49,47 @@ enum Destination {
   CHILE
   MEXICO
   DOMINICAN_REPUBLIC
+  GUATEMALA
+  COSTA_RICA
+  PANAMA
+  CUBA
+  BELICE
+  EL_SALVADOR
+  HONDURAS
+  NICARAGUA
+  HAITI
 }
 
+enum Difficulty {
+  EASY
+  MODERATE
+  DIFFICULT
+  EXTREME
+}
+
+enum GroupType {
+  PRIVATE
+  SHARED
+  BOTH
+}
+
+enum GuideStatus {
+  DISPONIBLE
+  EN_TOUR
+  OFFLINE
+}
+
+enum VehicleStatus {
+  DISPONIBLE
+  EN_USO
+  OFFLINE
+}
+
+enum CheckinStatus {
+  PENDING
+  SYNCED
+  PENDIENTE_SYNC
+}
 
 type User @table(name: "users") {
   id: String! @default(expr: "auth.uid")
@@ -68,6 +107,7 @@ type Tour @table(name: "tours") {
   location: String!
   duration: String!
   durationHours: Int!
+  durationDays: Int! @default(value: 1)
   originalPrice: Float!
   price: Float!
   discount: String
@@ -75,6 +115,7 @@ type Tour @table(name: "tours") {
   reviewsCount: Int! @default(value: 0)
   category: Category!
   description: String!
+  shortDescription: String
   image: String!
   featured: Boolean! @default(value: false)
   oneDay: Boolean! @default(value: true)
@@ -92,6 +133,24 @@ type Tour @table(name: "tours") {
   operatorId: String!
   operator: User! @ref(fields: "operatorId", references: "id")
   translations: String
+  availableDates: Any
+  itinerary: Any
+  minAge: Int! @default(value: 12)
+  maxPassengers: Int! @default(value: 15)
+  trailerUrl: String
+  galleryImages: Any
+  mapCenterLat: Float
+  mapCenterLng: Float
+  mapZoom: Int! @default(value: 12)
+  difficulty: Difficulty! @default(value: MODERATE)
+  seasonality: Any
+  includes: Any
+  excludes: Any
+  requirements: Any
+  pickupInfo: String
+  cancellationPolicy: String
+  languages: Any
+  groupType: GroupType! @default(value: SHARED)
   createdAt: Timestamp! @default(expr: "request.time")
   updatedAt: Timestamp! @default(expr: "request.time")
 }
@@ -129,24 +188,6 @@ type SliderSlide @table(name: "slider_slides") {
   updatedAt: Timestamp! @default(expr: "request.time")
 }
 
-enum GuideStatus {
-  DISPONIBLE
-  EN_TOUR
-  OFFLINE
-}
-
-enum VehicleStatus {
-  DISPONIBLE
-  EN_USO
-  OFFLINE
-}
-
-enum CheckinStatus {
-  PENDING
-  SYNCED
-  PENDIENTE_SYNC
-}
-
 type Guide @table(name: "guides") {
   id: UUID! @default(expr: "uuidV4()")
   name: String!
@@ -181,5 +222,3 @@ type PwaCheckin @table(name: "pwa_checkins") {
   createdAt: Timestamp! @default(expr: "request.time")
   updatedAt: Timestamp! @default(expr: "request.time")
 }
-
-

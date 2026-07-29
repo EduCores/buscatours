@@ -642,6 +642,24 @@ extend type Tour {
   """
   _count: Int! @fdc_generated(from: "Tour.", purpose: QUERY_COUNT)
   """
+  ✨ Count the number of rows in the `Tour` table where the `availableDates` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  availableDates_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.availableDates", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Tour` table where the `cancellationPolicy` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  cancellationPolicy_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.cancellationPolicy", purpose: QUERY_COUNT)
+  """
   ✨ Count the number of rows in the `Tour` table where the `category` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
   """
   category_count(
@@ -678,6 +696,15 @@ extend type Tour {
     distinct: Boolean = false
   ): Int! @fdc_generated(from: "Tour.destination", purpose: QUERY_COUNT)
   """
+  ✨ Count the number of rows in the `Tour` table where the `difficulty` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  difficulty_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.difficulty", purpose: QUERY_COUNT)
+  """
   ✨ Count the number of rows in the `Tour` table where the `discount` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
   """
   discount_count(
@@ -686,6 +713,15 @@ extend type Tour {
     """
     distinct: Boolean = false
   ): Int! @fdc_generated(from: "Tour.discount", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Tour` table where the `durationDays` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  durationDays_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.durationDays", purpose: QUERY_COUNT)
   """
   ✨ Count the number of rows in the `Tour` table where the `durationHours` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
   """
@@ -705,6 +741,15 @@ extend type Tour {
     distinct: Boolean = false
   ): Int! @fdc_generated(from: "Tour.duration", purpose: QUERY_COUNT)
   """
+  ✨ Count the number of rows in the `Tour` table where the `excludes` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  excludes_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.excludes", purpose: QUERY_COUNT)
+  """
   ✨ Count the number of rows in the `Tour` table where the `featured` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
   """
   featured_count(
@@ -713,6 +758,24 @@ extend type Tour {
     """
     distinct: Boolean = false
   ): Int! @fdc_generated(from: "Tour.featured", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Tour` table where the `galleryImages` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  galleryImages_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.galleryImages", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Tour` table where the `groupType` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  groupType_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.groupType", purpose: QUERY_COUNT)
   """
   ✨ Count the number of rows in the `Tour` table where the `heroBackgroundPosition` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
   """
@@ -750,6 +813,33 @@ extend type Tour {
     distinct: Boolean = false
   ): Int! @fdc_generated(from: "Tour.image", purpose: QUERY_COUNT)
   """
+  ✨ Count the number of rows in the `Tour` table where the `includes` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  includes_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.includes", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Tour` table where the `itinerary` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  itinerary_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.itinerary", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Tour` table where the `languages` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  languages_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.languages", purpose: QUERY_COUNT)
+  """
   ✨ Count the number of rows in the `Tour` table where the `lat` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
   """
   lat_count(
@@ -776,6 +866,51 @@ extend type Tour {
     """
     distinct: Boolean = false
   ): Int! @fdc_generated(from: "Tour.location", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Tour` table where the `mapCenterLat` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  mapCenterLat_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.mapCenterLat", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Tour` table where the `mapCenterLng` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  mapCenterLng_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.mapCenterLng", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Tour` table where the `mapZoom` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  mapZoom_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.mapZoom", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Tour` table where the `maxPassengers` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  maxPassengers_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.maxPassengers", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Tour` table where the `minAge` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  minAge_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.minAge", purpose: QUERY_COUNT)
   """
   ✨ Count the number of rows in the `Tour` table where the `oneDay` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
   """
@@ -804,6 +939,15 @@ extend type Tour {
     distinct: Boolean = false
   ): Int! @fdc_generated(from: "Tour.originalPrice", purpose: QUERY_COUNT)
   """
+  ✨ Count the number of rows in the `Tour` table where the `pickupInfo` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  pickupInfo_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.pickupInfo", purpose: QUERY_COUNT)
+  """
   ✨ Count the number of rows in the `Tour` table where the `popular` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
   """
   popular_count(
@@ -831,6 +975,15 @@ extend type Tour {
     distinct: Boolean = false
   ): Int! @fdc_generated(from: "Tour.rating", purpose: QUERY_COUNT)
   """
+  ✨ Count the number of rows in the `Tour` table where the `requirements` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  requirements_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.requirements", purpose: QUERY_COUNT)
+  """
   ✨ Count the number of rows in the `Tour` table where the `reviewsCount` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
   """
   reviewsCount_count(
@@ -839,6 +992,24 @@ extend type Tour {
     """
     distinct: Boolean = false
   ): Int! @fdc_generated(from: "Tour.reviewsCount", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Tour` table where the `seasonality` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  seasonality_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.seasonality", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Tour` table where the `shortDescription` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  shortDescription_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.shortDescription", purpose: QUERY_COUNT)
   """
   ✨ Count the number of rows in the `Tour` table where the `status` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
   """
@@ -857,6 +1028,15 @@ extend type Tour {
     """
     distinct: Boolean = false
   ): Int! @fdc_generated(from: "Tour.title", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Tour` table where the `trailerUrl` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  trailerUrl_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Tour.trailerUrl", purpose: QUERY_COUNT)
   """
   ✨ Count the number of rows in the `Tour` table where the `translations` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
   """
@@ -912,6 +1092,15 @@ extend type Tour {
     distinct: Boolean = false
   ): Int! @fdc_generated(from: "Tour.vibeRelax", purpose: QUERY_COUNT)
   """
+  ✨ Sum the `durationDays` field in the `Tour` table.
+  """
+  durationDays_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "Tour.durationDays", purpose: QUERY_SUM)
+  """
   ✨ Sum the `durationHours` field in the `Tour` table.
   """
   durationHours_sum(
@@ -938,6 +1127,51 @@ extend type Tour {
     """
     distinct: Boolean = false
   ): Float @fdc_generated(from: "Tour.lng", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `mapCenterLat` field in the `Tour` table.
+  """
+  mapCenterLat_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Tour.mapCenterLat", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `mapCenterLng` field in the `Tour` table.
+  """
+  mapCenterLng_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Tour.mapCenterLng", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `mapZoom` field in the `Tour` table.
+  """
+  mapZoom_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "Tour.mapZoom", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `maxPassengers` field in the `Tour` table.
+  """
+  maxPassengers_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "Tour.maxPassengers", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `minAge` field in the `Tour` table.
+  """
+  minAge_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "Tour.minAge", purpose: QUERY_SUM)
   """
   ✨ Sum the `originalPrice` field in the `Tour` table.
   """
@@ -1011,6 +1245,15 @@ extend type Tour {
     distinct: Boolean = false
   ): Int @fdc_generated(from: "Tour.vibeRelax", purpose: QUERY_SUM)
   """
+  ✨ Average the `durationDays` field in the `Tour` table.
+  """
+  durationDays_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Tour.durationDays", purpose: QUERY_AVG)
+  """
   ✨ Average the `durationHours` field in the `Tour` table.
   """
   durationHours_avg(
@@ -1037,6 +1280,51 @@ extend type Tour {
     """
     distinct: Boolean = false
   ): Float @fdc_generated(from: "Tour.lng", purpose: QUERY_AVG)
+  """
+  ✨ Average the `mapCenterLat` field in the `Tour` table.
+  """
+  mapCenterLat_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Tour.mapCenterLat", purpose: QUERY_AVG)
+  """
+  ✨ Average the `mapCenterLng` field in the `Tour` table.
+  """
+  mapCenterLng_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Tour.mapCenterLng", purpose: QUERY_AVG)
+  """
+  ✨ Average the `mapZoom` field in the `Tour` table.
+  """
+  mapZoom_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Tour.mapZoom", purpose: QUERY_AVG)
+  """
+  ✨ Average the `maxPassengers` field in the `Tour` table.
+  """
+  maxPassengers_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Tour.maxPassengers", purpose: QUERY_AVG)
+  """
+  ✨ Average the `minAge` field in the `Tour` table.
+  """
+  minAge_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Tour.minAge", purpose: QUERY_AVG)
   """
   ✨ Average the `originalPrice` field in the `Tour` table.
   """
@@ -1110,13 +1398,41 @@ extend type Tour {
     distinct: Boolean = false
   ): Float @fdc_generated(from: "Tour.vibeRelax", purpose: QUERY_AVG)
   """
+  ✨ Minimum of the `availableDates` field in the `Tour` table.
+  """
+  availableDates_min: Any @fdc_generated(from: "Tour.availableDates", purpose: QUERY_MIN)
+  """
   ✨ Minimum of the `createdAt` field in the `Tour` table.
   """
   createdAt_min: Timestamp @fdc_generated(from: "Tour.createdAt", purpose: QUERY_MIN)
   """
+  ✨ Minimum of the `durationDays` field in the `Tour` table.
+  """
+  durationDays_min: Int @fdc_generated(from: "Tour.durationDays", purpose: QUERY_MIN)
+  """
   ✨ Minimum of the `durationHours` field in the `Tour` table.
   """
   durationHours_min: Int @fdc_generated(from: "Tour.durationHours", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `excludes` field in the `Tour` table.
+  """
+  excludes_min: Any @fdc_generated(from: "Tour.excludes", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `galleryImages` field in the `Tour` table.
+  """
+  galleryImages_min: Any @fdc_generated(from: "Tour.galleryImages", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `includes` field in the `Tour` table.
+  """
+  includes_min: Any @fdc_generated(from: "Tour.includes", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `itinerary` field in the `Tour` table.
+  """
+  itinerary_min: Any @fdc_generated(from: "Tour.itinerary", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `languages` field in the `Tour` table.
+  """
+  languages_min: Any @fdc_generated(from: "Tour.languages", purpose: QUERY_MIN)
   """
   ✨ Minimum of the `lat` field in the `Tour` table.
   """
@@ -1125,6 +1441,26 @@ extend type Tour {
   ✨ Minimum of the `lng` field in the `Tour` table.
   """
   lng_min: Float @fdc_generated(from: "Tour.lng", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `mapCenterLat` field in the `Tour` table.
+  """
+  mapCenterLat_min: Float @fdc_generated(from: "Tour.mapCenterLat", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `mapCenterLng` field in the `Tour` table.
+  """
+  mapCenterLng_min: Float @fdc_generated(from: "Tour.mapCenterLng", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `mapZoom` field in the `Tour` table.
+  """
+  mapZoom_min: Int @fdc_generated(from: "Tour.mapZoom", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `maxPassengers` field in the `Tour` table.
+  """
+  maxPassengers_min: Int @fdc_generated(from: "Tour.maxPassengers", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `minAge` field in the `Tour` table.
+  """
+  minAge_min: Int @fdc_generated(from: "Tour.minAge", purpose: QUERY_MIN)
   """
   ✨ Minimum of the `originalPrice` field in the `Tour` table.
   """
@@ -1138,9 +1474,17 @@ extend type Tour {
   """
   rating_min: Float @fdc_generated(from: "Tour.rating", purpose: QUERY_MIN)
   """
+  ✨ Minimum of the `requirements` field in the `Tour` table.
+  """
+  requirements_min: Any @fdc_generated(from: "Tour.requirements", purpose: QUERY_MIN)
+  """
   ✨ Minimum of the `reviewsCount` field in the `Tour` table.
   """
   reviewsCount_min: Int @fdc_generated(from: "Tour.reviewsCount", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `seasonality` field in the `Tour` table.
+  """
+  seasonality_min: Any @fdc_generated(from: "Tour.seasonality", purpose: QUERY_MIN)
   """
   ✨ Minimum of the `updatedAt` field in the `Tour` table.
   """
@@ -1162,13 +1506,41 @@ extend type Tour {
   """
   vibeRelax_min: Int @fdc_generated(from: "Tour.vibeRelax", purpose: QUERY_MIN)
   """
+  ✨ Maximum of the `availableDates` field in the `Tour` table.
+  """
+  availableDates_max: Any @fdc_generated(from: "Tour.availableDates", purpose: QUERY_MAX)
+  """
   ✨ Maximum of the `createdAt` field in the `Tour` table.
   """
   createdAt_max: Timestamp @fdc_generated(from: "Tour.createdAt", purpose: QUERY_MAX)
   """
+  ✨ Maximum of the `durationDays` field in the `Tour` table.
+  """
+  durationDays_max: Int @fdc_generated(from: "Tour.durationDays", purpose: QUERY_MAX)
+  """
   ✨ Maximum of the `durationHours` field in the `Tour` table.
   """
   durationHours_max: Int @fdc_generated(from: "Tour.durationHours", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `excludes` field in the `Tour` table.
+  """
+  excludes_max: Any @fdc_generated(from: "Tour.excludes", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `galleryImages` field in the `Tour` table.
+  """
+  galleryImages_max: Any @fdc_generated(from: "Tour.galleryImages", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `includes` field in the `Tour` table.
+  """
+  includes_max: Any @fdc_generated(from: "Tour.includes", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `itinerary` field in the `Tour` table.
+  """
+  itinerary_max: Any @fdc_generated(from: "Tour.itinerary", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `languages` field in the `Tour` table.
+  """
+  languages_max: Any @fdc_generated(from: "Tour.languages", purpose: QUERY_MAX)
   """
   ✨ Maximum of the `lat` field in the `Tour` table.
   """
@@ -1177,6 +1549,26 @@ extend type Tour {
   ✨ Maximum of the `lng` field in the `Tour` table.
   """
   lng_max: Float @fdc_generated(from: "Tour.lng", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `mapCenterLat` field in the `Tour` table.
+  """
+  mapCenterLat_max: Float @fdc_generated(from: "Tour.mapCenterLat", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `mapCenterLng` field in the `Tour` table.
+  """
+  mapCenterLng_max: Float @fdc_generated(from: "Tour.mapCenterLng", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `mapZoom` field in the `Tour` table.
+  """
+  mapZoom_max: Int @fdc_generated(from: "Tour.mapZoom", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `maxPassengers` field in the `Tour` table.
+  """
+  maxPassengers_max: Int @fdc_generated(from: "Tour.maxPassengers", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `minAge` field in the `Tour` table.
+  """
+  minAge_max: Int @fdc_generated(from: "Tour.minAge", purpose: QUERY_MAX)
   """
   ✨ Maximum of the `originalPrice` field in the `Tour` table.
   """
@@ -1190,9 +1582,17 @@ extend type Tour {
   """
   rating_max: Float @fdc_generated(from: "Tour.rating", purpose: QUERY_MAX)
   """
+  ✨ Maximum of the `requirements` field in the `Tour` table.
+  """
+  requirements_max: Any @fdc_generated(from: "Tour.requirements", purpose: QUERY_MAX)
+  """
   ✨ Maximum of the `reviewsCount` field in the `Tour` table.
   """
   reviewsCount_max: Int @fdc_generated(from: "Tour.reviewsCount", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `seasonality` field in the `Tour` table.
+  """
+  seasonality_max: Any @fdc_generated(from: "Tour.seasonality", purpose: QUERY_MAX)
   """
   ✨ Maximum of the `updatedAt` field in the `Tour` table.
   """

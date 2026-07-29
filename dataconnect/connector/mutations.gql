@@ -34,7 +34,7 @@ mutation CreateTour(
   $mapCenterLat: Float
   $mapCenterLng: Float
   $mapZoom: Int
-  $difficulty: String
+  $difficulty: Difficulty
   $seasonality: Any
   $includes: Any
   $excludes: Any
@@ -42,7 +42,7 @@ mutation CreateTour(
   $pickupInfo: String
   $cancellationPolicy: String
   $languages: Any
-  $groupType: String
+  $groupType: GroupType
 ) @auth(level: USER) {
   tour_insert(data: {
     title: $title
@@ -128,7 +128,7 @@ mutation UpdateTour(
   $mapCenterLat: Float
   $mapCenterLng: Float
   $mapZoom: Int
-  $difficulty: String
+  $difficulty: Difficulty
   $seasonality: Any
   $includes: Any
   $excludes: Any
@@ -136,7 +136,7 @@ mutation UpdateTour(
   $pickupInfo: String
   $cancellationPolicy: String
   $languages: Any
-  $groupType: String
+  $groupType: GroupType
 ) @auth(level: USER) {
   tour_update(
     key: { id: $id }

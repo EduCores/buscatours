@@ -29,6 +29,18 @@ It accepts a CEL expression.
 """
 scalar Destination_Expr
 """
+✨ `Difficulty_Expr` is a server value variant of enum type `Difficulty`.
+
+It accepts a CEL expression.
+"""
+scalar Difficulty_Expr
+"""
+✨ `GroupType_Expr` is a server value variant of enum type `GroupType`.
+
+It accepts a CEL expression.
+"""
+scalar GroupType_Expr
+"""
 ✨ `Guide_KeyOutput` returns the primary key fields of table type `Guide`.
 
 It has the same format as `Guide_Key`, but is only used as mutation return value.
@@ -1086,6 +1098,210 @@ input Destination_ListFilter {
   Condition of the related objects to filter for.
   """
   exist: Destination_Filter
+}
+"""
+✨ Generated filter input type for table 'Difficulty'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Difficulty_Filter {
+  """
+  Match if field is exactly equal to provided value.
+  """
+  eq: Difficulty
+  """
+  ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
+  """
+  eq_expr: Difficulty_Expr
+  """
+  Match if field is not equal to provided value.
+  """
+  ne: Difficulty
+  """
+  ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
+  """
+  ne_expr: Difficulty_Expr
+  """
+  When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
+  """
+  isNull: Boolean
+  """
+  Match if field value is among the provided list of values.
+  """
+  in: [Difficulty!]
+  """
+  Match if field value is not among the provided list of values.
+  """
+  nin: [Difficulty!]
+  """
+  Match if field value is greater than the provided value, based on index ordering of supported enum values.
+  """
+  gt: Difficulty
+  """
+  ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
+  """
+  gt_expr: Difficulty_Expr
+  """
+  Match if field is greater than or equal to the provided value.
+  """
+  ge: Difficulty
+  """
+  ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
+  """
+  ge_expr: Difficulty_Expr
+  """
+  Match if field value is less than the provided value, based on index ordering of supported enum values.
+  """
+  lt: Difficulty
+  """
+  ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
+  """
+  lt_expr: Difficulty_Expr
+  """
+  Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
+  """
+  le: Difficulty
+  """
+  ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
+  """
+  le_expr: Difficulty_Expr
+}
+"""
+✨ Generated list filter input type for table 'Difficulty'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Difficulty_ListFilter {
+  """
+  Match if list field contains the provided value as a member.
+  """
+  includes: Difficulty
+  """
+  ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
+  """
+  includes_expr: Difficulty_Expr
+  """
+  Match if list field contains all of the provided values as members.
+  """
+  includesAll: [Difficulty!]
+  """
+  Match if list field does not contain the provided value as a member.
+  """
+  excludes: Difficulty
+  """
+  ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
+  """
+  excludes_expr: Difficulty_Expr
+  """
+  Match if list field does not contain any of the provided values as members.
+  """
+  excludesAll: [Difficulty!]
+  """
+  The desired number of enum values that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Difficulty_Filter
+}
+"""
+✨ Generated filter input type for table 'GroupType'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input GroupType_Filter {
+  """
+  Match if field is exactly equal to provided value.
+  """
+  eq: GroupType
+  """
+  ✨ `_expr` server value variant of `eq` (Match if field is exactly equal to provided value.)
+  """
+  eq_expr: GroupType_Expr
+  """
+  Match if field is not equal to provided value.
+  """
+  ne: GroupType
+  """
+  ✨ `_expr` server value variant of `ne` (Match if field is not equal to provided value.)
+  """
+  ne_expr: GroupType_Expr
+  """
+  When true, match if field `IS NULL`. When false, match if field is `NOT NULL`.
+  """
+  isNull: Boolean
+  """
+  Match if field value is among the provided list of values.
+  """
+  in: [GroupType!]
+  """
+  Match if field value is not among the provided list of values.
+  """
+  nin: [GroupType!]
+  """
+  Match if field value is greater than the provided value, based on index ordering of supported enum values.
+  """
+  gt: GroupType
+  """
+  ✨ `_expr` server value variant of `gt` (Match if field value is greater than the provided value, based on index ordering of supported enum values.)
+  """
+  gt_expr: GroupType_Expr
+  """
+  Match if field is greater than or equal to the provided value.
+  """
+  ge: GroupType
+  """
+  ✨ `_expr` server value variant of `ge` (Match if field is greater than or equal to the provided value.)
+  """
+  ge_expr: GroupType_Expr
+  """
+  Match if field value is less than the provided value, based on index ordering of supported enum values.
+  """
+  lt: GroupType
+  """
+  ✨ `_expr` server value variant of `lt` (Match if field value is less than the provided value, based on index ordering of supported enum values.)
+  """
+  lt_expr: GroupType_Expr
+  """
+  Match if field is less than or equal to the provided value, based on index ordering of supported enum values.
+  """
+  le: GroupType
+  """
+  ✨ `_expr` server value variant of `le` (Match if field is less than or equal to the provided value, based on index ordering of supported enum values.)
+  """
+  le_expr: GroupType_Expr
+}
+"""
+✨ Generated list filter input type for table 'GroupType'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input GroupType_ListFilter {
+  """
+  Match if list field contains the provided value as a member.
+  """
+  includes: GroupType
+  """
+  ✨ `_expr` server value variant of `includes` (Match if list field contains the provided value as a member.)
+  """
+  includes_expr: GroupType_Expr
+  """
+  Match if list field contains all of the provided values as members.
+  """
+  includesAll: [GroupType!]
+  """
+  Match if list field does not contain the provided value as a member.
+  """
+  excludes: GroupType
+  """
+  ✨ `_expr` server value variant of `excludes` (Match if list field does not contain the provided value as a member.)
+  """
+  excludes_expr: GroupType_Expr
+  """
+  Match if list field does not contain any of the provided values as members.
+  """
+  excludesAll: [GroupType!]
+  """
+  The desired number of enum values that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: GroupType_Filter
 }
 """
 ✨ Generated data input type for table 'Guide'. It includes all necessary fields for creating or upserting rows into table.
@@ -2513,6 +2729,22 @@ input Tour_Data {
   """
   operator: User_Key
   """
+  ✨ Generated from Field `Tour`.`availableDates` of type `Any`
+  """
+  availableDates: Any
+  """
+  ✨ `_expr` server value variant of `availableDates` (✨ Generated from Field `Tour`.`availableDates` of type `Any`)
+  """
+  availableDates_expr: Any_Expr
+  """
+  ✨ Generated from Field `Tour`.`cancellationPolicy` of type `String`
+  """
+  cancellationPolicy: String
+  """
+  ✨ `_expr` server value variant of `cancellationPolicy` (✨ Generated from Field `Tour`.`cancellationPolicy` of type `String`)
+  """
+  cancellationPolicy_expr: String_Expr
+  """
   ✨ Generated from Field `Tour`.`category` of type `Category!`
   """
   category: Category
@@ -2553,6 +2785,14 @@ input Tour_Data {
   """
   destination_expr: Destination_Expr
   """
+  ✨ Generated from Field `Tour`.`difficulty` of type `Difficulty!`
+  """
+  difficulty: Difficulty
+  """
+  ✨ `_expr` server value variant of `difficulty` (✨ Generated from Field `Tour`.`difficulty` of type `Difficulty!`)
+  """
+  difficulty_expr: Difficulty_Expr
+  """
   ✨ Generated from Field `Tour`.`discount` of type `String`
   """
   discount: String
@@ -2569,6 +2809,18 @@ input Tour_Data {
   """
   duration_expr: String_Expr
   """
+  ✨ Generated from Field `Tour`.`durationDays` of type `Int!`
+  """
+  durationDays: Int
+  """
+  ✨ `_expr` server value variant of `durationDays` (✨ Generated from Field `Tour`.`durationDays` of type `Int!`)
+  """
+  durationDays_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `durationDays` (✨ Generated from Field `Tour`.`durationDays` of type `Int!`)
+  """
+  durationDays_update: [Int_Update!]
+  """
   ✨ Generated from Field `Tour`.`durationHours` of type `Int!`
   """
   durationHours: Int
@@ -2581,6 +2833,14 @@ input Tour_Data {
   """
   durationHours_update: [Int_Update!]
   """
+  ✨ Generated from Field `Tour`.`excludes` of type `Any`
+  """
+  excludes: Any
+  """
+  ✨ `_expr` server value variant of `excludes` (✨ Generated from Field `Tour`.`excludes` of type `Any`)
+  """
+  excludes_expr: Any_Expr
+  """
   ✨ Generated from Field `Tour`.`featured` of type `Boolean!`
   """
   featured: Boolean
@@ -2588,6 +2848,22 @@ input Tour_Data {
   ✨ `_expr` server value variant of `featured` (✨ Generated from Field `Tour`.`featured` of type `Boolean!`)
   """
   featured_expr: Boolean_Expr
+  """
+  ✨ Generated from Field `Tour`.`galleryImages` of type `Any`
+  """
+  galleryImages: Any
+  """
+  ✨ `_expr` server value variant of `galleryImages` (✨ Generated from Field `Tour`.`galleryImages` of type `Any`)
+  """
+  galleryImages_expr: Any_Expr
+  """
+  ✨ Generated from Field `Tour`.`groupType` of type `GroupType!`
+  """
+  groupType: GroupType
+  """
+  ✨ `_expr` server value variant of `groupType` (✨ Generated from Field `Tour`.`groupType` of type `GroupType!`)
+  """
+  groupType_expr: GroupType_Expr
   """
   ✨ Generated from Field `Tour`.`heroBackgroundPosition` of type `String`
   """
@@ -2612,6 +2888,30 @@ input Tour_Data {
   ✨ `_expr` server value variant of `image` (✨ Generated from Field `Tour`.`image` of type `String!`)
   """
   image_expr: String_Expr
+  """
+  ✨ Generated from Field `Tour`.`includes` of type `Any`
+  """
+  includes: Any
+  """
+  ✨ `_expr` server value variant of `includes` (✨ Generated from Field `Tour`.`includes` of type `Any`)
+  """
+  includes_expr: Any_Expr
+  """
+  ✨ Generated from Field `Tour`.`itinerary` of type `Any`
+  """
+  itinerary: Any
+  """
+  ✨ `_expr` server value variant of `itinerary` (✨ Generated from Field `Tour`.`itinerary` of type `Any`)
+  """
+  itinerary_expr: Any_Expr
+  """
+  ✨ Generated from Field `Tour`.`languages` of type `Any`
+  """
+  languages: Any
+  """
+  ✨ `_expr` server value variant of `languages` (✨ Generated from Field `Tour`.`languages` of type `Any`)
+  """
+  languages_expr: Any_Expr
   """
   ✨ Generated from Field `Tour`.`lat` of type `Float`
   """
@@ -2645,6 +2945,66 @@ input Tour_Data {
   """
   location_expr: String_Expr
   """
+  ✨ Generated from Field `Tour`.`mapCenterLat` of type `Float`
+  """
+  mapCenterLat: Float
+  """
+  ✨ `_expr` server value variant of `mapCenterLat` (✨ Generated from Field `Tour`.`mapCenterLat` of type `Float`)
+  """
+  mapCenterLat_expr: Float_Expr
+  """
+  ✨ `_update` server value variant of `mapCenterLat` (✨ Generated from Field `Tour`.`mapCenterLat` of type `Float`)
+  """
+  mapCenterLat_update: [Float_Update!]
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLng` of type `Float`
+  """
+  mapCenterLng: Float
+  """
+  ✨ `_expr` server value variant of `mapCenterLng` (✨ Generated from Field `Tour`.`mapCenterLng` of type `Float`)
+  """
+  mapCenterLng_expr: Float_Expr
+  """
+  ✨ `_update` server value variant of `mapCenterLng` (✨ Generated from Field `Tour`.`mapCenterLng` of type `Float`)
+  """
+  mapCenterLng_update: [Float_Update!]
+  """
+  ✨ Generated from Field `Tour`.`mapZoom` of type `Int!`
+  """
+  mapZoom: Int
+  """
+  ✨ `_expr` server value variant of `mapZoom` (✨ Generated from Field `Tour`.`mapZoom` of type `Int!`)
+  """
+  mapZoom_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `mapZoom` (✨ Generated from Field `Tour`.`mapZoom` of type `Int!`)
+  """
+  mapZoom_update: [Int_Update!]
+  """
+  ✨ Generated from Field `Tour`.`maxPassengers` of type `Int!`
+  """
+  maxPassengers: Int
+  """
+  ✨ `_expr` server value variant of `maxPassengers` (✨ Generated from Field `Tour`.`maxPassengers` of type `Int!`)
+  """
+  maxPassengers_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `maxPassengers` (✨ Generated from Field `Tour`.`maxPassengers` of type `Int!`)
+  """
+  maxPassengers_update: [Int_Update!]
+  """
+  ✨ Generated from Field `Tour`.`minAge` of type `Int!`
+  """
+  minAge: Int
+  """
+  ✨ `_expr` server value variant of `minAge` (✨ Generated from Field `Tour`.`minAge` of type `Int!`)
+  """
+  minAge_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `minAge` (✨ Generated from Field `Tour`.`minAge` of type `Int!`)
+  """
+  minAge_update: [Int_Update!]
+  """
   ✨ Generated from Field `Tour`.`oneDay` of type `Boolean!`
   """
   oneDay: Boolean
@@ -2664,6 +3024,14 @@ input Tour_Data {
   ✨ `_update` server value variant of `originalPrice` (✨ Generated from Field `Tour`.`originalPrice` of type `Float!`)
   """
   originalPrice_update: [Float_Update!]
+  """
+  ✨ Generated from Field `Tour`.`pickupInfo` of type `String`
+  """
+  pickupInfo: String
+  """
+  ✨ `_expr` server value variant of `pickupInfo` (✨ Generated from Field `Tour`.`pickupInfo` of type `String`)
+  """
+  pickupInfo_expr: String_Expr
   """
   ✨ Generated from Field `Tour`.`popular` of type `Boolean!`
   """
@@ -2697,6 +3065,14 @@ input Tour_Data {
   """
   rating_update: [Float_Update!]
   """
+  ✨ Generated from Field `Tour`.`requirements` of type `Any`
+  """
+  requirements: Any
+  """
+  ✨ `_expr` server value variant of `requirements` (✨ Generated from Field `Tour`.`requirements` of type `Any`)
+  """
+  requirements_expr: Any_Expr
+  """
   ✨ Generated from Field `Tour`.`reviewsCount` of type `Int!`
   """
   reviewsCount: Int
@@ -2708,6 +3084,22 @@ input Tour_Data {
   ✨ `_update` server value variant of `reviewsCount` (✨ Generated from Field `Tour`.`reviewsCount` of type `Int!`)
   """
   reviewsCount_update: [Int_Update!]
+  """
+  ✨ Generated from Field `Tour`.`seasonality` of type `Any`
+  """
+  seasonality: Any
+  """
+  ✨ `_expr` server value variant of `seasonality` (✨ Generated from Field `Tour`.`seasonality` of type `Any`)
+  """
+  seasonality_expr: Any_Expr
+  """
+  ✨ Generated from Field `Tour`.`shortDescription` of type `String`
+  """
+  shortDescription: String
+  """
+  ✨ `_expr` server value variant of `shortDescription` (✨ Generated from Field `Tour`.`shortDescription` of type `String`)
+  """
+  shortDescription_expr: String_Expr
   """
   ✨ Generated from Field `Tour`.`status` of type `TourStatus!`
   """
@@ -2724,6 +3116,14 @@ input Tour_Data {
   ✨ `_expr` server value variant of `title` (✨ Generated from Field `Tour`.`title` of type `String!`)
   """
   title_expr: String_Expr
+  """
+  ✨ Generated from Field `Tour`.`trailerUrl` of type `String`
+  """
+  trailerUrl: String
+  """
+  ✨ `_expr` server value variant of `trailerUrl` (✨ Generated from Field `Tour`.`trailerUrl` of type `String`)
+  """
+  trailerUrl_expr: String_Expr
   """
   ✨ Generated from Field `Tour`.`translations` of type `String`
   """
@@ -2826,6 +3226,14 @@ input Tour_Filter {
   """
   operator: User_Filter
   """
+  ✨ Generated from Field `Tour`.`availableDates` of type `Any`
+  """
+  availableDates: Any_Filter
+  """
+  ✨ Generated from Field `Tour`.`cancellationPolicy` of type `String`
+  """
+  cancellationPolicy: String_Filter
+  """
   ✨ Generated from Field `Tour`.`category` of type `Category!`
   """
   category: Category_Filter
@@ -2842,6 +3250,10 @@ input Tour_Filter {
   """
   destination: Destination_Filter
   """
+  ✨ Generated from Field `Tour`.`difficulty` of type `Difficulty!`
+  """
+  difficulty: Difficulty_Filter
+  """
   ✨ Generated from Field `Tour`.`discount` of type `String`
   """
   discount: String_Filter
@@ -2850,13 +3262,29 @@ input Tour_Filter {
   """
   duration: String_Filter
   """
+  ✨ Generated from Field `Tour`.`durationDays` of type `Int!`
+  """
+  durationDays: Int_Filter
+  """
   ✨ Generated from Field `Tour`.`durationHours` of type `Int!`
   """
   durationHours: Int_Filter
   """
+  ✨ Generated from Field `Tour`.`excludes` of type `Any`
+  """
+  excludes: Any_Filter
+  """
   ✨ Generated from Field `Tour`.`featured` of type `Boolean!`
   """
   featured: Boolean_Filter
+  """
+  ✨ Generated from Field `Tour`.`galleryImages` of type `Any`
+  """
+  galleryImages: Any_Filter
+  """
+  ✨ Generated from Field `Tour`.`groupType` of type `GroupType!`
+  """
+  groupType: GroupType_Filter
   """
   ✨ Generated from Field `Tour`.`heroBackgroundPosition` of type `String`
   """
@@ -2870,6 +3298,18 @@ input Tour_Filter {
   """
   image: String_Filter
   """
+  ✨ Generated from Field `Tour`.`includes` of type `Any`
+  """
+  includes: Any_Filter
+  """
+  ✨ Generated from Field `Tour`.`itinerary` of type `Any`
+  """
+  itinerary: Any_Filter
+  """
+  ✨ Generated from Field `Tour`.`languages` of type `Any`
+  """
+  languages: Any_Filter
+  """
   ✨ Generated from Field `Tour`.`lat` of type `Float`
   """
   lat: Float_Filter
@@ -2882,6 +3322,26 @@ input Tour_Filter {
   """
   location: String_Filter
   """
+  ✨ Generated from Field `Tour`.`mapCenterLat` of type `Float`
+  """
+  mapCenterLat: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLng` of type `Float`
+  """
+  mapCenterLng: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`mapZoom` of type `Int!`
+  """
+  mapZoom: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`maxPassengers` of type `Int!`
+  """
+  maxPassengers: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`minAge` of type `Int!`
+  """
+  minAge: Int_Filter
+  """
   ✨ Generated from Field `Tour`.`oneDay` of type `Boolean!`
   """
   oneDay: Boolean_Filter
@@ -2889,6 +3349,10 @@ input Tour_Filter {
   ✨ Generated from Field `Tour`.`originalPrice` of type `Float!`
   """
   originalPrice: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`pickupInfo` of type `String`
+  """
+  pickupInfo: String_Filter
   """
   ✨ Generated from Field `Tour`.`popular` of type `Boolean!`
   """
@@ -2902,9 +3366,21 @@ input Tour_Filter {
   """
   rating: Float_Filter
   """
+  ✨ Generated from Field `Tour`.`requirements` of type `Any`
+  """
+  requirements: Any_Filter
+  """
   ✨ Generated from Field `Tour`.`reviewsCount` of type `Int!`
   """
   reviewsCount: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`seasonality` of type `Any`
+  """
+  seasonality: Any_Filter
+  """
+  ✨ Generated from Field `Tour`.`shortDescription` of type `String`
+  """
+  shortDescription: String_Filter
   """
   ✨ Generated from Field `Tour`.`status` of type `TourStatus!`
   """
@@ -2913,6 +3389,10 @@ input Tour_Filter {
   ✨ Generated from Field `Tour`.`title` of type `String!`
   """
   title: String_Filter
+  """
+  ✨ Generated from Field `Tour`.`trailerUrl` of type `String`
+  """
+  trailerUrl: String_Filter
   """
   ✨ Generated from Field `Tour`.`translations` of type `String`
   """
@@ -2980,6 +3460,14 @@ input Tour_Having {
   """
   _count: Int_Filter
   """
+  ✨ Generated from Field `Tour`.`availableDates_count` of type `Int!`
+  """
+  availableDates_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`cancellationPolicy_count` of type `Int!`
+  """
+  cancellationPolicy_count: Int_Filter
+  """
   ✨ Generated from Field `Tour`.`category_count` of type `Int!`
   """
   category_count: Int_Filter
@@ -2996,9 +3484,17 @@ input Tour_Having {
   """
   destination_count: Int_Filter
   """
+  ✨ Generated from Field `Tour`.`difficulty_count` of type `Int!`
+  """
+  difficulty_count: Int_Filter
+  """
   ✨ Generated from Field `Tour`.`discount_count` of type `Int!`
   """
   discount_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`durationDays_count` of type `Int!`
+  """
+  durationDays_count: Int_Filter
   """
   ✨ Generated from Field `Tour`.`durationHours_count` of type `Int!`
   """
@@ -3008,9 +3504,21 @@ input Tour_Having {
   """
   duration_count: Int_Filter
   """
+  ✨ Generated from Field `Tour`.`excludes_count` of type `Int!`
+  """
+  excludes_count: Int_Filter
+  """
   ✨ Generated from Field `Tour`.`featured_count` of type `Int!`
   """
   featured_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`galleryImages_count` of type `Int!`
+  """
+  galleryImages_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`groupType_count` of type `Int!`
+  """
+  groupType_count: Int_Filter
   """
   ✨ Generated from Field `Tour`.`heroBackgroundPosition_count` of type `Int!`
   """
@@ -3028,6 +3536,18 @@ input Tour_Having {
   """
   image_count: Int_Filter
   """
+  ✨ Generated from Field `Tour`.`includes_count` of type `Int!`
+  """
+  includes_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`itinerary_count` of type `Int!`
+  """
+  itinerary_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`languages_count` of type `Int!`
+  """
+  languages_count: Int_Filter
+  """
   ✨ Generated from Field `Tour`.`lat_count` of type `Int!`
   """
   lat_count: Int_Filter
@@ -3039,6 +3559,26 @@ input Tour_Having {
   ✨ Generated from Field `Tour`.`location_count` of type `Int!`
   """
   location_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLat_count` of type `Int!`
+  """
+  mapCenterLat_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLng_count` of type `Int!`
+  """
+  mapCenterLng_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`mapZoom_count` of type `Int!`
+  """
+  mapZoom_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`maxPassengers_count` of type `Int!`
+  """
+  maxPassengers_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`minAge_count` of type `Int!`
+  """
+  minAge_count: Int_Filter
   """
   ✨ Generated from Field `Tour`.`oneDay_count` of type `Int!`
   """
@@ -3052,6 +3592,10 @@ input Tour_Having {
   """
   originalPrice_count: Int_Filter
   """
+  ✨ Generated from Field `Tour`.`pickupInfo_count` of type `Int!`
+  """
+  pickupInfo_count: Int_Filter
+  """
   ✨ Generated from Field `Tour`.`popular_count` of type `Int!`
   """
   popular_count: Int_Filter
@@ -3064,9 +3608,21 @@ input Tour_Having {
   """
   rating_count: Int_Filter
   """
+  ✨ Generated from Field `Tour`.`requirements_count` of type `Int!`
+  """
+  requirements_count: Int_Filter
+  """
   ✨ Generated from Field `Tour`.`reviewsCount_count` of type `Int!`
   """
   reviewsCount_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`seasonality_count` of type `Int!`
+  """
+  seasonality_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`shortDescription_count` of type `Int!`
+  """
+  shortDescription_count: Int_Filter
   """
   ✨ Generated from Field `Tour`.`status_count` of type `Int!`
   """
@@ -3075,6 +3631,10 @@ input Tour_Having {
   ✨ Generated from Field `Tour`.`title_count` of type `Int!`
   """
   title_count: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`trailerUrl_count` of type `Int!`
+  """
+  trailerUrl_count: Int_Filter
   """
   ✨ Generated from Field `Tour`.`translations_count` of type `Int!`
   """
@@ -3100,6 +3660,10 @@ input Tour_Having {
   """
   vibeRelax_count: Int_Filter
   """
+  ✨ Generated from Field `Tour`.`durationDays_sum` of type `Int`
+  """
+  durationDays_sum: Int_Filter
+  """
   ✨ Generated from Field `Tour`.`durationHours_sum` of type `Int`
   """
   durationHours_sum: Int_Filter
@@ -3111,6 +3675,26 @@ input Tour_Having {
   ✨ Generated from Field `Tour`.`lng_sum` of type `Float`
   """
   lng_sum: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLat_sum` of type `Float`
+  """
+  mapCenterLat_sum: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLng_sum` of type `Float`
+  """
+  mapCenterLng_sum: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`mapZoom_sum` of type `Int`
+  """
+  mapZoom_sum: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`maxPassengers_sum` of type `Int`
+  """
+  maxPassengers_sum: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`minAge_sum` of type `Int`
+  """
+  minAge_sum: Int_Filter
   """
   ✨ Generated from Field `Tour`.`originalPrice_sum` of type `Float`
   """
@@ -3144,6 +3728,10 @@ input Tour_Having {
   """
   vibeRelax_sum: Int_Filter
   """
+  ✨ Generated from Field `Tour`.`durationDays_avg` of type `Float`
+  """
+  durationDays_avg: Float_Filter
+  """
   ✨ Generated from Field `Tour`.`durationHours_avg` of type `Float`
   """
   durationHours_avg: Float_Filter
@@ -3155,6 +3743,26 @@ input Tour_Having {
   ✨ Generated from Field `Tour`.`lng_avg` of type `Float`
   """
   lng_avg: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLat_avg` of type `Float`
+  """
+  mapCenterLat_avg: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLng_avg` of type `Float`
+  """
+  mapCenterLng_avg: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`mapZoom_avg` of type `Float`
+  """
+  mapZoom_avg: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`maxPassengers_avg` of type `Float`
+  """
+  maxPassengers_avg: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`minAge_avg` of type `Float`
+  """
+  minAge_avg: Float_Filter
   """
   ✨ Generated from Field `Tour`.`originalPrice_avg` of type `Float`
   """
@@ -3188,13 +3796,41 @@ input Tour_Having {
   """
   vibeRelax_avg: Float_Filter
   """
+  ✨ Generated from Field `Tour`.`availableDates_min` of type `Any`
+  """
+  availableDates_min: Any_Filter
+  """
   ✨ Generated from Field `Tour`.`createdAt_min` of type `Timestamp`
   """
   createdAt_min: Timestamp_Filter
   """
+  ✨ Generated from Field `Tour`.`durationDays_min` of type `Int`
+  """
+  durationDays_min: Int_Filter
+  """
   ✨ Generated from Field `Tour`.`durationHours_min` of type `Int`
   """
   durationHours_min: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`excludes_min` of type `Any`
+  """
+  excludes_min: Any_Filter
+  """
+  ✨ Generated from Field `Tour`.`galleryImages_min` of type `Any`
+  """
+  galleryImages_min: Any_Filter
+  """
+  ✨ Generated from Field `Tour`.`includes_min` of type `Any`
+  """
+  includes_min: Any_Filter
+  """
+  ✨ Generated from Field `Tour`.`itinerary_min` of type `Any`
+  """
+  itinerary_min: Any_Filter
+  """
+  ✨ Generated from Field `Tour`.`languages_min` of type `Any`
+  """
+  languages_min: Any_Filter
   """
   ✨ Generated from Field `Tour`.`lat_min` of type `Float`
   """
@@ -3203,6 +3839,26 @@ input Tour_Having {
   ✨ Generated from Field `Tour`.`lng_min` of type `Float`
   """
   lng_min: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLat_min` of type `Float`
+  """
+  mapCenterLat_min: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLng_min` of type `Float`
+  """
+  mapCenterLng_min: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`mapZoom_min` of type `Int`
+  """
+  mapZoom_min: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`maxPassengers_min` of type `Int`
+  """
+  maxPassengers_min: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`minAge_min` of type `Int`
+  """
+  minAge_min: Int_Filter
   """
   ✨ Generated from Field `Tour`.`originalPrice_min` of type `Float`
   """
@@ -3216,9 +3872,17 @@ input Tour_Having {
   """
   rating_min: Float_Filter
   """
+  ✨ Generated from Field `Tour`.`requirements_min` of type `Any`
+  """
+  requirements_min: Any_Filter
+  """
   ✨ Generated from Field `Tour`.`reviewsCount_min` of type `Int`
   """
   reviewsCount_min: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`seasonality_min` of type `Any`
+  """
+  seasonality_min: Any_Filter
   """
   ✨ Generated from Field `Tour`.`updatedAt_min` of type `Timestamp`
   """
@@ -3240,13 +3904,41 @@ input Tour_Having {
   """
   vibeRelax_min: Int_Filter
   """
+  ✨ Generated from Field `Tour`.`availableDates_max` of type `Any`
+  """
+  availableDates_max: Any_Filter
+  """
   ✨ Generated from Field `Tour`.`createdAt_max` of type `Timestamp`
   """
   createdAt_max: Timestamp_Filter
   """
+  ✨ Generated from Field `Tour`.`durationDays_max` of type `Int`
+  """
+  durationDays_max: Int_Filter
+  """
   ✨ Generated from Field `Tour`.`durationHours_max` of type `Int`
   """
   durationHours_max: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`excludes_max` of type `Any`
+  """
+  excludes_max: Any_Filter
+  """
+  ✨ Generated from Field `Tour`.`galleryImages_max` of type `Any`
+  """
+  galleryImages_max: Any_Filter
+  """
+  ✨ Generated from Field `Tour`.`includes_max` of type `Any`
+  """
+  includes_max: Any_Filter
+  """
+  ✨ Generated from Field `Tour`.`itinerary_max` of type `Any`
+  """
+  itinerary_max: Any_Filter
+  """
+  ✨ Generated from Field `Tour`.`languages_max` of type `Any`
+  """
+  languages_max: Any_Filter
   """
   ✨ Generated from Field `Tour`.`lat_max` of type `Float`
   """
@@ -3255,6 +3947,26 @@ input Tour_Having {
   ✨ Generated from Field `Tour`.`lng_max` of type `Float`
   """
   lng_max: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLat_max` of type `Float`
+  """
+  mapCenterLat_max: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLng_max` of type `Float`
+  """
+  mapCenterLng_max: Float_Filter
+  """
+  ✨ Generated from Field `Tour`.`mapZoom_max` of type `Int`
+  """
+  mapZoom_max: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`maxPassengers_max` of type `Int`
+  """
+  maxPassengers_max: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`minAge_max` of type `Int`
+  """
+  minAge_max: Int_Filter
   """
   ✨ Generated from Field `Tour`.`originalPrice_max` of type `Float`
   """
@@ -3268,9 +3980,17 @@ input Tour_Having {
   """
   rating_max: Float_Filter
   """
+  ✨ Generated from Field `Tour`.`requirements_max` of type `Any`
+  """
+  requirements_max: Any_Filter
+  """
   ✨ Generated from Field `Tour`.`reviewsCount_max` of type `Int`
   """
   reviewsCount_max: Int_Filter
+  """
+  ✨ Generated from Field `Tour`.`seasonality_max` of type `Any`
+  """
+  seasonality_max: Any_Filter
   """
   ✨ Generated from Field `Tour`.`updatedAt_max` of type `Timestamp`
   """
@@ -3335,6 +4055,14 @@ input Tour_Order {
   """
   operator: User_Order
   """
+  ✨ Generated from Field `Tour`.`availableDates` of type `Any`
+  """
+  availableDates: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`cancellationPolicy` of type `String`
+  """
+  cancellationPolicy: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`category` of type `Category!`
   """
   category: OrderDirection
@@ -3351,6 +4079,10 @@ input Tour_Order {
   """
   destination: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`difficulty` of type `Difficulty!`
+  """
+  difficulty: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`discount` of type `String`
   """
   discount: OrderDirection
@@ -3359,13 +4091,29 @@ input Tour_Order {
   """
   duration: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`durationDays` of type `Int!`
+  """
+  durationDays: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`durationHours` of type `Int!`
   """
   durationHours: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`excludes` of type `Any`
+  """
+  excludes: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`featured` of type `Boolean!`
   """
   featured: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`galleryImages` of type `Any`
+  """
+  galleryImages: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`groupType` of type `GroupType!`
+  """
+  groupType: OrderDirection
   """
   ✨ Generated from Field `Tour`.`heroBackgroundPosition` of type `String`
   """
@@ -3379,6 +4127,18 @@ input Tour_Order {
   """
   image: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`includes` of type `Any`
+  """
+  includes: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`itinerary` of type `Any`
+  """
+  itinerary: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`languages` of type `Any`
+  """
+  languages: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`lat` of type `Float`
   """
   lat: OrderDirection
@@ -3391,6 +4151,26 @@ input Tour_Order {
   """
   location: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`mapCenterLat` of type `Float`
+  """
+  mapCenterLat: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLng` of type `Float`
+  """
+  mapCenterLng: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`mapZoom` of type `Int!`
+  """
+  mapZoom: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`maxPassengers` of type `Int!`
+  """
+  maxPassengers: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`minAge` of type `Int!`
+  """
+  minAge: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`oneDay` of type `Boolean!`
   """
   oneDay: OrderDirection
@@ -3398,6 +4178,10 @@ input Tour_Order {
   ✨ Generated from Field `Tour`.`originalPrice` of type `Float!`
   """
   originalPrice: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`pickupInfo` of type `String`
+  """
+  pickupInfo: OrderDirection
   """
   ✨ Generated from Field `Tour`.`popular` of type `Boolean!`
   """
@@ -3411,9 +4195,21 @@ input Tour_Order {
   """
   rating: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`requirements` of type `Any`
+  """
+  requirements: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`reviewsCount` of type `Int!`
   """
   reviewsCount: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`seasonality` of type `Any`
+  """
+  seasonality: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`shortDescription` of type `String`
+  """
+  shortDescription: OrderDirection
   """
   ✨ Generated from Field `Tour`.`status` of type `TourStatus!`
   """
@@ -3422,6 +4218,10 @@ input Tour_Order {
   ✨ Generated from Field `Tour`.`title` of type `String!`
   """
   title: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`trailerUrl` of type `String`
+  """
+  trailerUrl: OrderDirection
   """
   ✨ Generated from Field `Tour`.`translations` of type `String`
   """
@@ -3451,6 +4251,14 @@ input Tour_Order {
   """
   _count: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`availableDates_count` of type `Int!`
+  """
+  availableDates_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`cancellationPolicy_count` of type `Int!`
+  """
+  cancellationPolicy_count: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`category_count` of type `Int!`
   """
   category_count: OrderDirection
@@ -3467,9 +4275,17 @@ input Tour_Order {
   """
   destination_count: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`difficulty_count` of type `Int!`
+  """
+  difficulty_count: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`discount_count` of type `Int!`
   """
   discount_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`durationDays_count` of type `Int!`
+  """
+  durationDays_count: OrderDirection
   """
   ✨ Generated from Field `Tour`.`durationHours_count` of type `Int!`
   """
@@ -3479,9 +4295,21 @@ input Tour_Order {
   """
   duration_count: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`excludes_count` of type `Int!`
+  """
+  excludes_count: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`featured_count` of type `Int!`
   """
   featured_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`galleryImages_count` of type `Int!`
+  """
+  galleryImages_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`groupType_count` of type `Int!`
+  """
+  groupType_count: OrderDirection
   """
   ✨ Generated from Field `Tour`.`heroBackgroundPosition_count` of type `Int!`
   """
@@ -3499,6 +4327,18 @@ input Tour_Order {
   """
   image_count: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`includes_count` of type `Int!`
+  """
+  includes_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`itinerary_count` of type `Int!`
+  """
+  itinerary_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`languages_count` of type `Int!`
+  """
+  languages_count: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`lat_count` of type `Int!`
   """
   lat_count: OrderDirection
@@ -3510,6 +4350,26 @@ input Tour_Order {
   ✨ Generated from Field `Tour`.`location_count` of type `Int!`
   """
   location_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLat_count` of type `Int!`
+  """
+  mapCenterLat_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLng_count` of type `Int!`
+  """
+  mapCenterLng_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`mapZoom_count` of type `Int!`
+  """
+  mapZoom_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`maxPassengers_count` of type `Int!`
+  """
+  maxPassengers_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`minAge_count` of type `Int!`
+  """
+  minAge_count: OrderDirection
   """
   ✨ Generated from Field `Tour`.`oneDay_count` of type `Int!`
   """
@@ -3523,6 +4383,10 @@ input Tour_Order {
   """
   originalPrice_count: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`pickupInfo_count` of type `Int!`
+  """
+  pickupInfo_count: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`popular_count` of type `Int!`
   """
   popular_count: OrderDirection
@@ -3535,9 +4399,21 @@ input Tour_Order {
   """
   rating_count: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`requirements_count` of type `Int!`
+  """
+  requirements_count: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`reviewsCount_count` of type `Int!`
   """
   reviewsCount_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`seasonality_count` of type `Int!`
+  """
+  seasonality_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`shortDescription_count` of type `Int!`
+  """
+  shortDescription_count: OrderDirection
   """
   ✨ Generated from Field `Tour`.`status_count` of type `Int!`
   """
@@ -3546,6 +4422,10 @@ input Tour_Order {
   ✨ Generated from Field `Tour`.`title_count` of type `Int!`
   """
   title_count: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`trailerUrl_count` of type `Int!`
+  """
+  trailerUrl_count: OrderDirection
   """
   ✨ Generated from Field `Tour`.`translations_count` of type `Int!`
   """
@@ -3571,6 +4451,10 @@ input Tour_Order {
   """
   vibeRelax_count: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`durationDays_sum` of type `Int`
+  """
+  durationDays_sum: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`durationHours_sum` of type `Int`
   """
   durationHours_sum: OrderDirection
@@ -3582,6 +4466,26 @@ input Tour_Order {
   ✨ Generated from Field `Tour`.`lng_sum` of type `Float`
   """
   lng_sum: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLat_sum` of type `Float`
+  """
+  mapCenterLat_sum: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLng_sum` of type `Float`
+  """
+  mapCenterLng_sum: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`mapZoom_sum` of type `Int`
+  """
+  mapZoom_sum: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`maxPassengers_sum` of type `Int`
+  """
+  maxPassengers_sum: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`minAge_sum` of type `Int`
+  """
+  minAge_sum: OrderDirection
   """
   ✨ Generated from Field `Tour`.`originalPrice_sum` of type `Float`
   """
@@ -3615,6 +4519,10 @@ input Tour_Order {
   """
   vibeRelax_sum: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`durationDays_avg` of type `Float`
+  """
+  durationDays_avg: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`durationHours_avg` of type `Float`
   """
   durationHours_avg: OrderDirection
@@ -3626,6 +4534,26 @@ input Tour_Order {
   ✨ Generated from Field `Tour`.`lng_avg` of type `Float`
   """
   lng_avg: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLat_avg` of type `Float`
+  """
+  mapCenterLat_avg: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLng_avg` of type `Float`
+  """
+  mapCenterLng_avg: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`mapZoom_avg` of type `Float`
+  """
+  mapZoom_avg: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`maxPassengers_avg` of type `Float`
+  """
+  maxPassengers_avg: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`minAge_avg` of type `Float`
+  """
+  minAge_avg: OrderDirection
   """
   ✨ Generated from Field `Tour`.`originalPrice_avg` of type `Float`
   """
@@ -3659,13 +4587,41 @@ input Tour_Order {
   """
   vibeRelax_avg: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`availableDates_min` of type `Any`
+  """
+  availableDates_min: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`createdAt_min` of type `Timestamp`
   """
   createdAt_min: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`durationDays_min` of type `Int`
+  """
+  durationDays_min: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`durationHours_min` of type `Int`
   """
   durationHours_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`excludes_min` of type `Any`
+  """
+  excludes_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`galleryImages_min` of type `Any`
+  """
+  galleryImages_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`includes_min` of type `Any`
+  """
+  includes_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`itinerary_min` of type `Any`
+  """
+  itinerary_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`languages_min` of type `Any`
+  """
+  languages_min: OrderDirection
   """
   ✨ Generated from Field `Tour`.`lat_min` of type `Float`
   """
@@ -3674,6 +4630,26 @@ input Tour_Order {
   ✨ Generated from Field `Tour`.`lng_min` of type `Float`
   """
   lng_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLat_min` of type `Float`
+  """
+  mapCenterLat_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLng_min` of type `Float`
+  """
+  mapCenterLng_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`mapZoom_min` of type `Int`
+  """
+  mapZoom_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`maxPassengers_min` of type `Int`
+  """
+  maxPassengers_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`minAge_min` of type `Int`
+  """
+  minAge_min: OrderDirection
   """
   ✨ Generated from Field `Tour`.`originalPrice_min` of type `Float`
   """
@@ -3687,9 +4663,17 @@ input Tour_Order {
   """
   rating_min: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`requirements_min` of type `Any`
+  """
+  requirements_min: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`reviewsCount_min` of type `Int`
   """
   reviewsCount_min: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`seasonality_min` of type `Any`
+  """
+  seasonality_min: OrderDirection
   """
   ✨ Generated from Field `Tour`.`updatedAt_min` of type `Timestamp`
   """
@@ -3711,13 +4695,41 @@ input Tour_Order {
   """
   vibeRelax_min: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`availableDates_max` of type `Any`
+  """
+  availableDates_max: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`createdAt_max` of type `Timestamp`
   """
   createdAt_max: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`durationDays_max` of type `Int`
+  """
+  durationDays_max: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`durationHours_max` of type `Int`
   """
   durationHours_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`excludes_max` of type `Any`
+  """
+  excludes_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`galleryImages_max` of type `Any`
+  """
+  galleryImages_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`includes_max` of type `Any`
+  """
+  includes_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`itinerary_max` of type `Any`
+  """
+  itinerary_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`languages_max` of type `Any`
+  """
+  languages_max: OrderDirection
   """
   ✨ Generated from Field `Tour`.`lat_max` of type `Float`
   """
@@ -3726,6 +4738,26 @@ input Tour_Order {
   ✨ Generated from Field `Tour`.`lng_max` of type `Float`
   """
   lng_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLat_max` of type `Float`
+  """
+  mapCenterLat_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`mapCenterLng_max` of type `Float`
+  """
+  mapCenterLng_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`mapZoom_max` of type `Int`
+  """
+  mapZoom_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`maxPassengers_max` of type `Int`
+  """
+  maxPassengers_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`minAge_max` of type `Int`
+  """
+  minAge_max: OrderDirection
   """
   ✨ Generated from Field `Tour`.`originalPrice_max` of type `Float`
   """
@@ -3739,9 +4771,17 @@ input Tour_Order {
   """
   rating_max: OrderDirection
   """
+  ✨ Generated from Field `Tour`.`requirements_max` of type `Any`
+  """
+  requirements_max: OrderDirection
+  """
   ✨ Generated from Field `Tour`.`reviewsCount_max` of type `Int`
   """
   reviewsCount_max: OrderDirection
+  """
+  ✨ Generated from Field `Tour`.`seasonality_max` of type `Any`
+  """
+  seasonality_max: OrderDirection
   """
   ✨ Generated from Field `Tour`.`updatedAt_max` of type `Timestamp`
   """
