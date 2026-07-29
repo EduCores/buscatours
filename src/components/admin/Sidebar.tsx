@@ -16,18 +16,18 @@ export const MENU_ITEMS = [
     roles: ['platform-admin', 'tour-admin', 'operator']
   },
   {
-    id: 'logistics' as ActiveTab,
-    labelKey: 'menuLogistics',
-    descKey: 'menuLogisticsDesc',
-    icon: Map,
-    roles: ['platform-admin']
+    id: 'slider' as ActiveTab,
+    labelKey: 'menuSlider',
+    descKey: 'menuSliderDesc',
+    icon: Sliders,
+    roles: ['platform-admin', 'tour-admin']
   },
   {
-    id: 'copilot' as ActiveTab,
-    labelKey: 'menuCopilot',
-    descKey: 'menuCopilotDesc',
-    icon: Sparkles,
-    roles: ['platform-admin']
+    id: 'operators' as ActiveTab,
+    labelKey: 'operators',
+    descKey: 'operatorsDesc',
+    icon: Building2,
+    roles: ['platform-admin', 'tour-admin']
   },
   {
     id: 'tours' as ActiveTab,
@@ -37,11 +37,11 @@ export const MENU_ITEMS = [
     roles: ['platform-admin', 'tour-admin', 'operator']
   },
   {
-    id: 'slider' as ActiveTab,
-    labelKey: 'menuSlider',
-    descKey: 'menuSliderDesc',
-    icon: Sliders,
-    roles: ['platform-admin', 'tour-admin']
+    id: 'copilot' as ActiveTab,
+    labelKey: 'menuCopilot',
+    descKey: 'menuCopilotDesc',
+    icon: Sparkles,
+    roles: ['platform-admin']
   },
   {
     id: 'bookings' as ActiveTab,
@@ -51,18 +51,18 @@ export const MENU_ITEMS = [
     roles: ['platform-admin', 'operator']
   },
   {
-    id: 'resources' as ActiveTab,
-    labelKey: 'menuResources',
-    descKey: 'menuResourcesDesc',
-    icon: Users,
-    roles: ['platform-admin', 'operator']
+    id: 'tourists' as ActiveTab,
+    labelKey: 'menuTourists',
+    descKey: 'menuTouristsDesc',
+    icon: UserCheck,
+    roles: ['platform-admin', 'tour-admin', 'operator']
   },
   {
-    id: 'operators' as ActiveTab,
-    labelKey: 'menuOperators',
-    descKey: 'menuOperatorsDesc',
-    icon: Building2,
-    roles: ['platform-admin', 'tour-admin']
+    id: 'logistics' as ActiveTab,
+    labelKey: 'menuLogistics',
+    descKey: 'menuLogisticsDesc',
+    icon: Map,
+    roles: ['platform-admin']
   },
   {
     id: 'pwa' as ActiveTab,
@@ -70,13 +70,6 @@ export const MENU_ITEMS = [
     descKey: 'menuPwaDesc',
     icon: QrCode,
     roles: ['platform-admin']
-  },
-  {
-    id: 'tourists' as ActiveTab,
-    labelKey: 'menuTourists',
-    descKey: 'menuTouristsDesc',
-    icon: UserCheck,
-    roles: ['platform-admin', 'tour-admin', 'operator']
   },
 ];
 

@@ -66,6 +66,8 @@ export const translations = {
     menuToursDesc: "Catálogo de Tours",
     menuSlider: "Slider Principal",
     menuSliderDesc: "Contenido Hero",
+    operators: "Operadores",
+    operatorsDesc: "Gestión de Operadores",
     menuBookings: "Reservas B2B",
     menuBookingsDesc: "Conflictos & Estados",
     menuResources: "Recursos",
