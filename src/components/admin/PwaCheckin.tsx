@@ -7,13 +7,13 @@ import { PwaCheckin } from './types';
 import { useTranslation } from '../../i18n/LanguageContext';
 
 interface PwaCheckinProps {
-  queue: PwaCheckin[];
+  offlineQueue: PwaCheckin[];
   onAddOfflineCheckin: (checkin: PwaCheckin) => void;
   onSyncQueue: () => void;
 }
 
 export default function PwaCheckinComponent({
-  queue: _queue,
+  offlineQueue: _queue,
   onAddOfflineCheckin,
   onSyncQueue
 }: PwaCheckinProps) {
