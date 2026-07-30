@@ -86,7 +86,7 @@ export default function TourCard({ tour, onClick, activeCurrency,   onToggleComp
   return (
     <article
       className="glass-card fade-in-up"
-      onClick={onClick}
+      onClick={() => onClick(id)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
