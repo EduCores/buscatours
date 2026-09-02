@@ -1,0 +1,50 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main, fix-all-issues]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+      - run: npm ci
+      - name: Build for GitHub Pages
+        run: npm run build:frontend
+        env:
+          VITE_FIREBASE_PROJECT_ID: buscatours-e0816
+          VITE_FIREBASE_AUTH_DOMAIN: buscatours-e0816.firebaseapp.com
+          VITE_FIREBASE_API_KEY: AIzaSyCA_XO3NUS547VFh5JFT2jS4YDvhOGcUBg
+          VITE_FIREBASE_APP_ID: 1:851924860249:web:a7c576de45b34df4e28bf7
+          VITE_USE_EMULATORS: "false"
+          GITHUB_ACTIONS: "true"
+      - run: cp dist/index.html dist/404.html
+      - run: touch dist/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

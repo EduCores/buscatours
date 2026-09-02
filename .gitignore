@@ -10,18 +10,28 @@ functions/lib/
 
 # Firebase
 .firebase/
-dataconnect-generated/
 .firebase-hosting.cache
+emulator-data/
+firebase-export-*/
+# Data Connect SDK: ignorar en root pero permitir src/dataconnect-generated (requerido para build en CI)
+dataconnect-generated/
+!src/dataconnect-generated/
 
 # Environment
 .env
 .env.local
 .env.production
 .env.*.local
+!.env.example
 
 # Logs
 *.log
 firebase-debug.log*
+build.log
+build-output.txt
+dataconnect-debug.log
+pglite-debug.log
+*.tsbuildinfo
 
 # IDE
 .vscode/
@@ -35,6 +45,9 @@ Thumbs.db
 
 # Testing
 coverage/
+test-results/
+playwright-report/
+blob-report/
 
 # Misc
 *.pem

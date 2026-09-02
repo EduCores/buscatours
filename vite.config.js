@@ -76,7 +76,9 @@ const uploadMiddleware = () => {
 }
 
 // https://vite.dev/config/
+// GitHub Pages vive en /buscatours/ -> base /buscatours/ en CI, / en local/Firebase
 export default defineConfig({
+  base: process.env.GITHUB_ACTIONS === 'true' ? '/buscatours/' : '/',
   plugins: [react(), tailwindcss(), uploadMiddleware()],
   server: {
     headers: {
