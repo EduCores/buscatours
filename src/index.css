@@ -164,8 +164,8 @@ body.theme-nature-dark {
 /* RESET */
 * {
   box-sizing: border-box;
-  margin: 20;
-  padding: 20;
+  margin: 0;
+  padding: 0;
 }
 
 html,
