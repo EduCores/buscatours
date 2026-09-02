@@ -12,7 +12,7 @@ export const toursData = [
     reviewsCount: 38,
     category: "Outdoor",
     description: "Visita la Cueva del Milodón, Laguna Sofía, Mirador del Nordenskjöld y navega cerca del impresionante Lago Grey en la excursión más completa.",
-    image: "/uploads/tours/torres-del-paine-card-tour.webp",
+    image: import.meta.env.BASE_URL + "uploads/tours/torres-del-paine-card-tour.webp",
     featured: true,
     oneDay: true,
     popular: true,
@@ -29,7 +29,7 @@ export const toursData = [
     difficulty: 'MODERATE',
     seasonality: ['Todo el Año'],
     trailerUrl: 'https://www.youtube.com/embed/xvFZjo5PgG0',
-    galleryImages: ['/uploads/tours/torres-del-paine-card-tour.webp'],
+    galleryImages: [import.meta.env.BASE_URL + 'uploads/tours/torres-del-paine-card-tour.webp'],
     itinerary: [
       { title: 'Día 1: Salida y Exploración Principal', content: 'Iniciamos temprano por la mañana saliendo de nuestro punto de encuentro. Nos dirigimos en transporte premium hacia el destino principal disfrutando de las vistas panorámicas. Realizaremos las caminatas principales y paradas de fotografías guiadas por nuestro experto local.' },
       { title: 'Día 1 (Tarde): Almuerzo Patagónico y Retorno', content: 'Disfrutaremos de un Box Lunch premium en un punto panorámico. Por la tarde realizaremos las últimas exploraciones arqueológicas o de glaciares antes de emprender el viaje de regreso al punto de partida.' }
@@ -43,7 +43,7 @@ export const toursData = [
     groupType: 'SHARED',
     availableDates: {},
     destinationCountry: 'Argentina',
-    heroImages: ['/uploads/tours/torres-del-paine-card-tour.webp'],
+    heroImages: [import.meta.env.BASE_URL + 'uploads/tours/torres-del-paine-card-tour.webp'],
     bgPosition: 'center',
     status: 'PUBLISHED',
     operator: 'Andes Expeditions',
@@ -64,7 +64,7 @@ export const toursData = [
     reviewsCount: 54,
     category: "Aventura",
     description: "Recorre el legendario Camino Inca hasta las ruinas sagradas de Machu Picchu. Una aventura de trekking sin precedentes entre templos y naturaleza.",
-    image: "/uploads/tours/Machu-Picchu-card-tour.webp",
+    image: import.meta.env.BASE_URL + "uploads/tours/Machu-Picchu-card-tour.webp",
     featured: true,
     oneDay: true,
     popular: true,
@@ -81,7 +81,7 @@ export const toursData = [
     difficulty: 'CHALLENGING',
     seasonality: ['Todo el Año'],
     trailerUrl: 'https://www.youtube.com/embed/xvFZjo5PgG0',
-    galleryImages: ['/uploads/tours/Machu-Picchu-card-tour.webp'],
+    galleryImages: [import.meta.env.BASE_URL + 'uploads/tours/Machu-Picchu-card-tour.webp'],
     itinerary: [
       { title: 'Día 1: Llegada a Cusco y Aclimatación', content: 'Recepción en el aeropuerto de Cusco. Traslado al hotel de altura. Día de aclimatación para preparar el cuerpo al nivel de altura. Cena de bienvenida con comida típica cusqueña.' },
       { title: 'Día 2: Trekking al Camino Inca y Machu Picchu', content: 'Desayuno temprano. Iniciamos el trekking por el Camino Inca tradicional hasta la Ciudadela de Machu Picchu. Recorrido por las principales estructuras arqueológicas con nuestro guía certificado.' }
@@ -95,7 +95,7 @@ export const toursData = [
     groupType: 'SHARED',
     availableDates: {},
     destinationCountry: 'Perú',
-    heroImages: ['/uploads/tours/Machu-Picchu-card-tour.webp'],
+    heroImages: [import.meta.env.BASE_URL + 'uploads/tours/Machu-Picchu-card-tour.webp'],
     bgPosition: 'center',
     status: 'PUBLISHED',
     operator: 'Andes Expeditions',
@@ -116,7 +116,7 @@ export const toursData = [
     reviewsCount: 29,
     category: "Outdoor",
     description: "Explora el espejo de sal más grande del mundo en un vehículo 4x4. Visita la Isla Incahuasi, el cementerio de trenes y lagunas de colores.",
-    image: "/uploads/tours/salar-de-uyuni-card-tour.webp",
+    image: import.meta.env.BASE_URL + "uploads/tours/salar-de-uyuni-card-tour.webp",
     featured: true,
     oneDay: true,
     popular: false,
@@ -141,7 +141,7 @@ export const toursData = [
     reviewsCount: 16,
     category: "Cultural",
     description: "Visita el Cristo Redentor en el Cerro Corcovado, el Pan de Azúcar y relájate en las famosas playas de Copacabana e Ipanema.",
-    image: "/uploads/tours/rio-de-janeiro-card-tour.webp",
+    image: import.meta.env.BASE_URL + "uploads/tours/rio-de-janeiro-card-tour.webp",
     featured: false,
     oneDay: true,
     popular: true,
@@ -358,7 +358,7 @@ export const toursData = [
 export const destinationsData = [
   {
     name: "Argentina",
-    image: "/uploads/tours/torres-del-paine-card-tour.webp",
+    image: import.meta.env.BASE_URL + "uploads/tours/torres-del-paine-card-tour.webp",
     count: 15,
     slug: "argentina",
     priceFrom: "$120",
@@ -372,7 +372,7 @@ export const destinationsData = [
   },
   {
     name: "Perú",
-    image: "/uploads/tours/Machu-Picchu-card-tour.webp",
+    image: import.meta.env.BASE_URL + "uploads/tours/Machu-Picchu-card-tour.webp",
     count: 12,
     slug: "peru",
     priceFrom: "$180",
@@ -386,7 +386,7 @@ export const destinationsData = [
   },
   {
     name: "Bolivia",
-    image: "/uploads/tours/salar-de-uyuni-card-tour.webp",
+    image: import.meta.env.BASE_URL + "uploads/tours/salar-de-uyuni-card-tour.webp",
     count: 8,
     slug: "bolivia",
     priceFrom: "$110",

@@ -46,16 +46,16 @@ export function useTour({ tour, allTours, setSelectedTourId, activeCurrency, wis
     const imgs = Array.isArray(rawImgs) && rawImgs.length > 0 ? rawImgs : [tour.image];
     return imgs.filter(Boolean).map((img) => {
       const lower = img.toLowerCase();
-      if (lower.includes("torres-del-paine")) return "/slider-torres-del-paine.webp";
-      if (lower.includes("machu-picchu") || lower.includes("machu-pichu")) return "/slider-machu-pichu.webp";
-      if (lower.includes("salar-de-uyuni")) return "/slider-salar-de-uyuni.webp";
-      if (lower.includes("rio-de-janeiro")) return "/slider-rio-de-janeiro.webp";
-      if (lower.includes("cataratas-del-iguazu")) return "/slider-cataratas-del-iguazu.webp";
-      if (lower.includes("ciudad-perdida")) return "/slider-ciudad-perdida.webp";
-      if (lower.includes("isla-galapagos") || lower.includes("galapagos")) return "/slider-isla-galapagos.webp";
-      if (lower.includes("perito-moreno")) return "/slider-perito-moreno.webp";
-      if (lower.includes("punta-cana")) return "/slider-punta-cana.webp";
-      if (lower.includes("valle-de-la-luna")) return "/slider-valle-de-la-luna.webp";
+      if (lower.includes("torres-del-paine")) return import.meta.env.BASE_URL + "slider-torres-del-paine.webp";
+      if (lower.includes("machu-picchu") || lower.includes("machu-pichu")) return import.meta.env.BASE_URL + "slider-machu-pichu.webp";
+      if (lower.includes("salar-de-uyuni")) return import.meta.env.BASE_URL + "slider-salar-de-uyuni.webp";
+      if (lower.includes("rio-de-janeiro")) return import.meta.env.BASE_URL + "slider-rio-de-janeiro.webp";
+      if (lower.includes("cataratas-del-iguazu")) return import.meta.env.BASE_URL + "slider-cataratas-del-iguazu.webp";
+      if (lower.includes("ciudad-perdida")) return import.meta.env.BASE_URL + "slider-ciudad-perdida.webp";
+      if (lower.includes("isla-galapagos") || lower.includes("galapagos")) return import.meta.env.BASE_URL + "slider-isla-galapagos.webp";
+      if (lower.includes("perito-moreno")) return import.meta.env.BASE_URL + "slider-perito-moreno.webp";
+      if (lower.includes("punta-cana")) return import.meta.env.BASE_URL + "slider-punta-cana.webp";
+      if (lower.includes("valle-de-la-luna")) return import.meta.env.BASE_URL + "slider-valle-de-la-luna.webp";
       return img;
     });
   }, [tour.heroImages, tour.image]);

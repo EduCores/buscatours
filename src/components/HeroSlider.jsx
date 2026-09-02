@@ -75,7 +75,7 @@ const DEFAULT_SLIDES = [
     title: '7 Días / 6 Noches',
     description: 'Cueva del Milodón, Laguna Sofía, Base Torres del Paine y Glaciar Grey. La experiencia patagónica definitiva.',
     buttonText: 'Ver Más',
-    image: '/uploads/tours/hero/slider-cataratas-del-iguazu.webp',
+    image: import.meta.env.BASE_URL + 'uploads/tours/hero/slider-cataratas-del-iguazu.webp',
     link: '#tours',
   },
   {
@@ -84,7 +84,7 @@ const DEFAULT_SLIDES = [
     title: 'Descubre la Magia de la Patagonia',
     description: 'Excursiones exclusivas saliendo de Punta Arenas, Puerto Natales y exploraciones en la salvaje Tierra del Fuego.',
     buttonText: 'Explorar Destinos',
-    image: '/uploads/tours/hero/slider-machu-pichu.webp',
+    image: import.meta.env.BASE_URL + 'uploads/tours/hero/slider-machu-pichu.webp',
     link: '#destinos',
   },
   {
@@ -93,7 +93,7 @@ const DEFAULT_SLIDES = [
     title: 'Un Mundo Oculto',
     description: 'Explora glaciares milenarios, estancias remotas y senderos vírgenes en el extremo sur del planeta.',
     buttonText: 'Ver Actividades',
-    image: '/uploads/tours/hero/slider-cataratas-del-iguazu.webp',
+    image: import.meta.env.BASE_URL + 'uploads/tours/hero/slider-cataratas-del-iguazu.webp',
     link: '#actividades',
   }
 ];
